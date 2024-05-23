@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     "blog.apps.BlogConfig",
     "contact.apps.ContactConfig",
     "administration_bit.apps.AdministrationBitConfig",
+    "bit_files.apps.BitFilesConfig",
+    "bit_auth.apps.BitAuthConfig",
 ]
 
 MIDDLEWARE = [
