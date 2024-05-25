@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Welcome To BIT Lalpur{% endblock title %}</title>
+    <link rel="stylesheet" href="/static/css/mian.css">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <nav class="py-2 bg-body-tertiary border-bottom">
+        <div class="container d-flex flex-wrap">
+            <ul class="nav me-auto">
+                <li class="nav-item">
+                    <a href="#" class="nav-link link-body-emphasis px-2 active" aria-current="page">
+                        ABOUT US
+                    </a>
+                </li>
+                <div class="vr"></div>
+                <li class="nav-item">
+                    <a href="#" class="nav-link link-body-emphasis px-2">
+                        ADMISSION
+                    </a>
+                </li>
+                <div class="vr"></div>
+                <li class="nav-item">
+                    <a href="#" class="nav-link link-body-emphasis px-2">
+                        DEPARTMENTS
+                    </a>
+                </li>
+                <div class="vr"></div>
+                <li class="nav-item">
+                    <a href="#" class="nav-link link-body-emphasis px-2">
+                        FAQs
+                    </a>
+            </ul>
+            <div>
+                <div id="google_translate_element"></div>
+            </div>
+            <!-- sidebar-notification -->
+            <div>
+                <button class="btn btn-primary rounded-circle side_toggle p-0 mx-2" type="button"
+                    data-bs-toggle="offcanvas" data-bs-target="#bit_lalpur_notification"
+                    aria-controls="bit_lalpur_notification">
+                    <ion-icon name="notifications-outline" style="font-size: 1.5rem;"></ion-icon>
+                </button>
+
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="bit_lalpur_notification"
+                    aria-labelledby="bit_lalpur_notificationLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="bit_lalpur_notificationLabel">NOTIFICATIONS</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <div class="flex-shrink-0 p-3">
+                            <button
+                                class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed w-100"
+                                data-bs-toggle="collapse" data-bs-target="#institute" aria-expanded="false">
+                                INSTITUTE
+                            </button>
+                            <div class="collapse" id="institute" style>
+                                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                    <li><a href="#"
+                                            class="link-body-emphasis d-inline-flex text-decoration-none rounded">ADMISTRATION</a>
+                                    </li>
+                                    <li><a href="#"
+                                            class="link-body-emphasis d-inline-flex text-decoration-none rounded">CAMPUS
+                                            TOUR</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <hr>
+
+                            <button
+                                class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed w-100"
+                                data-bs-toggle="collapse" data-bs-target="#acadmics" aria-expanded="false">
+                                ACADMICS
+                            </button>
+                            <div class="collapse" id="acadmics" style>
+                                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                    <li><a href="#"
+                                            class="link-body-emphasis d-inline-flex text-decoration-none rounded">ACADMICS
+                                            PROGRAMS</a>
+                                    </li>
+                                    <li><a href="#"
+                                            class="link-body-emphasis d-inline-flex text-decoration-none rounded">TIME
+                                            TABLE</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <hr>
+
+                            <button
+                                class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed w-100"
+                                data-bs-toggle="collapse" data-bs-target="#students" aria-expanded="false">
+                                STUDENTS
+                            </button>
+                            <div class="collapse" id="students" style>
+                                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                    <li><a href="#"
+                                            class="link-body-emphasis d-inline-flex text-decoration-none rounded">CURRENT
+                                            STUDENTS</a>
+                                    </li>
+                                    <li><a href="#"
+                                            class="link-body-emphasis d-inline-flex text-decoration-none rounded">PROSPECTIVE
+                                            STUDENTS</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <hr>
+
+                            <a class="btn btn-toggle d-inline-flex align-items-center rounded border-0 w-100 no_arrow"
+                                href="#">
+                                CAMPUS PLACEMENTS
+                            </a>
+
+                            <hr>
+
+                            <a class="btn btn-toggle d-inline-flex align-items-center rounded border-0 w-100 no_arrow"
+                                href="#">
+                                REAEARCH
+                            </a>
+
+                            <hr>
+
+                            <a class="btn btn-toggle d-inline-flex align-items-center rounded border-0 w-100 no_arrow"
+                                href="#">
+                                ALUMNI
+                            </a>
+
+                            <hr>
+
+                            <button
+                                class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed w-100"
+                                data-bs-toggle="collapse" data-bs-target="#career" aria-expanded="false">
+                                CAREER
+                            </button>
+                            <div class="collapse" id="career" style>
+                                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                    <li><a href="#"
+                                            class="link-body-emphasis d-inline-flex text-decoration-none rounded">Recruitment
+                                            advertisement</a>
+                                    </li>
+                                    <li><a href="#"
+                                            class="link-body-emphasis d-inline-flex text-decoration-none rounded">Why
+                                            Work With Us</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <hr>
+
+                            <a class="btn btn-toggle d-inline-flex align-items-center rounded border-0 w-100 no_arrow"
+                                href="#">
+                                TENDER
+                            </a>
+
+                        </div>
+                    </div>
+                    <!-- Temp -->
+                </div>
+            </div>
+            <!-- sidebar-navigation -->
+            <div>
+                <button class="btn btn-primary rounded-circle side_toggle p-0" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#bit_lalput_sidebar" aria-controls="bit_lalput_sidebar">
+                    <ion-icon class="menu" name="menu-outline"></ion-icon>
+                </button>
+
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="bit_lalput_sidebar"
+                    aria-labelledby="bit_lalput_sidebarLabel">
+                    <div class="offcanvas-header">
+                        <a href="#" class="text-decoration-none sidebar_header_text d-flex align-items-center">
+                            <img src="/assets/brand/bit_logo_100x100.png" height="50" width="50" alt="bit_logo"
+                                class="img-fluid me-2">
+                            <h5 class="offcanvas-title" id="bit_lalput_sidebarLabel">BIT MESRA</h5>
+                        </a>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <div class="flex-shrink-0 p-3">
+                            <button
+                                class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed w-100"
+                                data-bs-toggle="collapse" data-bs-target="#institute" aria-expanded="false">
+                                INSTITUTE
+                            </button>
+                            <div class="collapse" id="institute" style>
+                                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                    <li><a href="#"
+                                            class="link-body-emphasis d-inline-flex text-decoration-none rounded">ADMISTRATION</a>
+                                    </li>
+                                    <li><a href="#"
+                                            class="link-body-emphasis d-inline-flex text-decoration-none rounded">CAMPUS
+                                            TOUR</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <hr>
+
+                            <button
+                                class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed w-100"
+                                data-bs-toggle="collapse" data-bs-target="#acadmics" aria-expanded="false">
+                                ACADMICS
+                            </button>
+                            <div class="collapse" id="acadmics" style>
+                                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                    <li><a href="#"
+                                            class="link-body-emphasis d-inline-flex text-decoration-none rounded">ACADMICS
+                                            PROGRAMS</a>
+                                    </li>
+                                    <li><a href="#"
+                                            class="link-body-emphasis d-inline-flex text-decoration-none rounded">TIME
+                                            TABLE</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <hr>
+
+                            <button
+                                class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed w-100"
+                                data-bs-toggle="collapse" data-bs-target="#students" aria-expanded="false">
+                                STUDENTS
+                            </button>
+                            <div class="collapse" id="students" style>
+                                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                    <li><a href="#"
+                                            class="link-body-emphasis d-inline-flex text-decoration-none rounded">CURRENT
+                                            STUDENTS</a>
+                                    </li>
+                                    <li><a href="#"
+                                            class="link-body-emphasis d-inline-flex text-decoration-none rounded">PROSPECTIVE
+                                            STUDENTS</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <hr>
+
+                            <a class="btn btn-toggle d-inline-flex align-items-center rounded border-0 w-100 no_arrow"
+                                href="#">
+                                CAMPUS PLACEMENTS
+                            </a>
+
+                            <hr>
+
+                            <a class="btn btn-toggle d-inline-flex align-items-center rounded border-0 w-100 no_arrow"
+                                href="#">
+                                REAEARCH
+                            </a>
+
+                            <hr>
+
+                            <a class="btn btn-toggle d-inline-flex align-items-center rounded border-0 w-100 no_arrow"
+                                href="#">
+                                ALUMNI
+                            </a>
+
+                            <hr>
+
+                            <button
+                                class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed w-100"
+                                data-bs-toggle="collapse" data-bs-target="#career" aria-expanded="false">
+                                CAREER
+                            </button>
+                            <div class="collapse" id="career" style>
+                                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                    <li><a href="#"
+                                            class="link-body-emphasis d-inline-flex text-decoration-none rounded">Recruitment
+                                            advertisement</a>
+                                    </li>
+                                    <li><a href="#"
+                                            class="link-body-emphasis d-inline-flex text-decoration-none rounded">Why
+                                            Work With Us</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <hr>
+
+                            <a class="btn btn-toggle d-inline-flex align-items-center rounded border-0 w-100 no_arrow"
+                                href="#">
+                                TENDER
+                            </a>
+
+                        </div>
+                    </div>
+                    <!-- Temp -->
+                </div>
+            </div>
+        </div>
+    </nav>
+    <header class="py-3 mb-4 border-bottom">
+        <div class="container d-flex flex-wrap justify-content-center">
+            <a href="/"
+                class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto link-body-emphasis text-decoration-none">
+                <span class="fs-4">
+                    <img class="img-fluid" src="/img/BIT-Mesra (1).png" alt>
+                </span>
+            </a>
+            <div class="d-flex justify-content-center align-items-center">
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 d-flex gap-1 " role="search">
+                    <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+                    <button type="button" class="btn btn-outline-primary ">Search</button>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    {% block body %}
+    Main content is sypposed to here...
+    {% endblock body %}
+
+
+    <hr class="my-5">
+    <div class="container">
+        <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5">
+            <div class="col mb-3">
+                <a href="/"
+                    class="d-flex justify-content-center align-items-center mb-3 link-body-emphasis text-decoration-none">
+                    <img src="/assets/brand/bit_logo_100x100.png" alt="">
+                </a>
+                <p class="text-body-secondary text-center">
+                    © <span class="year">2022</span> Bit Mesra</p>
+            </div>
+
+            <hr style="width:80%; margin:0 auto; display:block;" class="d-block d-sm-none pb-3">
+
+            <div class="col-sm-12 d-flex justify-content-center align-items-center">
+                <div class="text-center">
+                    <h5 class="text-body-secondary">Section</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr style="width:80%; margin:0 auto; display:block;" class="d-block d-sm-none pb-3 mt-3">
+
+            <div class="col-sm-12 d-flex justify-content-center align-items-center">
+                <div class="text-center">
+                    <h5 class="text-body-secondary">Section</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr style="width:80%; margin:0 auto; display:block;" class="d-block d-sm-none pb-3 mt-3">
+
+            <div class="col-sm-12 d-flex justify-content-center align-items-center">
+                <div class="text-center">
+                    <h5 class="text-body-secondary">Section</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr style="width:80%; margin:0 auto; display:block;" class="d-block d-sm-none pb-3 mt-3">
+
+            <div class="col-sm-12 d-flex justify-content-center align-items-center">
+                <div class="text-center">
+                    <h5 class="text-body-secondary">Section</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </footer>
+    </div>
+
+
+    <script src="/static/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Google translate element... -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+        }
+    </script>
+
+    <script type="text/javascript"
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    {% block js %}{% endblock js %}
+
+
+</body>
+
+</html>

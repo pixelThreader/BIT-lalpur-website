@@ -514,7 +514,7 @@
             <hr class="my-3">
 
             <div class="container">
-                <form action="{% url 'sendmail' %}" method="post" id="sendmail-form" class="p-4 bg-light rounded">
+                <form action="{% url 'student_to_BIT' %}" method="post" id="sendmail-form" class="p-4 bg-light rounded">
                     {% csrf_token %}
                     <h5>Send E-Mail to <span class="text-success" id="message_reciver"></span></h5>
                     <h6>Receiver's Email: <span class="text-success" id="email_reciver"></span></h6>
@@ -536,46 +536,9 @@
                 </form>
             </div>
 
-            <div class="d-flex justify-content-center" id="sendmail-spinner" style="display: none;">
-                <div class="spinner-border text-primary" role="status">
-                    <span class="sr-only">Sending...</span>
-                </div>
+            <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+                <span class="visually-hidden">Loading...</span>
             </div>
-
-            <script>
-                document.addEventListener('DOMContentLoaded', () => {
-                    const sendmailForm = document.getElementById('sendmail-form');
-                    const sendmailSpinner = document.getElementById('sendmail-spinner');
-                    const formContainer = document.getElementById('form-container');
-
-                    sendmailForm.addEventListener('submit', (e) => {
-                        e.preventDefault();
-
-                        // Show the spinner and hide the form
-                        sendmailSpinner.style.display = "flex";
-                        formContainer.style.display = "none";
-
-                        fetch(sendmailForm.action, {
-                            method: 'POST',
-                            body: new FormData(sendmailForm),
-                            headers: {
-                                'X-Requested-With': 'XMLHttpRequest',
-                                'Accept': 'application/json'
-                            }
-                        })
-                            .then((res) => res.json())
-                            .then((data) => {
-                                sendmailSpinner.style.display = "none";
-                                alert(data.message);  // Show success message or process as needed
-                            })
-                            .catch((err) => {
-                                sendmailSpinner.style.display = "none";
-                                formContainer.style.display = "block";  // Show the form again on error
-                                alert('An error occurred: ' + err.message);
-                            });
-                    });
-                });
-            </script>
         </aside>
     </section>
 

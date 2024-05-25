@@ -21,6 +21,7 @@ from add_content import urls as ADDURL
 from administration_bit import urls as ADMINURL
 from blog import urls as BURLS
 from contact import urls as CURLS
+from mailHandler import urls as MHURLS
 
 admin.site.site_header = "BIT LALPUR"
 admin.site.site_title = "BIT LALPUR"
@@ -33,4 +34,5 @@ urlpatterns = [
     path("administration/", include(ADMINURL)),
     path("blog/", include(BURLS)),
     path("contact/", include(CURLS)),
+    path("mails/", include(MHURLS)),
 ]

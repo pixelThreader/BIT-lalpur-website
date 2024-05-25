@@ -38,12 +38,13 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     # 
+    "bit_auth.apps.BitAuthConfig",
     "add_content.apps.AddContentConfig",
     "blog.apps.BlogConfig",
     "contact.apps.ContactConfig",
     "administration_bit.apps.AdministrationBitConfig",
+    "mailHandler.apps.MailhandlerConfig",
     "bit_files.apps.BitFilesConfig",
-    "bit_auth.apps.BitAuthConfig",
 ]
 
 MIDDLEWARE = [

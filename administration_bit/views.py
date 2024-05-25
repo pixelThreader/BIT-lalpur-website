@@ -3,7 +3,7 @@ from django.shortcuts import render
 # Create your views here.
 
 def index(request):
-    return render(request, 'adminstration/index.html')
+    return render(request, 'administrations/index.html')
 
 def palcements(request):
-    return render(request, 'adminstration/palcements.html')
+    return render(request, 'admiinstrations/palcements.html')
