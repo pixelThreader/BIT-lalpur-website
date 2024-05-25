@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock title %}</title>
+    <link rel="stylesheet" href="/static/css/mian.css">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+</head>
+
+<body data-bs-theme="dark">
+
+    <header>...header</header>
+
+    {% block body %}
+    <main>
+        <div class="container bg-home-about rounded-3">
+            <div class="row mb-4">
+                <div class="col-12 mt-4">
+                    <h1 class="text-center">ADMINISTRATION</h1>
+                </div>
+
+            </div>
+            <!-- bootstrap copied -->
+            <div class="row m-0 g-5">
+                <div class="col-md-8">
+                    <!-- LHS Container - non-sticky -->
+                    <!-- cards1 -->
+                    <div class="container-fluid">
+                        <div class="card">
+                            <div class="card-body row g-0">
+                                <div class="col-12 col-md-4 d-flex justify-content-center p-2">
+                                    <div>
+                                        <img src="/assets/media/faculties/vandana_bhattacharjee.png " alt=""
+                                            class="img-thumbnail w-100">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-8 p-2">
+                                    <h5 class="card-title">
+                                        <div class="col  d-flex flex-column position-static pb-0">
+                                            <strong class="d-inline-block mb-2 text-success">Director
+                                                (In-charge)</strong>
+                                            <hr class="my-3">
+                                            <h3 class="mb-0">Dr. Vandana Bhattacharjee</h3>
+                                            <hr class="my-3">
+                                            <p class="card-text mb-auto">
+                                            <ul class="list-unstyled m-0">
+                                                <li class="bg-home-about rounded-1 p-2 mb-2">
+                                                    <span class="fw-bold text-primary">
+                                                        Qualification:
+                                                    </span>
+                                                    <p class="mt-3 mb-0 ps-4 font-para-11">
+                                                        PhD - JNU , M.Tech.(CS) - JNU and B.Tech(CSE) - BIT Mesra
+                                                    </p>
+                                                </li>
+                                                <li class="bg-home-about rounded-1 p-2 mb-2">
+                                                    <span class="fw-bold text-primary">
+                                                        Contact No.:
+                                                    </span>
+                                                    <p class="mt-3 ps-4 mb-0 font-para-11">
+                                                        9431596469
+                                                    </p>
+
+                                                </li>
+                                                <li class="bg-home-about rounded-1 p-2">
+                                                    <span class="fw-bold text-primary">
+                                                        Email Id:
+                                                    </span>
+                                                    <p class="mt-3 ps-4 mb-0 font-para-11 mail">
+                                                        dir.lalpur@bitmesra.ac.in
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                            </p>
+
+                                        </div>
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- cards1 -->
+                    <br>
+                    <!-- cards2 -->
+                    <div class="container-fluid">
+                        <div class="card">
+                            <div class="card-body row g-0">
+                                <div class="col-12 col-md-4 d-flex justify-content-center p-2">
+                                    <div>
+                                        <img src="/assets/media/faculties/manoj_kumar_giri.jpg " alt=""
+                                            class="img-thumbnail w-100">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-8 p-2">
+                                    <h5 class="card-title">
+                                        <div class="col  d-flex flex-column position-static pb-0">
+                                            <strong class="d-inline-block mb-2 text-info">Assistant Registrar</strong>
+                                            <hr class="my-3">
+                                            <h3 class="ps-4">
+                                                Mr. Manoj Kumar Giri 
+                                            </h3>
+                                            <hr class="my-3">
+                                            <p class="card-text mb-auto">
+                                            <ul class="list-unstyled m-0">
+                                                <li class="bg-home-about rounded-1 p-2 mb-2">
+                                                    <span class="fw-bold text-primary">
+                                                        Qualification:
+                                                    </span>
+                                                    <p class="mt-3 ps-4 mb-0 font-para-11">
+                                                        MBA (Mktg & IT)
+                                                    </p>
+                                                </li>
+                                                <li class="bg-home-about rounded-1 p-2 mb-2">
+                                                    <span class="fw-bold text-primary">
+                                                        Contact No.:
+                                                    </span>
+                                                    <p class="mt-3 ps-4 mb-0 font-para-11">
+                                                        7004824027
+                                                    </p>
+
+                                                </li>
+                                                <li class="bg-home-about rounded-1 p-2">
+                                                    <span class="fw-bold text-primary">
+                                                        Email Id:
+                                                    </span>
+                                                    <p class="mt-3 ps-4 mb-0 font-para-11 mail">
+                                                        ar.bitlalpur@bitmesra.ac.in
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                            </p>
+
+                                        </div>
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- cards2 -->
+                    <hr class="my-4">
+                    <!-- tables -->
+                    <h3 class="text-warning text-center">Contact details of offices at BITOC Lalpur</h3>
+                    <div class="table-responsive mt-4 rounded-3">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Office</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">E-mail</th>
+                                    <th scope="col">Contacts</th>
+                                </tr>
+                            </thead>
+                            <tbody class="table-group-divider">
+
+                                <tr>
+                                    <td class="align-middle">Library</td>
+                                    <td class="align-middle" scope="row">
+                                        <ul class="list-unstyled nowrap d-md-none" style="white-space: nowrap;">
+                                            <li>Prof. Dr. Ashutosh Mishra (Prof. In-Charge)</li>
+                                            <li class="mt-3">Mr. Ajay Kumar Singh</li>
+                                            <li class="mt-3">Mrs. Soni Kumari</li>
+                                            <li class="mt-3">Mr. Binod Kumar</li>
+                                            <li class="mt-3">Mrs. Sarita Tigga</li>
+                                        </ul>
+                                        <ul class="list-unstyled d-none d-md-block">
+                                            <li>Prof. Dr. Ashutosh Mishra (Prof. In-Charge)</li>
+                                            <li class="mt-3">Mr. Ajay Kumar Singh</li>
+                                            <li class="mt-3">Mrs. Soni Kumari</li>
+                                            <li class="mt-3">Mr. Binod Kumar</li>
+                                            <li class="mt-3">Mrs. Sarita Tigga</li>
+                                        </ul>
+                                    </td>
+
+                                    <td class="align-middle mail">library.bitlalpur@bitmesra.ac.in</td>
+                                    <td>
+                                        <ul class="list-unstyled">
+                                            <li>7677672446</li>
+                                            <li class="mt-3">9905327204</li>
+                                            <li class="mt-3">8252236779</li>
+                                            <li class="mt-3">9546278685</li>
+                                            <li class="mt-3">9430143625</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="align-middle">Accounts</td>
+                                    <td class="align-middle" scope="row">
+                                        <ul class="list-unstyled nowrap d-md-none" style="white-space: nowrap;">
+                                            <li>
+                                                Mr. Shantanu Kumar
+                                            </li>
+                                            <li class="mt-3">
+                                                Mr. Suresh Mahto
+                                            </li>
+                                        </ul>
+                                        <ul class="list-unstyled d-none d-md-block">
+                                            <li>
+                                                Mr. Shantanu Kumar
+                                            </li>
+                                            <li class="mt-3">
+                                                Mr. Suresh Mahto
+                                            </li>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <ul class="list-unstyled">
+                                            <li class="mail">
+                                                shantanukumar@bitmesra.ac.in
+                                            </li>
+                                            <li class="mt-3 mail">
+                                                sureshmahtolalpur@bitmesra.ac.in
+                                            </li>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <ul class="list-unstyled">
+                                            <li>
+                                                9955004848
+                                            </li>
+                                            <li class="mt-3">
+                                                8957008961
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="align-middle">
+                                        Admissions
+                                    </td>
+                                    <td class="align-middle" scope="row">
+                                        <ul class="list-unstyled nowrap d-md-none" style="white-space: nowrap;">
+                                            <li>Dr. Amrita Priyam</li>
+                                            <li class="mt-3">Dr. Sanjay Kumar</li>
+                                            <li class="mt-3">Mr. Basudeo Singh</li>
+                                        </ul>
+                                        <ul class="list-unstyled d-none d-md-block">
+                                            <li>Prof. Dr. Ashutosh Mishra (Prof. In-Charge)</li>
+                                            <li class="mt-3">Mr. Ajay Kumar Singh</li>
+                                            <li class="mt-3">Mrs. Soni Kumari</li>
+
+                                        </ul>
+                                    </td>
+
+                                    <td class="align-middle mail">admissionsbitlalpur@bitmesra.ac.in</td>
+                                    <td>
+                                        <ul class="list-unstyled">
+                                            <li>
+                                                9431361802</li>
+                                            <li class="mt-3">9934514216</li>
+                                            <li class="mt-3">9905745754</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="align-middle">Semester</td>
+                                    <td class="align-middle" scope="row">
+                                        <ul class="list-unstyled nowrap d-md-none" style="white-space: nowrap;">
+                                            <li>Dr. Srabani Mukhopadhyaya</li>
+                                            <li class="mt-3">Dr. Soumitro Chakravarty</li>
+                                            <li class="mt-3">Dr. Prashant Singh</li>
+                                            <li class="mt-3">Ms. Onima Tigga</li>
+                                            <li class="mt-3">Mrs. Anamika Kumari</li>
+                                        </ul>
+                                        <ul class="list-unstyled d-none d-md-block">
+                                            <li>Dr. Srabani Mukhopadhyaya</li>
+                                            <li class="mt-3">Dr. Soumitro Chakravarty</li>
+                                            <li class="mt-3">Dr. Prashant Singh</li>
+                                            <li class="mt-3">Ms. Onima Tigga</li>
+                                            <li class="mt-3">Mrs. Anamika Kumari</li>
+                                        </ul>
+                                    </td>
+
+                                    <td class="align-middle mail">sembitlalpur@bitmesra.ac.in</td>
+                                    <td>
+                                        <ul class="list-unstyled">
+                                            <li>9830774212</li>
+                                            <li class="mt-3">9608943362</li>
+                                            <li class="mt-3">7282845066</li>
+                                            <li class="mt-3">9934320669</li>
+                                            <li class="mt-3">9709051349</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="align-middle">ERP</td>
+                                    <td class="align-middle" scope="row">
+                                        <ul class="list-unstyled nowrap d-md-none" style="white-space: nowrap;">
+                                            <li>Dr. Kuntal Mukherjee</li>
+                                            <li class="mt-3">Dr. Jaya Pal</li>
+                                            <li class="mt-3">Mr. Somenath Chatterjee</li>
+                                        </ul>
+                                        <ul class="list-unstyled d-none d-md-block">
+                                            <li>Dr. Kuntal Mukherjee</li>
+                                            <li class="mt-3">Dr. Jaya Pal</li>
+                                            <li class="mt-3">Mr. Somenath Chatterjee</li>
+                                        </ul>
+                                    </td>
+
+                                    <td class="align-middle mail">erpbitlalpur@bitmesra.ac.in</td>
+                                    <td>
+                                        <ul class="list-unstyled">
+                                            <li>9973001178</li>
+                                            <li class="mt-3">9931149772</li>
+                                            <li class="mt-3">9304281866</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="align-middle"> Examination</td>
+                                    <td class="align-middle" scope="row">
+                                        <ul class="list-unstyled nowrap d-md-none" style="white-space: nowrap;">
+                                            <li>Dr. Shiva Surya Narayana</li>
+                                            <li class="mt-3">Dr. Umesh Prasad</li>
+                                            <li class="mt-3">Mrs. Mini Dubey</li>
+                                        </ul>
+                                        <ul class="list-unstyled d-none d-md-block">
+                                            <li>Dr. Shiva Surya Narayana</li>
+                                            <li class="mt-3">Dr. Umesh Prasad</li>
+                                            <li class="mt-3">Mrs. Mini Dubey</li>
+                                        </ul>
+                                    </td>
+
+                                    <td class="align-middle mail">exambitlalpur@bitmesra.ac.in</td>
+                                    <td>
+                                        <ul class="list-unstyled">
+                                            <li>9810950586</li>
+                                            <li class="mt-3">9431351906</li>
+                                            <li class="mt-3">8210234745</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="align-middle">Student section</td>
+                                    <td class="align-middle" scope="row">
+                                        <ul class="list-unstyled nowrap d-md-none" style="white-space: nowrap;">
+                                            <li>Dr. Pradeep Munda</li>
+                                            <li class="mt-3">Mr. Rana Pratap Mishra</li>
+                                        </ul>
+                                        <ul class="list-unstyled d-none d-md-block">
+                                            <li>Dr. Pradeep Munda</li>
+                                            <li class="mt-3">Mr. Rana Pratap Mishra</li>
+                                        </ul>
+                                    </td>
+
+                                    <td class="align-middle mail">stusecbitlalpur@bitmesra.ac.in</td>
+                                    <td>
+                                        <ul class="list-unstyled">
+                                            <li>7061765573</li>
+                                            <li class="mt-3">9608171323</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="align-middle">Training & Placement</td>
+                                    <td class="align-middle" scope="row">
+                                        <ul class="list-unstyled nowrap d-md-none" style="white-space: nowrap;">
+                                            <li>Dr.T.K.Banerjee</li>
+                                            <li class="mt-3">Dr. Siba Mitra</li>
+                                            <li class="mt-3">Mrs. Alice P Toppo</li>
+                                        </ul>
+                                        <ul class="list-unstyled d-none d-md-block">
+                                            <li>Dr.T.K.Banerjee</li>
+                                            <li class="mt-3">Dr. Siba Mitra</li>
+                                            <li class="mt-3">Mrs. Alice P Toppo</li>
+                                        </ul>
+                                    </td>
+
+                                    <td class="align-middle mail">tpolalpur@bitmesra.ac.in</td>
+                                    <td>
+                                        <ul class="list-unstyled">
+                                            <li>7980358286</li>
+                                            <li class="mt-3">8777308118</li>
+                                            <li class="mt-3">9431733363</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="align-middle">Other inquiries</td>
+                                    <td class="align-middle" scope="row">
+                                        <ul class="list-unstyled nowrap d-md-none" style="white-space: nowrap;">
+                                            <li>Mr. Basudeo Singh</li>
+                                        </ul>
+                                        <ul class="list-unstyled d-none d-md-block">
+                                            <li>Mr. Basudeo Singh</li>
+                                        </ul>
+                                    </td>
+
+                                    <td class="align-middle mail">office.bitlalpur@bitmesra.ac.in</td>
+                                    <td>
+                                        <ul class="list-unstyled">
+                                            <li>9905745754</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- tables -->
+                    <!-- LHS Container - non-sticky -->
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <!-- RHS Container - sticky -->
+                    <div class="position-sticky" style="top: 2rem;">
+                        <div class="p-4 mb-3 bg-body-tertiary rounded">
+                            <h4 class="fst-italic">IMPORTANT LINKS</h4>
+                            <hr class="my-3">
+                            <ul class="list-unstyled">
+                                <li class="mb-3"><a href="#"
+                                        class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Annual
+                                        Student's Fest (Aurora 2024)</a></li>
+                                <li class="mb-3"><a href="#"
+                                        class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Committee
+                                        Notifications</a></li>
+                                <li class="mb-3"><a href="#"
+                                        class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Degree
+                                        Distribution Ceremony 2022</a></li>
+                                <li class="mb-3"><a href="#"
+                                        class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Annual
+                                        Students’ Fest (AURORA 2023)</a></li>
+                                <li><a href="#"
+                                        class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Important
+                                        Forms</a></li>
+                            </ul>
+                        </div>
+                        <div class="p-4 mb-3 bg-body-tertiary rounded">
+                            <h4 class="fst-italic">CURRENT NEWS</h4>
+                            <hr class="my-3">
+                            <ul class="list-unstyled nav-item">
+                                <li class="mb-3 nav-link">
+                                    <a href="#" class="list-group-item list-group-item-action active"
+                                        aria-current="true">
+                                        <div class="d-flex w-100 justify-content-between">
+                                            <h6 class="mb-1">Semester Fee and Registration for MO-2023</h6>
+                                            <small><span class="badge text-bg-danger">New</span></small>
+                                        </div>
+                                        <!-- timestamp -->
+                                        <p class="mb-1 font-para-8">Last Update : <span>4-Jul-2023 03:38 PM</span></p>
+                                        <!-- timestamp -->
+                                    </a>
+                                </li>
+                                <li class="mb-3 nav-link">
+                                    <a href="#" class="list-group-item list-group-item-action active"
+                                        aria-current="true">
+                                        <div class="d-flex w-100 justify-content-between">
+                                            <h6 class="mb-1">Semester Fee and Registration for MO-2023</h6>
+                                            <small><span class="badge text-bg-danger">New</span></small>
+                                        </div>
+                                        <!-- timestamp -->
+                                        <p class="mb-1 font-para-8">Last Update : <span>4-Jul-2023 03:38 PM</span></p>
+                                        <!-- timestamp -->
+                                    </a>
+                                </li>
+                                <li class="mb-3 nav-link">
+                                    <a href="#" class="list-group-item list-group-item-action active"
+                                        aria-current="true">
+                                        <div class="d-flex w-100 justify-content-between">
+                                            <h6 class="mb-1">Semester Fee and Registration for MO-2023</h6>
+                                            <small><span class="badge text-bg-danger">New</span></small>
+                                        </div>
+                                        <!-- timestamp -->
+                                        <p class="mb-1 font-para-8">Last Update : <span>4-Jul-2023 03:38 PM</span></p>
+                                        <!-- timestamp -->
+                                    </a>
+                                </li>
+                                <li class="mb-3 nav-link">
+                                    <a href="#" class="list-group-item list-group-item-action active"
+                                        aria-current="true">
+                                        <div class="d-flex w-100 justify-content-between">
+                                            <h6 class="mb-1">Semester Fee and Registration for MO-2023</h6>
+                                            <small><span class="badge text-bg-danger">New</span></small>
+                                        </div>
+                                        <!-- timestamp -->
+                                        <p class="mb-1 font-para-8">Last Update : <span>4-Jul-2023 03:38 PM</span></p>
+                                        <!-- timestamp -->
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- RHS Container - sticky -->
+                </div>
+            </div>
+            <!-- bootstrap copied -->
+        </div>
+    </main>
+
+    <section class="sendmail">
+    <!-- <section class="sendmail active"> -->
+        <aside class="bg-success-subtle border border-success rounded-top p-3">
+            
+        </aside>
+    </section>
+
+    {% endblock body %}
+
+    <footer>...footer</footer>
+
+
+    <script src="/static/js/bootstrap.bundle.min.js"></script>
+
+
+    {% block js %}
+
+    <script>
+        mail_elem = document.querySelectorAll('.mail');
+        mail_elem.forEach(element => {
+            element.onclick = function () {
+                this.classList.toggle('hello');
+            }
+        });
+    </script>
+
+    {% endblock js %}
+
+
+</body>
+
+</html>
