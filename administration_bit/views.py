@@ -4,3 +4,6 @@ from django.shortcuts import render
 
 def index(request):
     return render(request, 'adminstration/index.html')
+
+def palcements(request):
+    return render(request, 'adminstration/palcements.html')
