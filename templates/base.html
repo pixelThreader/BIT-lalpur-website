@@ -5,35 +5,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Welcome To BIT Lalpur{% endblock title %}</title>
-    <link rel="stylesheet" href="/static/css/mian.css">
+    <link rel="stylesheet" href="/static/css/main.css">
     <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    {% block css %}{% endblock css %}
 </head>
 
 <body>
 
-    <nav class="py-2 bg-body-tertiary border-bottom">
+    
+    <nav class="py-2 border-bottom">
         <div class="container d-flex flex-wrap">
             <ul class="nav me-auto">
                 <li class="nav-item">
-                    <a href="#" class="nav-link link-body-emphasis px-2 active" aria-current="page">
+                    <a href="/about.html" class="nav-link link-body-emphasis px-2 active" aria-current="page">
                         ABOUT US
                     </a>
                 </li>
                 <div class="vr"></div>
                 <li class="nav-item">
-                    <a href="#" class="nav-link link-body-emphasis px-2">
+                    <a href="https://bitmesra.ac.in/Disp_Notify_Admission?cid=1&deptid=11" class="nav-link link-body-emphasis px-2">
                         ADMISSION
                     </a>
                 </li>
                 <div class="vr"></div>
                 <li class="nav-item">
-                    <a href="{% url 'departments' %}" class="nav-link link-body-emphasis px-2">
+                    <a href="departments.html" class="nav-link link-body-emphasis px-2">
                         DEPARTMENTS
                     </a>
                 </li>
                 <div class="vr"></div>
                 <li class="nav-item">
-                    <a href="#" class="nav-link link-body-emphasis px-2">
+                    <a href="faqs.html" class="nav-link link-body-emphasis px-2">
                         FAQs
                     </a>
             </ul>
@@ -55,122 +57,156 @@
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
-                        <div class="flex-shrink-0 p-3">
-                            <button
-                                class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed w-100"
-                                data-bs-toggle="collapse" data-bs-target="#institute" aria-expanded="false">
-                                INSTITUTE
-                            </button>
-                            <div class="collapse" id="institute" style>
-                                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                    <li>
-                                        <a href="#"
-                                            class="link-body-emphasis d-inline-flex text-decoration-none rounded">
-                                            ADMISTRATION
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"
-                                            class="link-body-emphasis d-inline-flex text-decoration-none rounded">
-                                            CAMPUS TOUR
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
+                        <!-- notification -->
+                        <div class="p-4 mb-3 bg-body-tertiary rounded">
+                            <h4 class="fst-italic">Never miss an update</h4>
+                            <hr class="my-3">
+                            <ul class="list-unstyled nav-item">
+                                <li class="mb-3 nav-link">
+                                    <a href="https://www.bitmesra.ac.in/UploadedDocuments/adminlalpur/NewsUPloaded/Newsb82249e537574bbe99c43ea742e47b2f_BCA_NEP_Syllabus_MO23%20onwards.pdf"
+                                        class="list-group-item list-group-item-action active" aria-current="true">
+                                        <div class="d-flex w-100 justify-content-between">
+                                            <h6 class="mb-1">BCA NEP syllabus MO 23</h6>
+                                            <small><span class="badge text-bg-danger">New</span></small>
+                                        </div>
+                                        <!-- timestamp -->
+                                        <p class="mb-1 font-para-8">Posted Date : <span>29-Apr-2024 02:00 PM</span></p>
+                                        <!-- timestamp -->
+                                    </a>
+                                </li>
+                                <li class="mb-3 nav-link">
+                                    <a href="https://www.bitmesra.ac.in/UploadedDocuments/adminlalpur/NewsUPloaded/News18f0d70eb0164d6cb1d124b4641bb805_Extension%20of%20Dates%20For%20Payment%20of%20Semester%20Fee%20and%20Registration%20for%20SP%202024.pdf"
+                                        class="list-group-item list-group-item-action active" aria-current="true">
+                                        <div class="d-flex w-100 justify-content-between">
+                                            <h6 class="mb-1">EXTENSION OF DATES FOR PAYMENT OF SEMESTER FEE AND
+                                                REGISTRATION FOR SP 2024</h6>
+                                            <small><span class="badge text-bg-danger">New</span></small>
+                                        </div>
+                                        <!-- timestamp -->
+                                        <p class="mb-1 font-para-8">Posted Date : <span>8-Jan-2024 04:37 PM</span></p>
+                                        <!-- timestamp -->
+                                    </a>
+                                </li>
+                                <li class="mb-3 nav-link">
+                                    <a href="https://www.bitmesra.ac.in/UploadedDocuments/adminlalpur/NewsUPloaded/News6b7e53a01a324d488cdd8f840c9630de_Last%20Call%20For%20Registration%20in%20SP%202024_05-04-24.pdf"
+                                        class="list-group-item list-group-item-action active" aria-current="true">
+                                        <div class="d-flex w-100 justify-content-between">
+                                            <h6 class="mb-1">LAST CALL FOR REGISTRATION IN SP2024</h6>
+                                            <small><span class="badge text-bg-danger">New</span></small>
+                                        </div>
+                                        <!-- timestamp -->
+                                        <p class="mb-1 font-para-8">Posted Date : <span>5-Apr-2024 06:22 PM</span></p>
+                                        <!-- timestamp -->
+                                    </a>
+                                </li>
+                                <li class="mb-3 nav-link">
+                                    <a href="https://www.bitmesra.ac.in/UploadedDocuments/adminlalpur/NewsUPloaded/News5ec33b274b4944059966f44e53d4b793_Regarding%20Registration%20for%20SP%202024.pdf"
+                                        class="list-group-item list-group-item-action active" aria-current="true">
+                                        <div class="d-flex w-100 justify-content-between">
+                                            <h6 class="mb-1">Notice regarding extended dates for registration in SP-24
+                                                with late fine</h6>
+                                            <small><span class="badge text-bg-danger">New</span></small>
+                                        </div>
+                                        <!-- timestamp -->
+                                        <p class="mb-1 font-para-8">Posted Date : <span>4-Mar-2024 06:43
+                                                PM</span></span></p>
+                                        <!-- timestamp -->
+                                    </a>
+                                </li>
+                                <li class="mb-3 nav-link">
+                                    <a href="https://www.bitmesra.ac.in/UploadedDocuments/adminlalpur/NewsUPloaded/News5ec33b274b4944059966f44e53d4b793_Regarding%20Registration%20for%20SP%202024.pdf"
+                                        class="list-group-item list-group-item-action active" aria-current="true">
+                                        <div class="d-flex w-100 justify-content-between">
+                                            <h6 class="mb-1">Notice regarding extended dates for registration in SP-24
+                                                with late fine</h6>
+                                            <small><span class="badge text-bg-danger">New</span></small>
+                                        </div>
+                                        <!-- timestamp -->
+                                        <p class="mb-1 font-para-8">Posted Date : <span>4-Mar-2024 06:43
+                                                PM</span></span></p>
+                                        <!-- timestamp -->
+                                    </a>
+                                </li>
+                                <li class="mb-3 nav-link">
+                                    <a href="https://www.bitmesra.ac.in/UploadedDocuments/adminlalpur/NewsUPloaded/News5ec33b274b4944059966f44e53d4b793_Regarding%20Registration%20for%20SP%202024.pdf"
+                                        class="list-group-item list-group-item-action active" aria-current="true">
+                                        <div class="d-flex w-100 justify-content-between">
+                                            <h6 class="mb-1">Notice regarding extended dates for registration in SP-24
+                                                with late fine</h6>
+                                            <small><span class="badge text-bg-danger">New</span></small>
+                                        </div>
+                                        <!-- timestamp -->
+                                        <p class="mb-1 font-para-8">Posted Date : <span>4-Mar-2024 06:43
+                                                PM</span></span></p>
+                                        <!-- timestamp -->
+                                    </a>
+                                </li>
+                                <li class="mb-3 nav-link">
+                                    <a href="https://www.bitmesra.ac.in/UploadedDocuments/adminlalpur/NewsUPloaded/News5ec33b274b4944059966f44e53d4b793_Regarding%20Registration%20for%20SP%202024.pdf"
+                                        class="list-group-item list-group-item-action active" aria-current="true">
+                                        <div class="d-flex w-100 justify-content-between">
+                                            <h6 class="mb-1">Notice regarding extended dates for registration in SP-24
+                                                with late fine</h6>
+                                            <small><span class="badge text-bg-danger">New</span></small>
+                                        </div>
+                                        <!-- timestamp -->
+                                        <p class="mb-1 font-para-8">Posted Date : <span>4-Mar-2024 06:43
+                                                PM</span></span></p>
+                                        <!-- timestamp -->
+                                    </a>
+                                </li>
+                                <li class="mb-3 nav-link">
+                                    <a href="https://www.bitmesra.ac.in/UploadedDocuments/adminlalpur/NewsUPloaded/News5ec33b274b4944059966f44e53d4b793_Regarding%20Registration%20for%20SP%202024.pdf"
+                                        class="list-group-item list-group-item-action active" aria-current="true">
+                                        <div class="d-flex w-100 justify-content-between">
+                                            <h6 class="mb-1">Notice regarding extended dates for registration in SP-24
+                                                with late fine</h6>
+                                            <small><span class="badge text-bg-danger">New</span></small>
+                                        </div>
+                                        <!-- timestamp -->
+                                        <p class="mb-1 font-para-8">Posted Date : <span>4-Mar-2024 06:43
+                                                PM</span></span></p>
+                                        <!-- timestamp -->
+                                    </a>
+                                </li>
+                                <li class="mb-3 nav-link">
+                                    <a href="https://www.bitmesra.ac.in/UploadedDocuments/adminlalpur/NewsUPloaded/News5ec33b274b4944059966f44e53d4b793_Regarding%20Registration%20for%20SP%202024.pdf"
+                                        class="list-group-item list-group-item-action active" aria-current="true">
+                                        <div class="d-flex w-100 justify-content-between">
+                                            <h6 class="mb-1">Notice regarding extended dates for registration in SP-24
+                                                with late fine</h6>
+                                            <small><span class="badge text-bg-danger">New</span></small>
+                                        </div>
+                                        <!-- timestamp -->
+                                        <p class="mb-1 font-para-8">Posted Date : <span>4-Mar-2024 06:43
+                                                PM</span></span></p>
+                                        <!-- timestamp -->
+                                    </a>
+                                </li>
+                                <li class="mb-3 nav-link">
+                                    <a href="https://www.bitmesra.ac.in/UploadedDocuments/adminlalpur/NewsUPloaded/News5ec33b274b4944059966f44e53d4b793_Regarding%20Registration%20for%20SP%202024.pdf"
+                                        class="list-group-item list-group-item-action active" aria-current="true">
+                                        <div class="d-flex w-100 justify-content-between">
+                                            <h6 class="mb-1">Notice regarding extended dates for registration in SP-24
+                                                with late fine</h6>
+                                            <small><span class="badge text-bg-danger">New</span></small>
+                                        </div>
+                                        <!-- timestamp -->
+                                        <p class="mb-1 font-para-8">Posted Date : <span>4-Mar-2024 06:43
+                                                PM</span></span></p>
+                                        <!-- timestamp -->
+                                    </a>
+                                </li>
 
-                            <hr>
-
-                            <button
-                                class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed w-100"
-                                data-bs-toggle="collapse" data-bs-target="#acadmics" aria-expanded="false">
-                                ACADMICS
-                            </button>
-                            <div class="collapse" id="acadmics">
-                                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                    <li><a href="#"
-                                            class="link-body-emphasis d-inline-flex text-decoration-none rounded">ACADMICS
-                                            PROGRAMS</a>
-                                    </li>
-                                    <li><a href="#"
-                                            class="link-body-emphasis d-inline-flex text-decoration-none rounded">TIME
-                                            TABLE</a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <hr>
-
-                            <button
-                                class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed w-100"
-                                data-bs-toggle="collapse" data-bs-target="#students" aria-expanded="false">
-                                STUDENTS
-                            </button>
-                            <div class="collapse" id="students" style>
-                                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                    <li><a href="#"
-                                            class="link-body-emphasis d-inline-flex text-decoration-none rounded">CURRENT
-                                            STUDENTS</a>
-                                    </li>
-                                    <li><a href="#"
-                                            class="link-body-emphasis d-inline-flex text-decoration-none rounded">PROSPECTIVE
-                                            STUDENTS</a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <hr>
-
-                            <a class="btn btn-toggle d-inline-flex align-items-center rounded border-0 w-100 no_arrow"
-                                href="#">
-                                CAMPUS PLACEMENTS
-                            </a>
-
-                            <hr>
-
-                            <a class="btn btn-toggle d-inline-flex align-items-center rounded border-0 w-100 no_arrow"
-                                href="#">
-                                REAEARCH
-                            </a>
-
-                            <hr>
-
-                            <a class="btn btn-toggle d-inline-flex align-items-center rounded border-0 w-100 no_arrow"
-                                href="#">
-                                ALUMNI
-                            </a>
-
-                            <hr>
-
-                            <button
-                                class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed w-100"
-                                data-bs-toggle="collapse" data-bs-target="#career" aria-expanded="false">
-                                CAREER
-                            </button>
-                            <div class="collapse" id="career" style>
-                                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                    <li><a href="#"
-                                            class="link-body-emphasis d-inline-flex text-decoration-none rounded">Recruitment
-                                            advertisement</a>
-                                    </li>
-                                    <li><a href="#"
-                                            class="link-body-emphasis d-inline-flex text-decoration-none rounded">Why
-                                            Work With Us</a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <hr>
-
-                            <a class="btn btn-toggle d-inline-flex align-items-center rounded border-0 w-100 no_arrow"
-                                href="#">
-                                TENDER
-                            </a>
-
+                            </ul>
                         </div>
+                        <!-- notification -->
                     </div>
                     <!-- Temp -->
                 </div>
             </div>
+            <!-- sidebar-notification -->
+
             <!-- sidebar-navigation -->
             <div>
                 <button class="btn btn-primary rounded-circle side_toggle p-0" type="button" data-bs-toggle="offcanvas"
@@ -300,32 +336,37 @@
                     <!-- Temp -->
                 </div>
             </div>
+            <!-- sidebar-navigation -->
         </div>
     </nav>
+
     <header class="py-3 mb-4 border-bottom">
         <div class="container d-flex flex-wrap justify-content-center">
-            <a href="{% url 'home' %}"
+            <a href="/"
                 class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto link-body-emphasis text-decoration-none">
                 <span class="fs-4">
                     <img class="img-fluid" src="/img/BIT-Mesra (1).png" alt>
                 </span>
             </a>
             <div class="d-flex justify-content-center align-items-center">
-                <form action="{% url 'search' %}" class="col-12 col-lg-auto mb-3 mb-lg-0 d-flex gap-1 " role="search">
-                    <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
-                    <button type="button" class="btn btn-outline-primary ">Search</button>
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 d-flex input-group" role="search">
+                    <input type="search" class="rounded-start-pill form-control border border-primary"
+                        placeholder="Search..." aria-label="Search">
+                    <button type="button" class="btn btn-primary rounded-end-pill">Search</button>
                 </form>
             </div>
         </div>
     </header>
 
     {% block body %}
-    Main content is sypposed to here...
+    BIT LALPUR MAIN
     {% endblock body %}
 
 
     <hr class="my-5">
+    
     <div class="container">
+
         <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5">
             <div class="col mb-3">
                 <a href="/"
@@ -338,64 +379,78 @@
 
             <hr style="width:80%; margin:0 auto; display:block;" class="d-block d-sm-none pb-3">
 
-            <div class="col-sm-12 d-flex justify-content-center align-items-center">
+            <div class="col-sm-12 d-flex justify-content-center">
                 <div class="text-center">
-                    <h5 class="text-body-secondary">Section</h5>
                     <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+                        <li class="nav-item mb-2"><a href="https://bitmesra.ac.in/Disp_Notify_Admission?cid=1&deptid=11" class="nav-link p-0 text-body-secondary">Admissions</a>
+                        </li>
+                        <li class="nav-item mb-2"><a href="contact_1.html"
+                                class="nav-link p-0 text-body-secondary">Contact Us</a>
+                        </li>
                     </ul>
                 </div>
             </div>
 
             <hr style="width:80%; margin:0 auto; display:block;" class="d-block d-sm-none pb-3 mt-3">
 
-            <div class="col-sm-12 d-flex justify-content-center align-items-center">
+            <div class="col-sm-12 d-flex justify-content-center">
                 <div class="text-center">
-                    <h5 class="text-body-secondary">Section</h5>
                     <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+                        <li class="nav-item mb-2"><a href="https://www.bitmesra.ac.in/Show_Content_Section?cid=1&pid=38" class="nav-link p-0 text-body-secondary">Academic
+                                Calander</a></li>
                     </ul>
                 </div>
             </div>
 
             <hr style="width:80%; margin:0 auto; display:block;" class="d-block d-sm-none pb-3 mt-3">
 
-            <div class="col-sm-12 d-flex justify-content-center align-items-center">
+            <div class="col-sm-12 d-flex justify-content-center">
                 <div class="text-center">
-                    <h5 class="text-body-secondary">Section</h5>
                     <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+                        <li class="nav-item mb-2"><a href="https://www.bitmesra.ac.in/UploadedDocuments/pratyush_869/files/Holidays_list_2016.pdf" class="nav-link p-0 text-body-secondary">List Of
+                                Holidays</a></li>
+                        <li class="nav-item mb-2"><a href="https://www.bitmesra.ac.in/Show_Content_Section?cid=1&pid=365" class="nav-link p-0 text-body-secondary">ERP (BIT
+                                Mesra)</a>
+                        </li>
                     </ul>
                 </div>
             </div>
 
             <hr style="width:80%; margin:0 auto; display:block;" class="d-block d-sm-none pb-3 mt-3">
 
-            <div class="col-sm-12 d-flex justify-content-center align-items-center">
+            <div class="col-sm-12 d-flex justify-content-center">
                 <div class="text-center">
-                    <h5 class="text-body-secondary">Section</h5>
+                    <h5 class="text-body-secondary">Social</h5>
                     <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+                        <li class="nav-item mb-2">
+                            <a href="https://x.com/BITMesra_Ranchi" class="nav-link p-0 text-body-secondary">
+                                <ion-icon name="logo-twitter"></ion-icon>
+                                Twitter
+                            </a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a href="https://www.youtube.com/channel/UClKOCa97mxvflz2Jdpg59HQ" class="nav-link p-0 text-body-secondary">
+                                <ion-icon name="logo-youtube"></ion-icon>
+                                YouTube
+                            </a>
+                        </li>
+                        <li class="nav-item mb-2 d-flex align-items-center">
+                            <a href="https://www.facebook.com/BITMesraRanchi" class="nav-link p-0 text-body-secondary">
+                                <ion-icon name="logo-facebook" style="line-height: 0;"></ion-icon>
+                                Facebook
+                            </a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a href="https://www.instagram.com/bit.mediacell/" class="nav-link p-0 text-body-secondary">
+                                <ion-icon name="logo-instagram"></ion-icon>
+                                Instagram
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
 
+        </footer>
         </footer>
     </div>
 
@@ -410,7 +465,7 @@
     </script>
 
     <script type="text/javascript"
-        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        src="//translate.google.com/translate_a/element.jscb=googleTranslateElementInit"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 

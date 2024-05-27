@@ -3,6 +3,27 @@ body {
 
 }
 
+.scroll-bar::-webkit-scrollbar {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    width: 7px;
+}
+
+.scroll-bar::-webkit-scrollbar-thumb {
+    background: #aeadad;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.scroll-bar:hover::-webkit-scrollbar-thumb {
+    background: #747474;
+}
+
+
 .VIpgJd-ZVi9od-ORHb-OEVmcd {
     display: none !important;
 }
@@ -98,36 +119,36 @@ ion-icon.menu {
     overflow-y: auto;
 }
 
-.sidebar_header_text{
+.sidebar_header_text {
     color: var(--bs-black);
 }
 
-[data-bs-theme="dark"] .sidebar_header_text{
+[data-bs-theme="dark"] .sidebar_header_text {
     color: var(--bs-white);
 }
 
-.bg-home-about{
+.bg-home-about {
     background: #e6e6e6;
 }
 
-[data-bs-theme="dark"] .bg-home-about{
+[data-bs-theme="dark"] .bg-home-about {
     background: #3b3b3b;
 }
 
-.about-lalpur{
+.about-lalpur {
     background: #d3d1d1;
 }
 
-[data-bs-theme="dark"] .about-lalpur{
+[data-bs-theme="dark"] .about-lalpur {
     background: #545454;
 }
 
 .nav-item:hover .nav-link {
-    color: #007bff;
+    color: #d33039;
 }
 
 .nav-link:hover {
-    color: #007bff;
+    color: #d33039;
     text-decoration: none;
 }
 
@@ -139,7 +160,7 @@ ion-icon.menu {
 .nav-link:hover:after {
     content: '';
     display: block;
-    border-bottom: 2px solid #007bff;
+    border-bottom: 2px solid #d33039;
     width: 100%;
     transform: scaleX(1);
     transition: transform 0.25s ease-out;
@@ -154,12 +175,52 @@ ion-icon.menu {
     transition: transform 0.25s ease-in;
 }
 
-.font-para-11{
+.font-para-11 {
     font-size: 1.1rem;
 }
 
-.font-para-8{
+.font-para-8 {
     font-size: 0.8rem;
+}
+
+.pdf-btn {
+    height: 300px;
+    width: 300px;
+    object-fit: contain;
+    overflow: hidden;
+    transition: .5s ease;
+    border: 1px solid #b29497 !important;
+}
+
+.pdf-btn:hover {
+    border-color: #5d5555 !important;
+    transition: 0s ease;
+    filter: brightness(0.9);
+}
+
+.department_img {
+    max-width: 600px;
+    object-fit: contain;
+    overflow: hidden;
+    transition: .5s ease;
+    border: 1px solid #b29497 !important;
+}
+
+.div_blur_hero {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+
+#u_0_0_As>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.video__youtube {
+    height: 100%;
 }
 
 .mail {

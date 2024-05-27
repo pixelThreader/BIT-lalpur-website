@@ -2,6 +2,26 @@ body {
   top: 0 !important;
 }
 
+.scroll-bar::-webkit-scrollbar {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  width: 7px;
+}
+
+.scroll-bar::-webkit-scrollbar-thumb {
+  background: #aeadad;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.scroll-bar:hover::-webkit-scrollbar-thumb {
+  background: #747474;
+}
+
 .VIpgJd-ZVi9od-ORHb-OEVmcd {
   display: none !important;
 }
@@ -121,11 +141,11 @@ ion-icon.menu {
 }
 
 .nav-item:hover .nav-link {
-  color: #007bff;
+  color: #d33039;
 }
 
 .nav-link:hover {
-  color: #007bff;
+  color: #d33039;
   text-decoration: none;
 }
 
@@ -137,7 +157,7 @@ ion-icon.menu {
 .nav-link:hover:after {
   content: "";
   display: block;
-  border-bottom: 2px solid #007bff;
+  border-bottom: 2px solid #d33039;
   width: 100%;
   transform: scaleX(1);
   transition: transform 0.25s ease-out;
@@ -158,6 +178,48 @@ ion-icon.menu {
 
 .font-para-8 {
   font-size: 0.8rem;
+}
+
+.pdf-btn {
+  height: 300px;
+  width: 300px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  overflow: hidden;
+  transition: 0.5s ease;
+  border: 1px solid #b29497 !important;
+}
+
+.pdf-btn:hover {
+  border-color: #5d5555 !important;
+  transition: 0s ease;
+  filter: brightness(0.9);
+}
+
+.department_img {
+  max-width: 600px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  overflow: hidden;
+  transition: 0.5s ease;
+  border: 1px solid #b29497 !important;
+}
+
+.div_blur_hero {
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+
+#u_0_0_As > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.video__youtube {
+  height: 100%;
 }
 
 .mail {
@@ -187,4 +249,4 @@ ion-icon.menu {
   bottom: 0;
   height: 70%;
   width: 80%;
-}/*# sourceMappingURL=mian.css.map */
+}/*# sourceMappingURL=main.css.map */
