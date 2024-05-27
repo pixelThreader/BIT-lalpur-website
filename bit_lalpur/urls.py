@@ -16,6 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from bit_auth import urls as AUURL
 from home import urls as HURLS
 from add_content import urls as ADDURL
 from administration_bit import urls as ADMINURL
@@ -29,6 +30,7 @@ admin.site.index_title = "BIT LALPUR"
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("authentication/", include(AUURL)),
     path("", include(HURLS)),
     path("upload/", include(ADDURL)),
     path("administration/", include(ADMINURL)),

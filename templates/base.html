@@ -63,12 +63,17 @@
                             </button>
                             <div class="collapse" id="institute" style>
                                 <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                    <li><a href="#"
-                                            class="link-body-emphasis d-inline-flex text-decoration-none rounded">ADMISTRATION</a>
+                                    <li>
+                                        <a href="#"
+                                            class="link-body-emphasis d-inline-flex text-decoration-none rounded">
+                                            ADMISTRATION
+                                        </a>
                                     </li>
-                                    <li><a href="#"
-                                            class="link-body-emphasis d-inline-flex text-decoration-none rounded">CAMPUS
-                                            TOUR</a>
+                                    <li>
+                                        <a href="#"
+                                            class="link-body-emphasis d-inline-flex text-decoration-none rounded">
+                                            CAMPUS TOUR
+                                        </a>
                                     </li>
                                 </ul>
                             </div>
@@ -80,7 +85,7 @@
                                 data-bs-toggle="collapse" data-bs-target="#acadmics" aria-expanded="false">
                                 ACADMICS
                             </button>
-                            <div class="collapse" id="acadmics" style>
+                            <div class="collapse" id="acadmics">
                                 <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                                     <li><a href="#"
                                             class="link-body-emphasis d-inline-flex text-decoration-none rounded">ACADMICS
@@ -299,14 +304,14 @@
     </nav>
     <header class="py-3 mb-4 border-bottom">
         <div class="container d-flex flex-wrap justify-content-center">
-            <a href="/"
+            <a href="{% url 'home' %}"
                 class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto link-body-emphasis text-decoration-none">
                 <span class="fs-4">
                     <img class="img-fluid" src="/img/BIT-Mesra (1).png" alt>
                 </span>
             </a>
             <div class="d-flex justify-content-center align-items-center">
-                <form class="col-12 col-lg-auto mb-3 mb-lg-0 d-flex gap-1 " role="search">
+                <form action="{% url 'search' %}" class="col-12 col-lg-auto mb-3 mb-lg-0 d-flex gap-1 " role="search">
                     <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
                     <button type="button" class="btn btn-outline-primary ">Search</button>
                 </form>
