@@ -5,14 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Welcome To BIT Lalpur{% endblock title %}</title>
+    <link rel="shortcut icon" href="/static/assets/brand/bit50x50.png" type="image/x-icon">
     <link rel="stylesheet" href="/static/css/main.css">
     <link rel="stylesheet" href="/static/css/bootstrap.min.css">
     {% block css %}{% endblock css %}
 </head>
 
-<body>
-
-    
+<body data-bs-theme="dark">    
     <nav class="py-2 border-bottom">
         <div class="container d-flex flex-wrap">
             <ul class="nav me-auto">
@@ -345,7 +344,7 @@
             <a href="/"
                 class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto link-body-emphasis text-decoration-none">
                 <span class="fs-4">
-                    <img class="img-fluid" src="/img/BIT-Mesra (1).png" alt>
+                    <img class="img-fluid" src="/static/assets/brand/bit_logo_light.png" alt="BIT_header" id="bit_header_logo">
                 </span>
             </a>
             <div class="d-flex justify-content-center align-items-center">
@@ -367,11 +366,11 @@
     
     <div class="container">
 
-        <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5">
+        <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 pt-5 mt-5 mb-3">
             <div class="col mb-3">
                 <a href="/"
                     class="d-flex justify-content-center align-items-center mb-3 link-body-emphasis text-decoration-none">
-                    <img src="/assets/brand/bit_logo_100x100.png" alt="">
+                    <img src="/static/assets/brand/bit100x100.png" alt="">
                 </a>
                 <p class="text-body-secondary text-center">
                     © <span class="year">2022</span> Bit Mesra</p>
@@ -382,9 +381,9 @@
             <div class="col-sm-12 d-flex justify-content-center">
                 <div class="text-center">
                     <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="https://bitmesra.ac.in/Disp_Notify_Admission?cid=1&deptid=11" class="nav-link p-0 text-body-secondary">Admissions</a>
+                        <li class="nav-item mb-2"><a target="_blank" href="https://bitmesra.ac.in/Disp_Notify_Admission?cid=1&deptid=11" class="nav-link p-0 text-body-secondary">Admissions</a>
                         </li>
-                        <li class="nav-item mb-2"><a href="contact_1.html"
+                        <li class="nav-item mb-2"><a target="_blank" href="contact_1.html"
                                 class="nav-link p-0 text-body-secondary">Contact Us</a>
                         </li>
                     </ul>
@@ -396,7 +395,7 @@
             <div class="col-sm-12 d-flex justify-content-center">
                 <div class="text-center">
                     <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="https://www.bitmesra.ac.in/Show_Content_Section?cid=1&pid=38" class="nav-link p-0 text-body-secondary">Academic
+                        <li class="nav-item mb-2"><a target="_blank" href="https://www.bitmesra.ac.in/Show_Content_Section?cid=1&pid=38" class="nav-link p-0 text-body-secondary">Academic
                                 Calander</a></li>
                     </ul>
                 </div>
@@ -407,9 +406,9 @@
             <div class="col-sm-12 d-flex justify-content-center">
                 <div class="text-center">
                     <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="https://www.bitmesra.ac.in/UploadedDocuments/pratyush_869/files/Holidays_list_2016.pdf" class="nav-link p-0 text-body-secondary">List Of
+                        <li class="nav-item mb-2"><a target="_blank" href="https://www.bitmesra.ac.in/UploadedDocuments/pratyush_869/files/Holidays_list_2016.pdf" class="nav-link p-0 text-body-secondary">List Of
                                 Holidays</a></li>
-                        <li class="nav-item mb-2"><a href="https://www.bitmesra.ac.in/Show_Content_Section?cid=1&pid=365" class="nav-link p-0 text-body-secondary">ERP (BIT
+                        <li class="nav-item mb-2"><a target="_blank" href="https://www.bitmesra.ac.in/Show_Content_Section?cid=1&pid=365" class="nav-link p-0 text-body-secondary">ERP (BIT
                                 Mesra)</a>
                         </li>
                     </ul>
@@ -423,25 +422,25 @@
                     <h5 class="text-body-secondary">Social</h5>
                     <ul class="nav flex-column">
                         <li class="nav-item mb-2">
-                            <a href="https://x.com/BITMesra_Ranchi" class="nav-link p-0 text-body-secondary">
+                            <a target="_blank" href="https://x.com/BITMesra_Ranchi" class="nav-link p-0 text-body-secondary">
                                 <ion-icon name="logo-twitter"></ion-icon>
                                 Twitter
                             </a>
                         </li>
                         <li class="nav-item mb-2">
-                            <a href="https://www.youtube.com/channel/UClKOCa97mxvflz2Jdpg59HQ" class="nav-link p-0 text-body-secondary">
+                            <a target="_blank" href="https://www.youtube.com/channel/UClKOCa97mxvflz2Jdpg59HQ" class="nav-link p-0 text-body-secondary">
                                 <ion-icon name="logo-youtube"></ion-icon>
                                 YouTube
                             </a>
                         </li>
                         <li class="nav-item mb-2 d-flex align-items-center">
-                            <a href="https://www.facebook.com/BITMesraRanchi" class="nav-link p-0 text-body-secondary">
+                            <a target="_blank" href="https://www.facebook.com/BITMesraRanchi" class="nav-link p-0 text-body-secondary">
                                 <ion-icon name="logo-facebook" style="line-height: 0;"></ion-icon>
                                 Facebook
                             </a>
                         </li>
                         <li class="nav-item mb-2">
-                            <a href="https://www.instagram.com/bit.mediacell/" class="nav-link p-0 text-body-secondary">
+                            <a target="_blank" href="https://www.instagram.com/bit.mediacell/" class="nav-link p-0 text-body-secondary">
                                 <ion-icon name="logo-instagram"></ion-icon>
                                 Instagram
                             </a>
@@ -456,12 +455,18 @@
 
 
     <script src="/static/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/js/jquery.js"></script>
 
     <!-- Google translate element... -->
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
         }
+        $('#bit_header_logo').attr('src', function() {
+            return $('body').data('bs-theme') == 'dark' ?
+                "/static/assets/brand/bit_logo.png" :
+                "/static/assets/brand/bit_logo_light.png";
+        });
     </script>
 
     <script type="text/javascript"
