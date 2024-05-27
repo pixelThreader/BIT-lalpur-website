@@ -8,21 +8,25 @@
     <link rel="shortcut icon" href="/static/assets/brand/bit50x50.png" type="image/x-icon">
     <link rel="stylesheet" href="/static/css/main.css">
     <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/tippy.css">
+    <link rel="stylesheet" href="/static/css/backdrop.css">
+    <link rel="stylesheet" href="/static/css/scale.css">
+    <link rel="stylesheet" href="/static/tippy/css/light.css">
     {% block css %}{% endblock css %}
 </head>
 
-<body data-bs-theme="dark">    
+<body>    
     <nav class="py-2 border-bottom">
         <div class="container d-flex flex-wrap">
             <ul class="nav me-auto">
                 <li class="nav-item">
-                    <a href="/about.html" class="nav-link link-body-emphasis px-2 active" aria-current="page">
+                    <a href="{% url 'about' %}" class="nav-link link-body-emphasis px-2 active" aria-current="page">
                         ABOUT US
                     </a>
                 </li>
                 <div class="vr"></div>
                 <li class="nav-item">
-                    <a href="https://bitmesra.ac.in/Disp_Notify_Admission?cid=1&deptid=11" class="nav-link link-body-emphasis px-2">
+                    <a target="_blank" href="https://bitmesra.ac.in/Disp_Notify_Admission?cid=1&deptid=11" class="nav-link link-body-emphasis px-2">
                         ADMISSION
                     </a>
                 </li>
@@ -43,7 +47,7 @@
             </div>
             <!-- sidebar-notification -->
             <div>
-                <button class="btn btn-primary rounded-circle side_toggle p-0 mx-2" type="button"
+                <button class="btn btn-primary rounded-circle side_toggle p-0 mx-2 msg" type="button" data-tippy-content="Show Notifications"
                     data-bs-toggle="offcanvas" data-bs-target="#bit_lalpur_notification"
                     aria-controls="bit_lalpur_notification">
                     <ion-icon name="notifications-outline" style="font-size: 1.5rem;"></ion-icon>
@@ -53,7 +57,7 @@
                     aria-labelledby="bit_lalpur_notificationLabel">
                     <div class="offcanvas-header">
                         <h5 class="offcanvas-title" id="bit_lalpur_notificationLabel">NOTIFICATIONS</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        <button type="button" class="btn-close msg" data-tippy-content="Close Notifications" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
                         <!-- notification -->
@@ -61,127 +65,6 @@
                             <h4 class="fst-italic">Never miss an update</h4>
                             <hr class="my-3">
                             <ul class="list-unstyled nav-item">
-                                <li class="mb-3 nav-link">
-                                    <a href="https://www.bitmesra.ac.in/UploadedDocuments/adminlalpur/NewsUPloaded/Newsb82249e537574bbe99c43ea742e47b2f_BCA_NEP_Syllabus_MO23%20onwards.pdf"
-                                        class="list-group-item list-group-item-action active" aria-current="true">
-                                        <div class="d-flex w-100 justify-content-between">
-                                            <h6 class="mb-1">BCA NEP syllabus MO 23</h6>
-                                            <small><span class="badge text-bg-danger">New</span></small>
-                                        </div>
-                                        <!-- timestamp -->
-                                        <p class="mb-1 font-para-8">Posted Date : <span>29-Apr-2024 02:00 PM</span></p>
-                                        <!-- timestamp -->
-                                    </a>
-                                </li>
-                                <li class="mb-3 nav-link">
-                                    <a href="https://www.bitmesra.ac.in/UploadedDocuments/adminlalpur/NewsUPloaded/News18f0d70eb0164d6cb1d124b4641bb805_Extension%20of%20Dates%20For%20Payment%20of%20Semester%20Fee%20and%20Registration%20for%20SP%202024.pdf"
-                                        class="list-group-item list-group-item-action active" aria-current="true">
-                                        <div class="d-flex w-100 justify-content-between">
-                                            <h6 class="mb-1">EXTENSION OF DATES FOR PAYMENT OF SEMESTER FEE AND
-                                                REGISTRATION FOR SP 2024</h6>
-                                            <small><span class="badge text-bg-danger">New</span></small>
-                                        </div>
-                                        <!-- timestamp -->
-                                        <p class="mb-1 font-para-8">Posted Date : <span>8-Jan-2024 04:37 PM</span></p>
-                                        <!-- timestamp -->
-                                    </a>
-                                </li>
-                                <li class="mb-3 nav-link">
-                                    <a href="https://www.bitmesra.ac.in/UploadedDocuments/adminlalpur/NewsUPloaded/News6b7e53a01a324d488cdd8f840c9630de_Last%20Call%20For%20Registration%20in%20SP%202024_05-04-24.pdf"
-                                        class="list-group-item list-group-item-action active" aria-current="true">
-                                        <div class="d-flex w-100 justify-content-between">
-                                            <h6 class="mb-1">LAST CALL FOR REGISTRATION IN SP2024</h6>
-                                            <small><span class="badge text-bg-danger">New</span></small>
-                                        </div>
-                                        <!-- timestamp -->
-                                        <p class="mb-1 font-para-8">Posted Date : <span>5-Apr-2024 06:22 PM</span></p>
-                                        <!-- timestamp -->
-                                    </a>
-                                </li>
-                                <li class="mb-3 nav-link">
-                                    <a href="https://www.bitmesra.ac.in/UploadedDocuments/adminlalpur/NewsUPloaded/News5ec33b274b4944059966f44e53d4b793_Regarding%20Registration%20for%20SP%202024.pdf"
-                                        class="list-group-item list-group-item-action active" aria-current="true">
-                                        <div class="d-flex w-100 justify-content-between">
-                                            <h6 class="mb-1">Notice regarding extended dates for registration in SP-24
-                                                with late fine</h6>
-                                            <small><span class="badge text-bg-danger">New</span></small>
-                                        </div>
-                                        <!-- timestamp -->
-                                        <p class="mb-1 font-para-8">Posted Date : <span>4-Mar-2024 06:43
-                                                PM</span></span></p>
-                                        <!-- timestamp -->
-                                    </a>
-                                </li>
-                                <li class="mb-3 nav-link">
-                                    <a href="https://www.bitmesra.ac.in/UploadedDocuments/adminlalpur/NewsUPloaded/News5ec33b274b4944059966f44e53d4b793_Regarding%20Registration%20for%20SP%202024.pdf"
-                                        class="list-group-item list-group-item-action active" aria-current="true">
-                                        <div class="d-flex w-100 justify-content-between">
-                                            <h6 class="mb-1">Notice regarding extended dates for registration in SP-24
-                                                with late fine</h6>
-                                            <small><span class="badge text-bg-danger">New</span></small>
-                                        </div>
-                                        <!-- timestamp -->
-                                        <p class="mb-1 font-para-8">Posted Date : <span>4-Mar-2024 06:43
-                                                PM</span></span></p>
-                                        <!-- timestamp -->
-                                    </a>
-                                </li>
-                                <li class="mb-3 nav-link">
-                                    <a href="https://www.bitmesra.ac.in/UploadedDocuments/adminlalpur/NewsUPloaded/News5ec33b274b4944059966f44e53d4b793_Regarding%20Registration%20for%20SP%202024.pdf"
-                                        class="list-group-item list-group-item-action active" aria-current="true">
-                                        <div class="d-flex w-100 justify-content-between">
-                                            <h6 class="mb-1">Notice regarding extended dates for registration in SP-24
-                                                with late fine</h6>
-                                            <small><span class="badge text-bg-danger">New</span></small>
-                                        </div>
-                                        <!-- timestamp -->
-                                        <p class="mb-1 font-para-8">Posted Date : <span>4-Mar-2024 06:43
-                                                PM</span></span></p>
-                                        <!-- timestamp -->
-                                    </a>
-                                </li>
-                                <li class="mb-3 nav-link">
-                                    <a href="https://www.bitmesra.ac.in/UploadedDocuments/adminlalpur/NewsUPloaded/News5ec33b274b4944059966f44e53d4b793_Regarding%20Registration%20for%20SP%202024.pdf"
-                                        class="list-group-item list-group-item-action active" aria-current="true">
-                                        <div class="d-flex w-100 justify-content-between">
-                                            <h6 class="mb-1">Notice regarding extended dates for registration in SP-24
-                                                with late fine</h6>
-                                            <small><span class="badge text-bg-danger">New</span></small>
-                                        </div>
-                                        <!-- timestamp -->
-                                        <p class="mb-1 font-para-8">Posted Date : <span>4-Mar-2024 06:43
-                                                PM</span></span></p>
-                                        <!-- timestamp -->
-                                    </a>
-                                </li>
-                                <li class="mb-3 nav-link">
-                                    <a href="https://www.bitmesra.ac.in/UploadedDocuments/adminlalpur/NewsUPloaded/News5ec33b274b4944059966f44e53d4b793_Regarding%20Registration%20for%20SP%202024.pdf"
-                                        class="list-group-item list-group-item-action active" aria-current="true">
-                                        <div class="d-flex w-100 justify-content-between">
-                                            <h6 class="mb-1">Notice regarding extended dates for registration in SP-24
-                                                with late fine</h6>
-                                            <small><span class="badge text-bg-danger">New</span></small>
-                                        </div>
-                                        <!-- timestamp -->
-                                        <p class="mb-1 font-para-8">Posted Date : <span>4-Mar-2024 06:43
-                                                PM</span></span></p>
-                                        <!-- timestamp -->
-                                    </a>
-                                </li>
-                                <li class="mb-3 nav-link">
-                                    <a href="https://www.bitmesra.ac.in/UploadedDocuments/adminlalpur/NewsUPloaded/News5ec33b274b4944059966f44e53d4b793_Regarding%20Registration%20for%20SP%202024.pdf"
-                                        class="list-group-item list-group-item-action active" aria-current="true">
-                                        <div class="d-flex w-100 justify-content-between">
-                                            <h6 class="mb-1">Notice regarding extended dates for registration in SP-24
-                                                with late fine</h6>
-                                            <small><span class="badge text-bg-danger">New</span></small>
-                                        </div>
-                                        <!-- timestamp -->
-                                        <p class="mb-1 font-para-8">Posted Date : <span>4-Mar-2024 06:43
-                                                PM</span></span></p>
-                                        <!-- timestamp -->
-                                    </a>
-                                </li>
                                 <li class="mb-3 nav-link">
                                     <a href="https://www.bitmesra.ac.in/UploadedDocuments/adminlalpur/NewsUPloaded/News5ec33b274b4944059966f44e53d4b793_Regarding%20Registration%20for%20SP%202024.pdf"
                                         class="list-group-item list-group-item-action active" aria-current="true">
@@ -208,7 +91,7 @@
 
             <!-- sidebar-navigation -->
             <div>
-                <button class="btn btn-primary rounded-circle side_toggle p-0" type="button" data-bs-toggle="offcanvas"
+                <button class="btn btn-primary rounded-circle side_toggle p-0 msg" data-tippy-content="Open Navigation" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#bit_lalput_sidebar" aria-controls="bit_lalput_sidebar">
                     <ion-icon class="menu" name="menu-outline"></ion-icon>
                 </button>
@@ -217,7 +100,7 @@
                     aria-labelledby="bit_lalput_sidebarLabel">
                     <div class="offcanvas-header">
                         <a href="#" class="text-decoration-none sidebar_header_text d-flex align-items-center">
-                            <img src="/assets/brand/bit_logo_100x100.png" height="50" width="50" alt="bit_logo"
+                            <img src="/static/assets/brand/bit100x100.png" height="50" width="50" alt="bit_logo"
                                 class="img-fluid me-2">
                             <h5 class="offcanvas-title" id="bit_lalput_sidebarLabel">BIT MESRA</h5>
                         </a>
@@ -342,16 +225,17 @@
     <header class="py-3 mb-4 border-bottom">
         <div class="container d-flex flex-wrap justify-content-center">
             <a href="/"
-                class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto link-body-emphasis text-decoration-none">
+                class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto link-body-emphasis text-decoration-none msg" data-tippy-placement="right" data-tippy-content="BIT Lalpur">
                 <span class="fs-4">
                     <img class="img-fluid" src="/static/assets/brand/bit_logo_light.png" alt="BIT_header" id="bit_header_logo">
                 </span>
             </a>
             <div class="d-flex justify-content-center align-items-center">
                 <form class="col-12 col-lg-auto mb-3 mb-lg-0 d-flex input-group" role="search">
-                    <input type="search" class="rounded-start-pill form-control border border-primary"
+                    <input type="search" class="rounded-start-pill form-control border border-primary msg"
+                    data-tippy-content="Tell us what to search."
                         placeholder="Search..." aria-label="Search">
-                    <button type="button" class="btn btn-primary rounded-end-pill">Search</button>
+                    <button type="button" class="btn btn-primary rounded-end-pill msg" data-tippy-content="Search Securely">Search</button>
                 </form>
             </div>
         </div>
@@ -473,6 +357,10 @@
         src="//translate.google.com/translate_a/element.jscb=googleTranslateElementInit"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/tippy-bundle.umd.min.js"></script>
+    <script src="/static/js/tooltip.min.js"></script>
 
     {% block js %}{% endblock js %}
 

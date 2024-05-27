@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WeatherApp</title>
+    <link rel="shortcut icon" href="/static/brand/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/tippy.css">
+    <link rel="stylesheet" href="/static/css/backdrop.css">
+    <link rel="stylesheet" href="/static/css/scale.css">
+    <link rel="stylesheet" href="/static/tippy/css/light.css">
+</head>
+
+<body data-bs-theme="light" class="usn">
+    <section id="preloader"></section>
+    <section id="loadingcontent" style="display: none;" tabindex="1"></section>
+    <div id="backgrnd">
+        <div class="cicle b small" style="--t:2rem;--r:2rem;"></div>
+        <div class="cicle sb middle" style="--t:5rem;"></div>
+        <div class="cicle g big" style="--b:0;--r:0;"></div>
+    </div>
+    <main id="mains">
+        <div class="container">
+            <h1 class="text-center pt-4 mb-4">
+                <i class="bi bi-cloud-sun-fill"></i>
+                <span class="text-center pt-4 mb-4 chFontGSP h1" title="Weather App">Weather App</span>
+            </h1>
+        </div>
+        <hr class="mb-4">
+        <div class="container pb-3">
+            <!-- top bar -->
+            <div class="container">
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                    <!-- Section 1 -->
+                    <div class="col">
+                        <div id="temp-cont"
+                            class="border border-light rounded-3 p-3 position-relative text-center mb-4">
+                            <span id="temp-span01"
+                                class="badge bg-dark-subtle text-light border-light border-light border position-absolute rounded-pill"
+                                style="top: -.7rem !important;
+                        left: 1rem;">Temperature Format <ion-icon name="thermometer-outline"></ion-icon></span>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <label for="celcius" class="chFontGSP cup msg"
+                                    data-tippy-content="Temperature in Celcius">Celcius</label>
+                                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                                    <input type="radio" class="btn-check" name="btnradio" id="celcius" checked>
+                                    <label class="btn btn-outline-secondary msg"
+                                        data-tippy-content="Temperature in Celcius" for="celcius">°C</label>
+                                    <input type="radio" class="btn-check" name="btnradio" id="farenheit">
+                                    <label class="btn btn-outline-secondary msg"
+                                        data-tippy-content="Temperature in Farenheit" for="farenheit">°F</label>
+                                </div>
+                                <label for="farenheit" class="chFontGSP cup msg"
+                                    data-tippy-content="Temperature in Farenheit">Farenheit</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Section 2 -->
+                    <div class="col">
+                        <div id="font-cont"
+                            class="border border-light rounded-3 p-3 position-relative text-center mb-4">
+                            <span id="font-span01"
+                                class="badge bg-dark-subtle text-light border-light border-light border position-absolute rounded-pill"
+                                style="top: -.7rem !important;
+                        left: 1rem;">Font <ion-icon name="text"></ion-icon></span>
+                            <select class="form-select fon0 cup msg" id="selfon" data-tippy-content="Choose your font"
+                                title="Choose Fonts As Per Your Preference">
+                                <option data-val="fon0" class="fon0 optn cup" value="0" selected>Poppins</option>
+                                <option data-val="fon1" class="fon1 optn cup" value="1">Bad Script</option>
+                                <option data-val="fon2" class="fon2 optn cup" value="2">Chilanka</option>
+                                <option data-val="fon3" class="fon3 optn cup" value="3">Delius Swash Caps</option>
+                                <option data-val="fon4" class="fon4 optn cup" value="4">Kalam</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- Section 3 -->
+                    <div class="col">
+                        <div id="theme-cont"
+                            class="border border-light rounded-3 p-3 position-relative text-center mb-4">
+                            <span id="theme-span01"
+                                class="badge bg-dark-subtle text-light border-light border-light border position-absolute rounded-pill"
+                                style="top: -.7rem !important;
+                        left: 1rem;">Theme <ion-icon name="contrast-outline"></ion-icon></span>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <!-- Toggle Switch and Text with Icon for Section 1 -->
+                                <label for="dark" class="chFontGSP cup msg" data-tippy-content="Dark">Dark</label>
+                                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                                    <input type="radio" class="btn-check" name="btnradio3" id="dark" autocomplete="off"
+                                        checked>
+                                    <label class="btn btn-outline-secondary msg" data-tippy-content="Dark Theme"
+                                        for="dark">Dark</label>
+
+                                    <input type="radio" class="btn-check" name="btnradio3" id="light"
+                                        autocomplete="off">
+                                    <label class="btn btn-outline-light msg" data-tippy-content="Lgiht Theme"
+                                        for="light">Light</label>
+                                </div>
+                                <label for="light" class="chFontGSP cup msg" data-tippy-content="Light">Light</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Location enter -->
+            <div class="container-fluid border mb-4 px-1 pt-4 pb-1 position-relative rounded-2 bg-info-subtle">
+                <span id="temp-span0"
+                    class="badge bg-dark-subtle text-light border-light border-light border position-absolute rounded-pill"
+                    style="top: -.7rem !important; left: 1rem;">Location <ion-icon name="earth"></ion-icon></span>
+
+                <div class="p-0 m-0 d-flex justify-content-center align-items-center"
+                    style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);"
+                    aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item btn-link cup chFontGSP msg chFontGSP" id="located-Region"
+                            data-tippy-content="Region" data-bs-toggle="modal" data-bs-target="#mapModal">Asia</li>
+                        <li class="breadcrumb-item btn-link cup chFontGSP msg chFontGSP" id="located-Country"
+                            data-tippy-content="Country" data-bs-toggle="modal" data-bs-target="#mapModal"
+                            aria-current="page">India</li>
+                        <li class="breadcrumb-item btn-link cup chFontGSP msg chFontGSP" id="located-State"
+                            data-tippy-content="State" aria-current="page">Jharkhand</li>
+                        <li class="breadcrumb-item btn-link cup chFontGSP msg chFontGSP" id="located-city"
+                            data-tippy-content="City" aria-current="page">Ranchi</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="container-fluid px-3 pb-3 m-0">
+                <div class="row rounded-2 border overflow-hidden">
+                    <!-- Card 1: Shows Current Weather Info. -->
+                    <div class="col-lg-6 p-2">
+                        <h5 class="mb-3 chFontGSP">Current Weather</h5>
+                        <hr class="mb-3">
+                        <div class="row m-0 p-0 border rounded-2 position-relative">
+                            <div class="col-12 col-sm-6 p-2 d-flex align-items-center">
+                                <div class="placeholder-img">
+                                    <img class="img-fluid manipIMG msg" data-tippy-content="Rainy" id="weather-today"
+                                        src="/static/weather/heavy-rain.png" alt="Weather Icon">
+                                </div>
+                                <p class="mb-0 ms-2 chFontGSP msg temp3104" data-tippy-content="25 °C"
+                                    style="font-size: 1.5rem;" id="today-temp-var" data-altT="12 °F">25 °C</p>
+                            </div>
+                            <div class="col-12 col-sm-6 flex-b-end mb-3">
+                                <p class="mb-0 chFontGSP msg" style="cursor: default;" id="id-curr-wethr"
+                                    data-tippy-content="Weather: Rainy">Rainy</p>
+                            </div>
+                            <div id="img-place-season">
+                                <img src="/static/season/autmn-2.png" class="img-fluid" id="img-place-season0431" alt="f1">
+                            </div>
+                        </div>
+                        <div class="container-fluid p-1 pb-0">
+                            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
+                                <div class="col msg" id="today-pptn-tippy" data-tippy-content="Percipitation: 21%">
+                                    <div class="p-2 chFontGSP">
+                                        Percipitation:
+                                        <br>
+                                        <span class="valp" id="today-pptn">21%</span>
+                                    </div>
+                                </div>
+                                <div class="col msg" id="today-hmdty-tippy" data-tippy-content="Humidity: 21%">
+                                    <div class="p-2 chFontGSP">
+                                        Humidity:
+                                        <br>
+                                        <span class="valp" id="today-hmdty">21%</span>
+                                    </div>
+                                </div>
+                                <div class="col msg" id="today-wnd1-tippy" data-tippy-content="Wind Speed (kmh): 21 kmh">
+                                    <div class="p-2 chFontGSP">
+                                        Wind Speed (kmh):
+                                        <br>
+                                        <span class="valp" id="today-wnd1">21 kmh</span>
+                                    </div>
+                                </div>
+                                <div class="col msg" id="today-wnd2-tippy" data-tippy-content="Wind Speed (mph): 21 mph">
+                                    <div class="p-2 chFontGSP">
+                                        Wind Speed (mph):
+                                        <br>
+                                        <span class="valp" id="today-wnd2">21 mph</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Card2: Shows Current Season Date and time -->
+                    <div class="col-lg-6 border-start p-2 position-relative">
+                        <!-- Rest of the content... -->
+                        <div id="bgBox">
+                            <img src="/static/season/autmn-b.jpg" id="target-season-img-bg" alt=""
+                                class="img-fluid manipIMG">
+                        </div>
+                        <h5 class="chFontGSP">Season, Date and Time</h5>
+                        <hr class="mb-2">
+                        <div class="container-fluid row flex-j-center p-0 m-0">
+                            <div class="col-8 border flex-center rounded-2 me-4 chFontGSP" id="target-season"
+                                style="font-size: 40px;">
+                                Autumn
+                            </div>
+                            <div class="col-3 border rounded-2 flex-center position-relative" style="font-size: 55px;">
+                                <div class="placeholder-img msg" data-tippy-content="Autumn" id="season-tippy">
+                                    <img class="img-fluid usn manipIMG" id="target-season-img" height="100px"
+                                        width="100px" src="/static/season/autmn.png" />
+                                </div>
+                            </div>
+                        </div>
+                        <!-- bottom box -->
+                        <div class="container-fluid row flex-j-center p-0 mt-3 m-0">
+                            <div class="col-8 border flex-center rounded-2 me-4 position-relative overflow-hidden">
+                                <span
+                                    class="ribbon chFontGSP position-absolute top-0 start-0 bg-info-subtle px-2 rbe border-end border-bottom flex-a-center">
+                                    <span id="time" class="msg" data-tippy-content="Current Time">00:00:00 AM</span>
+                                    <div class="vr mx-2"></div>
+                                    <span class="form-check form-check-inline m-0 msg"
+                                        data-tippy-content="12 Hr. Format" style="transform: scale(.7);">
+                                        <input class="form-check-input cup" type="radio" name="inlineRadioOptions0"
+                                            id="fmt12" value="12" checked>
+                                        <label class="form-check-label cup" for="fmt12">12</label>
+                                    </span>
+                                    <span class="form-check form-check-inline m-0 msg"
+                                        data-tippy-content="24 Hr. Format" style="transform: scale(.7);">
+                                        <input class="form-check-input cup" type="radio" name="inlineRadioOptions0"
+                                            id="fmt24" value="24">
+                                        <label class="form-check-label cup" for="fmt24">24</label>
+                                    </span>
+                                </span>
+                                <h3 class="chFontGSP" id="forecast-last-updt">20-12-2023 Monday</h3>
+                                <span
+                                    class="ribbon chFontGSP wish position-absolute bottom-0 end-0 bg-danger-subtle px-2 rts border-start border-top">Good
+                                    Afternoon</span>
+
+                            </div>
+
+                            <div class="col-3 border rounded-2 flex-center position-relative" style="font-size: 55px;">
+                                <div class="placeholder-img">
+                                    <img class="img-fluid manipIMG msg" id="timezone-img" setted="0" height="100px" width="100px"
+                                        src="/static/time/evening.png" data-tippy-content="Evening" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid p-0" id="ribbon-p">
+                <span class="position-relative bg-info-subtle px-2 rounded-pill border flex-a-center rib-p">
+                    <span class="msg" data-tippy-content="Current Time" id="time2">00:00:00 AM</span>
+                    <div class="vr mx-2"></div>
+                    <span class="form-check form-check-inline m-0 msg" data-tippy-content="12 Hr. Format"
+                        style="transform: scale(.7);">
+                        <input class="form-check-input cup" type="radio" name="inlineRadioOptions" id="fmt12-p"
+                            value="12" checked>
+                        <label class="form-check-label cup" for="fmt12-p">12</label>
+                    </span>
+                    <span class="form-check form-check-inline m-0 msg" data-tippy-content="24 Hr. Format"
+                        style="transform: scale(.7);">
+                        <input class="form-check-input cup" type="radio" name="inlineRadioOptions" id="fmt24-p"
+                            value="24">
+                        <label class="form-check-label cup" for="fmt24-p">24</label>
+                    </span>
+                </span>
+                <span class="position-relative chFontGSP bg-danger-subtle px-2 wish rounded-pill border rib-p">Good
+                    Afternoon</span>
+            </div>
+            <hr class="my-3">
+            <!-- Additional Forecast -->
+            <div class="container">
+                <h5 class="mb-5 chFontGSP">Forecast for the week.</h5>
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-5">
+                    <!-- Forecast cards go here -->
+                    <div class="col flex-center flex-column forecast-next border position-relative">
+                        <!-- Forecast card content... -->
+                        <div class="mt-5 placeholder-img">
+                            <img src="/static/weather/heavy-rain.png" alt="f2" id="d01img"
+                                class="img-fluid msg manipIMG" data-tippy-content="Rainy">
+                        </div>
+                        <div class="container mt-2 mb-5 chFontGSP msg text-center" id="d01wtr"
+                            data-tippy-content="Rainy">Rain</div>
+                        <div class="dat chFontGSP mt-2 msg" id="d01day" data-tippy-content="Thursday">Thu</div>
+                        <div class="min_temp chFontGSP temp3104 msg" id="d01min" data-altT="22°F"
+                            data-tippy-content="Min: 24°C">24°C</div>
+                        <div class="max_temp chFontGSP temp3104 msg" id="d01max" data-altT="32°F"
+                            data-tippy-content="Max: 34°C">34°C</div>
+                    </div>
+                    <div class="col flex-center flex-column forecast-next border position-relative">
+                        <!-- Forecast card content... -->
+                        <div class="mt-5 placeholder-img">
+                            <img src="/static/weather/heavy-rain.png" alt="f2" id="d02img"
+                                class="img-fluid msg manipIMG" data-tippy-content="Rainy">
+                        </div>
+                        <div class="container mt-2 mb-5 chFontGSP msg text-center" id="d02wtr"
+                            data-tippy-content="Rainy">Rain</div>
+                        <div class="dat chFontGSP mt-2 msg" id="d02day" data-tippy-content="Thursday">Thu</div>
+                        <div class="min_temp chFontGSP temp3104 msg" id="d02min" data-altT="22°F"
+                            data-tippy-content="Min: 24°C">24°C</div>
+                        <div class="max_temp chFontGSP temp3104 msg" id="d02max" data-altT="32°F"
+                            data-tippy-content="Max: 34°C">34°C</div>
+                    </div>
+                    <div class="col flex-center flex-column forecast-next border position-relative">
+                        <!-- Forecast card content... -->
+                        <div class="mt-5 placeholder-img">
+                            <img src="/static/weather/heavy-rain.png" alt="f2" id="d03img"
+                                class="img-fluid msg manipIMG" data-tippy-content="Rainy">
+                        </div>
+                        <div class="container mt-2 mb-5 chFontGSP msg text-center" id="d03wtr"
+                            data-tippy-content="Rainy">Rain</div>
+                        <div class="dat chFontGSP mt-2 msg" id="d03day" data-tippy-content="Thursday">Thu</div>
+                        <div class="min_temp chFontGSP temp3104 msg" id="d03min" data-altT="22°F"
+                            data-tippy-content="Min: 24°C">24°C</div>
+                        <div class="max_temp chFontGSP temp3104 msg" id="d03max" data-altT="32°F"
+                            data-tippy-content="Max: 34°C">34°C</div>
+                    </div>
+                    <div class="col flex-center flex-column forecast-next border position-relative">
+                        <!-- Forecast card content... -->
+                        <div class="mt-5 placeholder-img">
+                            <img src="/static/weather/heavy-rain.png" alt="f2" id="d04img"
+                                class="img-fluid msg manipIMG" data-tippy-content="Rainy">
+                        </div>
+                        <div class="container mt-2 mb-5 chFontGSP msg text-center" id="d04wtr"
+                            data-tippy-content="Rainy">Rain</div>
+                        <div class="dat chFontGSP mt-2 msg" id="d04day" data-tippy-content="Thursday">Thu</div>
+                        <div class="min_temp chFontGSP temp3104 msg" id="d04min" data-altT="22°F"
+                            data-tippy-content="Min: 24°C">24°C</div>
+                        <div class="max_temp chFontGSP temp3104 msg" id="d04max" data-altT="32°F"
+                            data-tippy-content="Max: 34°C">34°C</div>
+                    </div>
+                    <div class="col flex-center flex-column forecast-next border position-relative">
+                        <!-- Forecast card content... -->
+                        <div class="mt-5 placeholder-img">
+                            <img src="/static/weather/heavy-rain.png" alt="f2" id="d05img"
+                                class="img-fluid msg manipIMG" data-tippy-content="Rainy">
+                        </div>
+                        <div class="container mt-2 mb-5 chFontGSP msg text-center" id="d05wtr"
+                            data-tippy-content="Rainy">Rain</div>
+                        <div class="dat chFontGSP mt-2 msg" id="d05day" data-tippy-content="Thursday">Thu</div>
+                        <div class="min_temp chFontGSP temp3104 msg" id="d05min" data-altT="22°F"
+                            data-tippy-content="Min: 24°C">24°C</div>
+                        <div class="max_temp chFontGSP temp3104 msg" id="d05max" data-altT="32°F"
+                            data-tippy-content="Max: 34°C">34°C</div>
+                    </div>
+                    <div class="col flex-center flex-column forecast-next border position-relative">
+                        <!-- Forecast card content... -->
+                        <div class="mt-5 placeholder-img">
+                            <img src="/static/weather/heavy-rain.png" alt="f2" id="d06img"
+                                class="img-fluid msg manipIMG" data-tippy-content="Rainy">
+                        </div>
+                        <div class="container mt-2 mb-5 chFontGSP msg text-center" id="d06wtr"
+                            data-tippy-content="Rainy">Rain</div>
+                        <div class="dat chFontGSP mt-2 msg" id="d06day" data-tippy-content="Thursday">Thu</div>
+                        <div class="min_temp chFontGSP temp3104 msg" id="d06min" data-altT="22°F"
+                            data-tippy-content="Min: 24°C">24°C</div>
+                        <div class="max_temp chFontGSP temp3104 msg" id="d06max" data-altT="32°F"
+                            data-tippy-content="Max: 34°C">34°C</div>
+                    </div>
+                    <div class="col flex-center flex-column forecast-next border position-relative">
+                        <!-- Forecast card content... -->
+                        <div class="mt-5 placeholder-img">
+                            <img src="/static/weather/heavy-rain.png" alt="f2" id="d07img"
+                                class="img-fluid msg manipIMG" data-tippy-content="Rainy">
+                        </div>
+                        <div class="container mt-2 mb-5 chFontGSP msg text-center" id="d07wtr"
+                            data-tippy-content="Rainy">Rain</div>
+                        <div class="dat chFontGSP mt-2 msg" id="d07day" data-tippy-content="Thursday">Thu</div>
+                        <div class="min_temp chFontGSP temp3104 msg" id="d07min" data-altT="22°F"
+                            data-tippy-content="Min: 24°C">24°C</div>
+                        <div class="max_temp chFontGSP temp3104 msg" id="d07max" data-altT="32°F"
+                            data-tippy-content="Max: 34°C">34°C</div>
+                    </div>
+                    <div class="col flex-center flex-column forecast-next border position-relative">
+                        <!-- Forecast card content... -->
+                        <div class="mt-5 placeholder-img">
+                            <img src="/static/weather/heavy-rain.png" alt="f2" id="d08img"
+                                class="img-fluid msg manipIMG" data-tippy-content="Rainy">
+                        </div>
+                        <div class="container mt-2 mb-5 chFontGSP msg text-center" id="d08wtr"
+                            data-tippy-content="Rainy">Rain</div>
+                        <div class="dat chFontGSP mt-2 msg" id="d08day" data-tippy-content="Thursday">Thu</div>
+                        <div class="min_temp chFontGSP temp3104 msg" id="d08min" data-altT="22°F"
+                            data-tippy-content="Min: 24°C">24°C</div>
+                        <div class="max_temp chFontGSP temp3104 msg" id="d08max" data-altT="32°F"
+                            data-tippy-content="Max: 34°C">34°C</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer -->
+        <footer class="text-center text-lg-start">
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                © 2023-2036 Copyright:
+                <a class="text-success" href="#">ForecastWebsite.com</a>
+            </div>
+            <!-- Copyright -->
+        </footer>
+    </main>
+
+    <!-- Map selector Modal -->
+    <div class="modal fade" id="mapModal" tabindex="-1" aria-labelledby="mapModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5 chFontGSP" id="mapModalLabel">Select (Region + Country)</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body position-relative">
+                    <div id="map" style="height: 400px;width: 100%;"></div>
+                    <div id="state-dist" class="scroll container-fluid position-relative" style="display: none;"></div>
+                    <div id="city-dist" class="scroll container-fluid position-relative" style="display: none;"><span
+                            class="clue chFontGSP">Loading...</span></div>
+                    <div class="mt-3 ps-5 bg-info-subtle py-1 rounded-2 border border-info">
+                        ▶ <span class="ms-1" id="selected-region">
+                            <span class="chFontGSP" id="region-sel">Region</span>
+                            >
+                            <span class="chFontGSP" id="country-sel">Country</span>
+                            >
+                            <span class="chFontGSP" id="state-sel">state</span>
+                            >
+                            <span class="chFontGSP" id="city-sel">City</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning btn-sm" id="reset-map">
+                        Reset
+                    </button>
+                    <button type="button" class="btn btn-success btn-sm" data-puprus="country" data-search="0"
+                        id="get-target-location">
+                        Select Country
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <input type="hidden" name="theme-font" id="theme-font" value="fon0">
+    <input type="hidden" name="target-api-url" id="target-api-url" value="{% url 'api3104' %}">
+    <input type="hidden" name="target-region" id="target-region">
+    <input type="hidden" name="target-country" id="target-country" data-c-code="--">
+    <input type="hidden" name="target-state" id="target-state">
+    <input type="hidden" name="target-city" id="target-city">
+    <input type="hidden" name="target-location-long" id="target-location-long">
+    <input type="hidden" name="target-location-lat" id="target-location-lat">
+    {% csrf_token %}
+
+    <script src="/static/js/jQuery.js"></script>
+    <script>
+        $(window).on('load', function () {
+            $("#preloader").fadeOut(500);
+        });
+    </script>
+    <!-- virtual cdns -->
+    <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/maps.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/geodata/worldLow.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+    <!-- installed libraries and custom code snippets -->
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/tippy-bundle.umd.min.js"></script>
+    <script src="/static/js/tooltip.min.js"></script>
+    <script src="/static/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/js/gsap.min.js"></script>
+    <script src="/static/js/TextPlugin.min.js"></script>
+    <script src="/static/js/time.min.js"></script>
+    <script src="/static/js/wethr.min.js"></script>
+    <script src="/static/js/textManipulation.min.js"></script>
+    <script src="/static/js/map-select.min.js"></script>
+    <script src="/static/js/integation-main.js"></script>
+</body>
+
+</html>

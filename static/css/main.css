@@ -53,8 +53,8 @@ ion-icon.menu {
 
 .btn-toggle:hover,
 .btn-toggle:focus {
-  color: rgba(var(--bs-emphasis-color-rgb), 0.85);
-  background-color: #dbb2b2;
+  color: rgba(var(--bs-emphasis-color-rgb), 0.85 !important);
+  background-color: #dbb2b2 !important;
 }
 
 .btn-toggle::before {

@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}About BIT Lalpur{% endblock title %}</title>
+    {% block css %}{% endblock css %}
+</head>
+
+<body>
+
+    {% block body %}
+    <main class="container">
+        <h1 class="text-center mb-5 gap-4">About BIT Lalpur Campus</h1>
+        <div class="row container m-0 d-flex">
+            <!-- LHS -->
+            <div class="col-md-6 position-md-static sticky-top" style="height: 468px">
+                <div class="position-sticky top-0 mt-3">
+                    <div class="department_img rounded-3">
+                        <img src="/static/assets/bit/collage_image.jpg" class="img-fluid" alt=""
+                            style="object-fit: cover; max-width: 100%; max-height: 100%">
+                    </div>
+                </div>
+            </div>
+            <!-- LHS -->
+
+            <!-- RHS -->
+            <div class="col-md-6 border rounded-3 bg-home-about text-center">
+                <!-- <h3 class="text-center mb-4 mt-5">About BIT Lalpur campus</h1> -->
+                <p class="mt-4">
+                    BIT Lalpur Centre Ranchi was established in 1998 with the aim of inspiring young minds and
+                    professionals. Initially offering part-time courses, the institute now provides a range of
+                    programs including Master of Business Administration (MBA), Master of Computer Application
+                    (MCA), Bachelor of Business Administration (BBA), Bachelor of Computer Application (BCA), and
+                    Ph.D.
+                </p>
+
+                <p class="class=" text-center"">
+                    At our institute, we adopt a holistic approach to education, focusing on the overall development
+                    of students. Our unique pedagogy combines classroom teaching with the latest technology in
+                    education, emphasizing experiential learning and nurturing creativity. We encourage our students
+                    to participate in competitions across various platforms, fostering their all-round growth. The
+                    institute facilitates in-depth inquiry, adaptation, and evolution in a conducive learning
+                    environment.
+                </p>
+
+                <!-- <h3 class=" mt-4 mb-4">Programmes</h3> -->
+
+                <p>
+                    Our primary goal is to foster innovative thinking and cultivate the next generation of leaders.
+                    Our industry-driven curriculum and contemporary teaching methods equip students with the skills
+                    required to excel in any organization. We strive to instill a winning spirit, with the aim of
+                    developing smart managers and future business leaders.
+                    To provide real-time exposure to the professional environment, students engage in practical
+                    research assignments and participate in internship programs with leading multinational
+                    organizations.
+                </p>
+
+                <!-- <h3 class=" mt-4 mb-4">Course Structure</h3> -->
+
+                <p>
+                    We are dedicated to empowering our students, enabling them to thrive and succeed in their chosen
+                    fields.
+                </p>
+
+                <h4 class=" mt-4 mb-4">Highlights of BIT Lalpur Campus Ranchi include</h4>
+
+                <ul class="text-start mt-4">
+                    <li> The institute offers both full-time and part-time Ph.D. programs in the disciplines of
+                        Management and Computer Science.</li>
+                    <li>Two-year full-time Master of Business Administration (MBA) and Master of Computer
+                        Application (MCA) courses are available.</li>
+                    <li>Three-year Bachelor of Business Administration (BBA) and Bachelor of Computer Application
+                        (BCA) courses are offered.</li>
+                    <li>The campus takes pride in its unique pedagogy, incorporating the latest curriculum and a
+                        value-based holistic approach to learning in a conducive environment</li>
+                    <li> The programs at BIT Lalpur Ranchi empower students to realize their aspirations in the
+                        corporate world and make significant contributions to society through their pursuit of
+                        excellence.</li>
+                </ul>
+
+                <p class="text-center ps-2">At BIT Lalpur Campus Ranchi, we strive to provide an enriching educational
+                    experience that equips
+                    our students with the knowledge, skills, and values required for their professional and personal
+                    growth.</p>
+
+
+            </div>
+        </div>
+    </main>
+    {% endblock body %}
+
+    {% block js %}{% endblock js %}
+
+</body>
+
+</html>
