@@ -4,7 +4,7 @@ document.querySelectorAll('.msg').forEach(button => {
         content: 'Tooltip content',
         animation: (button.dataset.tippyAnimation == null) ? 'scale' : button.dataset.tippyAnimation,
         inertia: true,
-        theme: 'light',
+        theme: ($('body').data('bs-theme')=="light")? 'dark':'light',
         enabled: false,
         hideOnClick: false  // Tooltip will not hide on click
     });

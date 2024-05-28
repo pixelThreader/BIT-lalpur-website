@@ -140,11 +140,13 @@ ion-icon.menu {
   background: #545454;
 }
 
-.nav-item:hover .nav-link {
-  color: #d33039;
+.nav-item:hover .nav-link,
+.nav-item.active .nav-link {
+  color: #d33039 !important;
 }
 
-.nav-link:hover {
+.nav-link:hover,
+.nav-item.active {
   color: #d33039;
   text-decoration: none;
 }

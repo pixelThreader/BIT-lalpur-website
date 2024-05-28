@@ -11,11 +11,11 @@
     <link rel="stylesheet" href="/static/css/tippy.css">
     <link rel="stylesheet" href="/static/css/backdrop.css">
     <link rel="stylesheet" href="/static/css/scale.css">
-    <link rel="stylesheet" href="/static/tippy/css/light.css">
+    <link rel="stylesheet" href="/static/css/light.css">
     {% block css %}{% endblock css %}
 </head>
 
-<body>    
+<body data-bs-theme="dark">
     <nav class="py-2 border-bottom">
         <div class="container d-flex flex-wrap">
             <ul class="nav me-auto">
@@ -25,14 +25,15 @@
                     </a>
                 </li>
                 <div class="vr"></div>
-                <li class="nav-item">
-                    <a target="_blank" href="https://bitmesra.ac.in/Disp_Notify_Admission?cid=1&deptid=11" class="nav-link link-body-emphasis px-2">
+                <li class="nav-item active">
+                    <a target="_blank" href="https://bitmesra.ac.in/Disp_Notify_Admission?cid=1&deptid=11"
+                        class="nav-link link-body-emphasis px-2">
                         ADMISSION
                     </a>
                 </li>
                 <div class="vr"></div>
                 <li class="nav-item">
-                    <a href="departments.html" class="nav-link link-body-emphasis px-2">
+                    <a href="{% url 'departments' %}" class="nav-link link-body-emphasis px-2">
                         DEPARTMENTS
                     </a>
                 </li>
@@ -47,9 +48,9 @@
             </div>
             <!-- sidebar-notification -->
             <div>
-                <button class="btn btn-primary rounded-circle side_toggle p-0 mx-2 msg" type="button" data-tippy-content="Show Notifications"
-                    data-bs-toggle="offcanvas" data-bs-target="#bit_lalpur_notification"
-                    aria-controls="bit_lalpur_notification">
+                <button class="btn btn-primary rounded-circle side_toggle p-0 mx-2 msg" type="button"
+                    data-tippy-content="Show Notifications" data-bs-toggle="offcanvas"
+                    data-bs-target="#bit_lalpur_notification" aria-controls="bit_lalpur_notification">
                     <ion-icon name="notifications-outline" style="font-size: 1.5rem;"></ion-icon>
                 </button>
 
@@ -57,30 +58,25 @@
                     aria-labelledby="bit_lalpur_notificationLabel">
                     <div class="offcanvas-header">
                         <h5 class="offcanvas-title" id="bit_lalpur_notificationLabel">NOTIFICATIONS</h5>
-                        <button type="button" class="btn-close msg" data-tippy-content="Close Notifications" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        <button type="button" class="btn-close msg" data-tippy-content="Close Notifications"
+                            data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
                         <!-- notification -->
-                        <div class="p-4 mb-3 bg-body-tertiary rounded">
-                            <h4 class="fst-italic">Never miss an update</h4>
-                            <hr class="my-3">
-                            <ul class="list-unstyled nav-item">
-                                <li class="mb-3 nav-link">
-                                    <a href="https://www.bitmesra.ac.in/UploadedDocuments/adminlalpur/NewsUPloaded/News5ec33b274b4944059966f44e53d4b793_Regarding%20Registration%20for%20SP%202024.pdf"
-                                        class="list-group-item list-group-item-action active" aria-current="true">
-                                        <div class="d-flex w-100 justify-content-between">
-                                            <h6 class="mb-1">Notice regarding extended dates for registration in SP-24
-                                                with late fine</h6>
-                                            <small><span class="badge text-bg-danger">New</span></small>
-                                        </div>
-                                        <!-- timestamp -->
-                                        <p class="mb-1 font-para-8">Posted Date : <span>4-Mar-2024 06:43
-                                                PM</span></span></p>
-                                        <!-- timestamp -->
-                                    </a>
-                                </li>
+                        <div class="container-fluid d-flex flex-column p-0 m-0 gap-3">
+                            <!-- notification card -->
+                            <div class="notification container-fluid border border-info bg-info-subtle p-0 m-0 rounded-2 overflow-hidden">
+                                <div class="notification-header border-bottom border-info container-fluid d-flex align-items-center" style="height: 2.3rem;" >
+                                    <h6 class="text-truncate w-75 d-flex align-items-center h-100 m-0">Notification</h6>
+                                    <div class="w-25 d-flex justify-content-end align-items-center">
+                                        <button class="btn-close btn-sm"></button>
+                                    </div>
+                                </div>
+                                <div class="notification-content p-2 w-100">
+                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium ullam distinctio quos incidunt perferendis quam omnis doloremque deserunt neque delectus molestias quia, quod saepe cumque. Officiis nobis nemo alias quas.
+                                </div>
+                            </div>
 
-                            </ul>
                         </div>
                         <!-- notification -->
                     </div>
@@ -91,8 +87,9 @@
 
             <!-- sidebar-navigation -->
             <div>
-                <button class="btn btn-primary rounded-circle side_toggle p-0 msg" data-tippy-content="Open Navigation" type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#bit_lalput_sidebar" aria-controls="bit_lalput_sidebar">
+                <button class="btn btn-primary rounded-circle side_toggle p-0 msg" data-tippy-content="Open Navigation"
+                    type="button" data-bs-toggle="offcanvas" data-bs-target="#bit_lalput_sidebar"
+                    aria-controls="bit_lalput_sidebar">
                     <ion-icon class="menu" name="menu-outline"></ion-icon>
                 </button>
 
@@ -225,17 +222,20 @@
     <header class="py-3 mb-4 border-bottom">
         <div class="container d-flex flex-wrap justify-content-center">
             <a href="/"
-                class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto link-body-emphasis text-decoration-none msg" data-tippy-placement="right" data-tippy-content="BIT Lalpur">
+                class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto link-body-emphasis text-decoration-none msg"
+                data-tippy-placement="right" data-tippy-content="BIT Lalpur">
                 <span class="fs-4">
-                    <img class="img-fluid" src="/static/assets/brand/bit_logo_light.png" alt="BIT_header" id="bit_header_logo">
+                    <img class="img-fluid" src="/static/assets/brand/bit_logo_light.png" alt="BIT_header"
+                        id="bit_header_logo">
                 </span>
             </a>
             <div class="d-flex justify-content-center align-items-center">
-                <form class="col-12 col-lg-auto mb-3 mb-lg-0 d-flex input-group" role="search">
-                    <input type="search" class="rounded-start-pill form-control border border-primary msg"
-                    data-tippy-content="Tell us what to search."
-                        placeholder="Search..." aria-label="Search">
-                    <button type="button" class="btn btn-primary rounded-end-pill msg" data-tippy-content="Search Securely">Search</button>
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 d-flex input-group" role="search" method="get" action="{% url 'search' %}">
+                    <!-- <div class="gcse-search"></div> -->
+                    <input type="search" class="rounded-start-pill form-control border border-primary msg" id="search"
+                        data-tippy-content="Tell us what to search." placeholder="Search..." aria-label="Search">
+                    <button type="button" class="btn btn-primary rounded-end-pill msg" onclick="executeSearch()"
+                        data-tippy-content="Search Securely">Search</button>
                 </form>
             </div>
         </div>
@@ -244,10 +244,11 @@
     {% block body %}
     BIT LALPUR MAIN
     {% endblock body %}
+    <div id="searchResults"></div>
 
 
     <hr class="my-5">
-    
+
     <div class="container">
 
         <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 pt-5 mt-5 mb-3">
@@ -265,7 +266,9 @@
             <div class="col-sm-12 d-flex justify-content-center">
                 <div class="text-center">
                     <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a target="_blank" href="https://bitmesra.ac.in/Disp_Notify_Admission?cid=1&deptid=11" class="nav-link p-0 text-body-secondary">Admissions</a>
+                        <li class="nav-item mb-2"><a target="_blank"
+                                href="https://bitmesra.ac.in/Disp_Notify_Admission?cid=1&deptid=11"
+                                class="nav-link p-0 text-body-secondary">Admissions</a>
                         </li>
                         <li class="nav-item mb-2"><a target="_blank" href="contact_1.html"
                                 class="nav-link p-0 text-body-secondary">Contact Us</a>
@@ -279,7 +282,9 @@
             <div class="col-sm-12 d-flex justify-content-center">
                 <div class="text-center">
                     <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a target="_blank" href="https://www.bitmesra.ac.in/Show_Content_Section?cid=1&pid=38" class="nav-link p-0 text-body-secondary">Academic
+                        <li class="nav-item mb-2"><a target="_blank"
+                                href="https://www.bitmesra.ac.in/Show_Content_Section?cid=1&pid=38"
+                                class="nav-link p-0 text-body-secondary">Academic
                                 Calander</a></li>
                     </ul>
                 </div>
@@ -290,9 +295,13 @@
             <div class="col-sm-12 d-flex justify-content-center">
                 <div class="text-center">
                     <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a target="_blank" href="https://www.bitmesra.ac.in/UploadedDocuments/pratyush_869/files/Holidays_list_2016.pdf" class="nav-link p-0 text-body-secondary">List Of
+                        <li class="nav-item mb-2"><a target="_blank"
+                                href="https://www.bitmesra.ac.in/UploadedDocuments/pratyush_869/files/Holidays_list_2016.pdf"
+                                class="nav-link p-0 text-body-secondary">List Of
                                 Holidays</a></li>
-                        <li class="nav-item mb-2"><a target="_blank" href="https://www.bitmesra.ac.in/Show_Content_Section?cid=1&pid=365" class="nav-link p-0 text-body-secondary">ERP (BIT
+                        <li class="nav-item mb-2"><a target="_blank"
+                                href="https://www.bitmesra.ac.in/Show_Content_Section?cid=1&pid=365"
+                                class="nav-link p-0 text-body-secondary">ERP (BIT
                                 Mesra)</a>
                         </li>
                     </ul>
@@ -306,25 +315,29 @@
                     <h5 class="text-body-secondary">Social</h5>
                     <ul class="nav flex-column">
                         <li class="nav-item mb-2">
-                            <a target="_blank" href="https://x.com/BITMesra_Ranchi" class="nav-link p-0 text-body-secondary">
+                            <a target="_blank" href="https://x.com/BITMesra_Ranchi"
+                                class="nav-link p-0 text-body-secondary">
                                 <ion-icon name="logo-twitter"></ion-icon>
                                 Twitter
                             </a>
                         </li>
                         <li class="nav-item mb-2">
-                            <a target="_blank" href="https://www.youtube.com/channel/UClKOCa97mxvflz2Jdpg59HQ" class="nav-link p-0 text-body-secondary">
+                            <a target="_blank" href="https://www.youtube.com/channel/UClKOCa97mxvflz2Jdpg59HQ"
+                                class="nav-link p-0 text-body-secondary">
                                 <ion-icon name="logo-youtube"></ion-icon>
                                 YouTube
                             </a>
                         </li>
                         <li class="nav-item mb-2 d-flex align-items-center">
-                            <a target="_blank" href="https://www.facebook.com/BITMesraRanchi" class="nav-link p-0 text-body-secondary">
+                            <a target="_blank" href="https://www.facebook.com/BITMesraRanchi"
+                                class="nav-link p-0 text-body-secondary">
                                 <ion-icon name="logo-facebook" style="line-height: 0;"></ion-icon>
                                 Facebook
                             </a>
                         </li>
                         <li class="nav-item mb-2">
-                            <a target="_blank" href="https://www.instagram.com/bit.mediacell/" class="nav-link p-0 text-body-secondary">
+                            <a target="_blank" href="https://www.instagram.com/bit.mediacell/"
+                                class="nav-link p-0 text-body-secondary">
                                 <ion-icon name="logo-instagram"></ion-icon>
                                 Instagram
                             </a>
@@ -346,10 +359,17 @@
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
         }
-        $('#bit_header_logo').attr('src', function() {
+        $('#bit_header_logo').attr('src', function () {
             return $('body').data('bs-theme') == 'dark' ?
                 "/static/assets/brand/bit_logo.png" :
                 "/static/assets/brand/bit_logo_light.png";
+        });
+        document.addEventListener('DOMContentLoaded', function () {
+            var toastElList = [].slice.call(document.querySelectorAll('.toast'))
+            var toastList = toastElList.map(function (toastEl) {
+                return new bootstrap.Toast(toastEl)
+            })
+            toastList.forEach(toast => toast.show())
         });
     </script>
 
@@ -360,7 +380,32 @@
 
     <script src="/static/js/popper.min.js"></script>
     <script src="/static/js/tippy-bundle.umd.min.js"></script>
-    <script src="/static/js/tooltip.min.js"></script>
+    <script src="/static/js/tooltip.js"></script>
+    <script async src="https://cse.google.com/cse.js?cx=f28d250b0efb9452e">
+    </script>
+    <script>
+        function executeSearch() {
+          var query = document.getElementById('searchInput').value;
+          if (query) {
+            var element = google.search.cse.element.getElement('searchResults');
+            if (element) {
+              element.execute(query);
+            }
+          }
+        }
+    
+        (function() {
+          var cx = 'f28d250b0efb9452e'; // Replace with your Custom Search Engine ID
+          var gcse = document.createElement('script'); 
+          gcse.type = 'text/javascript'; 
+          gcse.async = true;
+          gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+          var s = document.getElementsByTagName('script')[0]; 
+          s.parentNode.insertBefore(gcse, s);
+        })();
+      </script>
+    
+      <gcse:searchresults-only id="searchResults"></gcse:searchresults-only>
 
     {% block js %}{% endblock js %}
 

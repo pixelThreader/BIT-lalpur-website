@@ -11,7 +11,8 @@ def palcements(request):
 def departments(request):
     return render(request, 'administrations/departments.html')
 
-def department_course(request):
+def department_course(request, course):
+    print(course)
     return render(request, 'administrations/department_course.html')
 
 def faq(request):
