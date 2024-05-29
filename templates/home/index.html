@@ -95,13 +95,11 @@
                         </div>
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carousel_BIT"
-                    data-bs-slide="prev">
+                <button class="carousel-control-prev" type="button" data-bs-target="#carousel_BIT" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carousel_BIT"
-                    data-bs-slide="next">
+                <button class="carousel-control-next" type="button" data-bs-target="#carousel_BIT" data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
@@ -459,11 +457,48 @@
                 </div>
             </div>
         </div>
+
+        <!-- Youtube Style -->
+        <style>
+            .responsive-iframe-container {
+                position: relative;
+                overflow: hidden;
+                width: 100%;
+                padding-top: 56.25%;
+                /* 16:9 Aspect Ratio */
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+
+            .responsive-iframe-container iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border: 0;
+            }
+
+            .video__youtube {
+                background-color: #343a40;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            .video__youtube h5,
+            .video__youtube p {
+                margin-bottom: 0;
+                /* width: calc(100% - 1rem); */
+            }
+        </style>
+
+
+        <!-- Youtube Style -->
+
         <!-- YOUTUBE VIDEO SECTION  -->
         <div class="container mt-5">
             <!-- ROW 1 -->
-            <div class="row p-0 m-0">
-                <!-- image column -->
+            <div class="row p-0 m-0 g-2">
                 <div class="col py-3">
                     <div class="container">
                         <!-- Header-BlockName -->
@@ -474,21 +509,36 @@
                             </h4>
                         </div>
                         <!-- Body-BlockName -->
-                        <div class="container-fluid p-0 border rounded-2 overflow-hidden" style="height: 300px;">
-                            <div class="row h-100 p-0 m-0">
-                                <div class="col-md-4 bg-dark border">
-                                    <div class="video__youtube">
-                                        <iframe id="mejs_547293913831479_youtube_iframe" frameborder="0"
-                                            allowfullscreen=""
-                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                            referrerpolicy="strict-origin-when-cross-origin"
-                                            title="Celebrations of 77th Independence Day at the institute"
-                                            src="https://www.youtube.com/embed/0KZbKC_Zf80?controls=0&amp;rel=0&amp;disablekb=1&amp;showinfo=0&amp;modestbranding=0&amp;html5=1&amp;playsinline=0&amp;start=0&amp;end=0&amp;iv_load_policy=3&amp;autoplay=0&amp;loop=0&amp;nocookie=false&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fwww.bitmesra.ac.in&amp;widgetid=3"
-                                            data-gtm-yt-inspected-8="true" width="362.663" height="203"></iframe>
+                        <div class="container-fluid p-0 overflow-hidden">
+                            <div class="row h-100 p-0 m-0 g-3">
+                                <!-- a -->
+                                <div class="col-md-4">
+                                    <div class="video__youtube p-2">
+                                        <div
+                                            class="container-fluid p-0 d-flex justify-content-center align-items-center flex-column">
+                                            <div class="responsive-iframe-container mb-3">
+                                                <iframe id="mejs_547293913831479_youtube_iframe" frameborder="0"
+                                                    allowfullscreen=""
+                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                    referrerpolicy="strict-origin-when-cross-origin"
+                                                    title="Celebrations of 77th Independence Day at the institute"
+                                                    src="https://www.youtube.com/embed/0KZbKC_Zf80?controls=0&amp;rel=0&amp;disablekb=1&amp;showinfo=0&amp;modestbranding=0&amp;html5=1&amp;playsinline=0&amp;start=0&amp;end=0&amp;iv_load_policy=3&amp;autoplay=0&amp;loop=0&amp;nocookie=false&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fwww.bitmesra.ac.in&amp;widgetid=3"
+                                                    data-gtm-yt-inspected-8="true"></iframe>
+                                            </div>
+                                            <h5 class="px-2 w-100 text-truncate">Celebrations of 77th
+                                                Independence Day at the institute</h5>
+                                            <p class="px-2 w-100 title text-truncate">Celebrations of 77th
+                                                Independence Day at the institute</p>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-md-4 bg-dark border">
-                                    <div class="video__youtube">
+                                <!-- a -->
+                                
+                                <div class="col-md-4">
+                                    <div class="video__youtube p-2">
+                                        <div
+                                            class="container-fluid p-0 d-flex justify-content-center align-items-center flex-column">
+                                            <div class="responsive-iframe-container mb-3">
                                         <iframe id="mejs_9657570935983175_youtube_iframe" frameborder="0"
                                             allowfullscreen=""
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -496,10 +546,19 @@
                                             title="The official anthem of BIT Mesra Ranchi"
                                             src="https://www.youtube.com/embed/zqOTIdO7_0U?controls=0&amp;rel=0&amp;disablekb=1&amp;showinfo=0&amp;modestbranding=0&amp;html5=1&amp;playsinline=0&amp;start=0&amp;end=0&amp;iv_load_policy=3&amp;autoplay=0&amp;loop=0&amp;nocookie=false&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fwww.bitmesra.ac.in&amp;widgetid=2"
                                             data-gtm-yt-inspected-8="true" width="362.663" height="203"></iframe>
+                                            </div>
+                                            <h5 class="px-2 w-100 text-truncate">The official anthem of BIT Mesra Ranchi</h5>
+                                            <p class="px-2 w-100 title text-truncate">Participants and all the respected guests singing the official song of BIT on the auspicious occasion of the launch of 5 days short term course DMBA23</p>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-md-4 bg-dark border">
-                                    <div class="video__youtube">
+                                <!-- a -->
+                                
+                                <div class="col-md-4">
+                                    <div class="video__youtube p-2">
+                                        <div
+                                            class="container-fluid p-0 d-flex justify-content-center align-items-center flex-column">
+                                            <div class="responsive-iframe-container mb-3">
                                         <iframe id="mejs_6376271062091905_youtube_iframe" frameborder="0"
                                             allowfullscreen=""
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -507,8 +566,13 @@
                                             title="DMBA 2023 Inauguration - Speech By Dr. C. Jagannathan (DRIE, BIT Mesra)"
                                             src="https://www.youtube.com/embed/nqI7EQf9Wdc?controls=0&amp;rel=0&amp;disablekb=1&amp;showinfo=0&amp;modestbranding=0&amp;html5=1&amp;playsinline=0&amp;start=0&amp;end=0&amp;iv_load_policy=3&amp;autoplay=0&amp;loop=0&amp;nocookie=false&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fwww.bitmesra.ac.in&amp;widgetid=1"
                                             data-gtm-yt-inspected-8="true" width="362.663" height="203"></iframe>
+                                            </div>
+                                            <h5 class="px-2 w-100 text-truncate">DMBA 2023</h5>
+                                            <p class="px-2 w-100 title text-truncate">DMBA 2023 Inauguration - Speech By Dr. C. Jagannathan (DRIE, BIT Mesra)</p>
+                                        </div>
                                     </div>
                                 </div>
+                                <!-- a -->
                             </div>
                         </div>
                     </div>

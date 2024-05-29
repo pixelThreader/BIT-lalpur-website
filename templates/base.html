@@ -18,7 +18,7 @@
 <body data-bs-theme="dark">
     <nav class="py-2 border-bottom">
         <div class="container d-flex flex-wrap">
-            <ul class="nav me-auto">
+            <ul class="nav me-auto d-none d-lg-block">
                 <li class="nav-item">
                     <a href="{% url 'about' %}" class="nav-link link-body-emphasis px-2 active" aria-current="page">
                         ABOUT US
@@ -55,7 +55,7 @@
                     <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">
                         {{ notifications.count }}
                         <span class="visually-hidden">unread messages</span>
-                      </span>
+                    </span>
                 </button>
 
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="bit_lalpur_notification"
@@ -70,7 +70,8 @@
                         <div class="container-fluid d-flex flex-column p-0 m-0 gap-3 scroll-bar">
                             <!-- notification card -->
                             {% for notification in notifications %}
-                            <a href="{{ notification.notify_link }}" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
+                            <a href="{{ notification.notify_link }}" target="_blank" rel="noopener noreferrer"
+                                class="text-decoration-none">
                                 <div
                                     class="notification container-fluid border border-info bg-info-subtle p-0 m-0 rounded-2 overflow-hidden">
                                     <div class="notification-header border-bottom border-info container-fluid d-flex align-items-center"
@@ -114,6 +115,35 @@
                     </div>
                     <div class="offcanvas-body">
                         <div class="flex-shrink-0 p-3">
+
+                            <a class="btn btn-toggle d-lg-none d-inline-flex align-items-center rounded border-0 w-100 no_arrow"
+                                href="{% url 'about' %}">
+                                ABOUT US
+                            </a>
+
+                            <hr class="d-lg-none">
+
+                            <a class="btn btn-toggle d-lg-none d-inline-flex align-items-center rounded border-0 w-100 no_arrow"
+                                href="{% url 'departments' %}">
+                                ADMISSIONS
+                            </a>
+
+                            <hr class="d-lg-none">
+
+                            <a class="btn btn-toggle d-lg-none d-inline-flex align-items-center rounded border-0 w-100 no_arrow"
+                                href="{% url 'plcements' %}">
+                                DEAPRTMENTS
+                            </a>
+
+                            <hr class="d-lg-none">
+
+                            <a class="btn btn-toggle d-lg-none d-inline-flex align-items-center rounded border-0 w-100 no_arrow"
+                                href="{% url 'plcements' %}">
+                                FAQs
+                            </a>
+
+                            <hr class="d-lg-none">
+
                             <button
                                 class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed w-100"
                                 data-bs-toggle="collapse" data-bs-target="#institute" aria-expanded="false">
@@ -264,7 +294,7 @@
                     <img src="/static/assets/brand/bit100x100.png" alt="">
                 </a>
                 <p class="text-body-secondary text-center">
-                    © <span class="year">2022</span> Bit Mesra</p>
+                    © <span class="year">{{ year }}</span> Bit Mesra</p>
             </div>
 
             <hr style="width:80%; margin:0 auto; display:block;" class="d-block d-sm-none pb-3">

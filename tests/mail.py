@@ -1,9 +1,8 @@
-from django.core.mail import send_mail
+import datetime
 
-send_mail(
-    "Subject here",
-    "This is test form Django",
-    "piyush@piyush.com",
-    ["piyush31032005@gmail.com"],
-    fail_silently=False,
-)
+# Get the current date
+current_date = datetime.date.today()
+
+# Extract and print the current year
+current_year = current_date.year
+print("Current year:", current_year)
