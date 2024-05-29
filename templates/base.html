@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Welcome To BIT Lalpur{% endblock title %}</title>
     <link rel="shortcut icon" href="/static/assets/brand/bit50x50.png" type="image/x-icon">
-    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="/static/css/text.css">
     <link rel="stylesheet" href="/static/css/bootstrap.min.css">
     <link rel="stylesheet" href="/static/css/tippy.css">
     <link rel="stylesheet" href="/static/css/backdrop.css">
@@ -25,7 +25,7 @@
                     </a>
                 </li>
                 <div class="vr"></div>
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a target="_blank" href="https://bitmesra.ac.in/Disp_Notify_Admission?cid=1&deptid=11"
                         class="nav-link link-body-emphasis px-2">
                         ADMISSION
@@ -39,7 +39,7 @@
                 </li>
                 <div class="vr"></div>
                 <li class="nav-item">
-                    <a href="faqs.html" class="nav-link link-body-emphasis px-2">
+                    <a href="{% url 'faqs' %}" class="nav-link link-body-emphasis px-2">
                         FAQs
                     </a>
             </ul>
@@ -48,10 +48,14 @@
             </div>
             <!-- sidebar-notification -->
             <div>
-                <button class="btn btn-primary rounded-circle side_toggle p-0 mx-2 msg" type="button"
+                <button class="btn btn-danger rounded-circle side_toggle p-0 mx-2 msg position-relative" type="button"
                     data-tippy-content="Show Notifications" data-bs-toggle="offcanvas"
                     data-bs-target="#bit_lalpur_notification" aria-controls="bit_lalpur_notification">
                     <ion-icon name="notifications-outline" style="font-size: 1.5rem;"></ion-icon>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">
+                        {{ notifications.count }}
+                        <span class="visually-hidden">unread messages</span>
+                      </span>
                 </button>
 
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="bit_lalpur_notification"
@@ -63,19 +67,24 @@
                     </div>
                     <div class="offcanvas-body">
                         <!-- notification -->
-                        <div class="container-fluid d-flex flex-column p-0 m-0 gap-3">
+                        <div class="container-fluid d-flex flex-column p-0 m-0 gap-3 scroll-bar">
                             <!-- notification card -->
-                            <div class="notification container-fluid border border-info bg-info-subtle p-0 m-0 rounded-2 overflow-hidden">
-                                <div class="notification-header border-bottom border-info container-fluid d-flex align-items-center" style="height: 2.3rem;" >
-                                    <h6 class="text-truncate w-75 d-flex align-items-center h-100 m-0">Notification</h6>
-                                    <div class="w-25 d-flex justify-content-end align-items-center">
-                                        <button class="btn-close btn-sm"></button>
+                            {% for notification in notifications %}
+                            <a href="{{ notification.notify_link }}" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
+                                <div
+                                    class="notification container-fluid border border-info bg-info-subtle p-0 m-0 rounded-2 overflow-hidden">
+                                    <div class="notification-header border-bottom border-info container-fluid d-flex align-items-center"
+                                        style="height: 2.3rem;">
+                                        <h6 class="text-truncate w-75 d-flex align-items-center h-100 m-0">
+                                            {{ notification.notif_title }}
+                                        </h6>
+                                    </div>
+                                    <div class="notification-content p-2 w-100">
+                                        Posted On: <span>{{ notification.notif_desc_dtme }}</span>
                                     </div>
                                 </div>
-                                <div class="notification-content p-2 w-100">
-                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium ullam distinctio quos incidunt perferendis quam omnis doloremque deserunt neque delectus molestias quia, quod saepe cumque. Officiis nobis nemo alias quas.
-                                </div>
-                            </div>
+                            </a>
+                            {% endfor %}
 
                         </div>
                         <!-- notification -->
@@ -87,7 +96,7 @@
 
             <!-- sidebar-navigation -->
             <div>
-                <button class="btn btn-primary rounded-circle side_toggle p-0 msg" data-tippy-content="Open Navigation"
+                <button class="btn btn-danger rounded-circle side_toggle p-0 msg" data-tippy-content="Open Navigation"
                     type="button" data-bs-toggle="offcanvas" data-bs-target="#bit_lalput_sidebar"
                     aria-controls="bit_lalput_sidebar">
                     <ion-icon class="menu" name="menu-outline"></ion-icon>
@@ -112,7 +121,7 @@
                             </button>
                             <div class="collapse" id="institute" style>
                                 <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                    <li><a href="#"
+                                    <li><a href="{% url 'administration' %}"
                                             class="link-body-emphasis d-inline-flex text-decoration-none rounded">ADMISTRATION</a>
                                     </li>
                                     <li><a href="#"
@@ -165,21 +174,22 @@
                             <hr>
 
                             <a class="btn btn-toggle d-inline-flex align-items-center rounded border-0 w-100 no_arrow"
-                                href="#">
+                                href="{% url 'plcements' %}">
                                 CAMPUS PLACEMENTS
                             </a>
 
                             <hr>
 
                             <a class="btn btn-toggle d-inline-flex align-items-center rounded border-0 w-100 no_arrow"
-                                href="#">
+                                href="https://bitmesra.ac.in/UploadedDocuments/adminlalpur/files/PUBLICATIONS-2018-2022.pdf"
+                                target="_blank">
                                 REAEARCH
                             </a>
 
                             <hr>
 
                             <a class="btn btn-toggle d-inline-flex align-items-center rounded border-0 w-100 no_arrow"
-                                href="#">
+                                target="_blank" href="https://alumni.bitmesra.ac.in/">
                                 ALUMNI
                             </a>
 
@@ -192,11 +202,12 @@
                             </button>
                             <div class="collapse" id="career" style>
                                 <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                    <li><a href="#"
+                                    <li><a href="https://bitmesra.ac.in/BIT_Curent_Recruitment?cid=7" target="_blank"
                                             class="link-body-emphasis d-inline-flex text-decoration-none rounded">Recruitment
                                             advertisement</a>
                                     </li>
-                                    <li><a href="#"
+                                    <li><a href="https://bitmesra.ac.in/Show_Content_Section?cid=1&pid=507"
+                                            target="_blank"
                                             class="link-body-emphasis d-inline-flex text-decoration-none rounded">Why
                                             Work With Us</a>
                                     </li>
@@ -206,7 +217,7 @@
                             <hr>
 
                             <a class="btn btn-toggle d-inline-flex align-items-center rounded border-0 w-100 no_arrow"
-                                href="#">
+                                href="https://bitmesra.ac.in/BIT_Tender_Notices?cid=7" target="_blank">
                                 TENDER
                             </a>
 
@@ -230,12 +241,8 @@
                 </span>
             </a>
             <div class="d-flex justify-content-center align-items-center">
-                <form class="col-12 col-lg-auto mb-3 mb-lg-0 d-flex input-group" role="search" method="get" action="{% url 'search' %}">
-                    <!-- <div class="gcse-search"></div> -->
-                    <input type="search" class="rounded-start-pill form-control border border-primary msg" id="search"
-                        data-tippy-content="Tell us what to search." placeholder="Search..." aria-label="Search">
-                    <button type="button" class="btn btn-primary rounded-end-pill msg" onclick="executeSearch()"
-                        data-tippy-content="Search Securely">Search</button>
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 d-flex input-group" role="search" method="get"
+                    action="{% url 'search' %}">
                 </form>
             </div>
         </div>
@@ -244,7 +251,6 @@
     {% block body %}
     BIT LALPUR MAIN
     {% endblock body %}
-    <div id="searchResults"></div>
 
 
     <hr class="my-5">
@@ -353,59 +359,28 @@
 
     <script src="/static/js/bootstrap.bundle.min.js"></script>
     <script src="/static/js/jquery.js"></script>
-
-    <!-- Google translate element... -->
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
-        }
-        $('#bit_header_logo').attr('src', function () {
-            return $('body').data('bs-theme') == 'dark' ?
-                "/static/assets/brand/bit_logo.png" :
-                "/static/assets/brand/bit_logo_light.png";
-        });
-        document.addEventListener('DOMContentLoaded', function () {
-            var toastElList = [].slice.call(document.querySelectorAll('.toast'))
-            var toastList = toastElList.map(function (toastEl) {
-                return new bootstrap.Toast(toastEl)
-            })
-            toastList.forEach(toast => toast.show())
-        });
-    </script>
-
     <script type="text/javascript"
         src="//translate.google.com/translate_a/element.jscb=googleTranslateElementInit"></script>
+
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
     <script src="/static/js/popper.min.js"></script>
     <script src="/static/js/tippy-bundle.umd.min.js"></script>
     <script src="/static/js/tooltip.js"></script>
-    <script async src="https://cse.google.com/cse.js?cx=f28d250b0efb9452e">
-    </script>
-    <script>
-        function executeSearch() {
-          var query = document.getElementById('searchInput').value;
-          if (query) {
-            var element = google.search.cse.element.getElement('searchResults');
-            if (element) {
-              element.execute(query);
-            }
-          }
+
+    <!-- Google translate element... -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
         }
-    
-        (function() {
-          var cx = 'f28d250b0efb9452e'; // Replace with your Custom Search Engine ID
-          var gcse = document.createElement('script'); 
-          gcse.type = 'text/javascript'; 
-          gcse.async = true;
-          gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-          var s = document.getElementsByTagName('script')[0]; 
-          s.parentNode.insertBefore(gcse, s);
-        })();
-      </script>
-    
-      <gcse:searchresults-only id="searchResults"></gcse:searchresults-only>
+
+        $('#bit_header_logo').attr('src', function () {
+            return $('body').data('bs-theme') == 'dark' ?
+                "/static/assets/brand/bit_logo.png" :
+                "/static/assets/brand/bit_logo_light.png";
+        });
+    </script>
 
     {% block js %}{% endblock js %}
 

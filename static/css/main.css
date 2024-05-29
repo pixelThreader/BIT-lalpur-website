@@ -140,38 +140,27 @@ ion-icon.menu {
   background: #545454;
 }
 
-.nav-item:hover .nav-link,
-.nav-item.active .nav-link {
-  color: #d33039 !important;
-}
-
-.nav-link:hover,
-.nav-item.active {
-  color: #d33039;
-  text-decoration: none;
-}
-
-.nav-link:not(:focus):not(:hover) {
+.nav-item .nav-link {
   color: initial;
   text-decoration: none;
+  position: relative;
 }
-
-.nav-link:hover:after {
-  content: "";
-  display: block;
-  border-bottom: 2px solid #d33039;
-  width: 100%;
-  transform: scaleX(1);
-  transition: transform 0.25s ease-out;
+.nav-item .nav-link:hover {
+  color: #d33039;
 }
-
-.nav-link:after {
+.nav-item .nav-link:after {
   content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
   display: block;
   border-bottom: 2px solid #fff;
   width: 100%;
   transform: scaleX(0);
   transition: transform 0.25s ease-in;
+}
+.nav-item .nav-link:hover:after {
+  transform: scaleX(1);
 }
 
 .font-para-11 {
