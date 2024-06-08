@@ -17,14 +17,14 @@
 </head>
 
 <body data-bs-theme="light" class="scroll-bar">
-    <nav class="py-2 border-bottom sticky-top" style="background-color: var(--bs-body-bg); z-index: 100000;">
+    <nav class="py-2 border-bottom sticky-top" style="background-color: var(--bs-body-bg); z-index: 1000;">
         <div class="w-100 d-flex justify-content-between align-items-center container">
             <a href="/" rel="noopener noreferrer">
                 <img src="/static/assets/brand/bit100x100.png" alt="" height="50" width="50">
             </a>
             <div class="vr ms-3 me-0"></div>
             <div class="container-fluid m-0 p-0 d-flex flex-wrap justify-content-end">
-                <ul class="nav me-auto d-none d-lg-flex">
+                <ul class="nav me-auto d-none d-lg-flex align-items-center">
                     <li class="nav-item ">
                         <a href="{% url 'about' %}" class="nav-link link-body-emphasis px-2 active" aria-current="page">
                             ABOUT US
@@ -57,6 +57,7 @@
                     data-tippy-content="Dark" id="toggle-theme">
                     <ion-icon name="moon" style="font-size: 1.5rem;"></ion-icon>
                 </button>
+
                 <!-- sidebar-notification -->
                 <div>
                     <button class="btn btn-danger rounded-circle side_toggle p-0 mx-2 msg position-relative"
@@ -87,12 +88,12 @@
                                         class="notification container-fluid border border-info bg-info-subtle p-0 m-0 rounded-2 overflow-hidden">
                                         <div
                                             class="notification-header border-bottom border-info container-fluid d-flex align-items-center">
-                                            <p
-                                                class="w-75 d-flex align-items-center m-0 fs-5 text-light text-capitalize">
+                                            <p class="w-100 d-flex align-items-center m-0 fs-5 text-capitalize">
                                                 {{ notification.notif_title | safe }}
                                             </p>
                                         </div>
-                                        <div class="notification-content p-2 w-100 fs-6 py-1">
+                                        <div class="notification-content p-2 w-100 fs-6 py-1"
+                                            style="color: var(--bs-body-color);">
                                             Posted On: <span>{{ notification.notif_desc_dtme }}</span>
                                         </div>
                                     </div>
@@ -271,6 +272,70 @@
                     </div>
                 </div>
                 <!-- sidebar-navigation -->
+
+
+                <!-- Profile Dropdown -->
+                <div class="dropdown text-end">
+                    <button href="#" data-tippy-content="
+                        {% if request.user.is_authenticated %}
+                        Hii, {{ request.user.first_name }}
+                        {% else %}
+                        Hii user
+                        {% endif %}
+                    " 
+                    class="d-block btn btn-danger msg rounded-pill ms-2 link-body-emphasis text-decoration-none dropdown-toggle p-1 px-3"
+                    data-bs-toggle="dropdown" 
+                    aria-expanded="false"
+                    data-tippy-placement="right">
+                        <ion-icon name="person" style="font-size: 1.5rem;"></ion-icon>
+                    </button>
+                    <ul class="dropdown-menu text-small">
+                        {% if request.user.is_superuser %}
+                        <li>
+                            <a class="dropdown-item" href="/admin">
+                                <ion-icon name="shield-checkmark" class="profile-icons"></ion-icon>
+                                Admin
+                            </a>
+                        </li>
+                        {% endif %}
+                        {% if request.user.is_anonymous %}
+                        <li>
+                            <a class="dropdown-item" href="{% url 'signup' %}">
+                                <ion-icon name="person-add" class="profile-icons"></ion-icon>
+                                Signup
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="{% url 'login' %}">
+                                <ion-icon name="log-in-outline" class="profile-icons"></ion-icon>
+                                Login
+                            </a>
+                        </li>
+                        {% else %}
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <ion-icon name="cog" class="profile-icons"></ion-icon>
+                                Settings
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <ion-icon name="person-circle" class="profile-icons"></ion-icon>
+                                Profile
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li>
+                            <button data-bs-toggle="modal" data-bs-target="#logoutModal" class="dropdown-item">
+                                <ion-icon name="log-out-outline" class="profile-icons"></ion-icon>
+                                Log out
+                            </button>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
             </div>
         </div>
     </nav>
@@ -399,6 +464,29 @@
 
         </footer>
         </footer>
+    </div>
+
+
+    <!-- Useful Modals -->
+
+    <!-- Logout -->
+    <div class="modal fade" id="logoutModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="logoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="logoutModalLabel">Log Out</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <span class="text-capitalize">{{ request.user }}</span>, do you really want to log out?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Back</button>
+                    <a href="{% url 'logout' %}" class="btn btn-danger">Logout</a>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script type="text/javascript">

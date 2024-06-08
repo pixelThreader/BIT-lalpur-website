@@ -10,6 +10,7 @@ class Notification(models.Model):
     notif_title = models.CharField(max_length=500, null=False, default=None)
     notif_desc = models.CharField(max_length=1000, null=False, default=None)
     notify_link = models.TextField(null=True, default=None)
+    is_valid = models.BooleanField(default=True)
 
     class Meta:
         verbose_name = ("notification")

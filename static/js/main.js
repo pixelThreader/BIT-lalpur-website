@@ -9,6 +9,7 @@ function changelogo(theme) {
     // Function to update the toggle button based on the theme
     function updateToggleButton(theme) {
         $('#toggle-theme').attr('title', theme === 'light' ? 'Dark' : 'Light');
+        changeTippy('#toggle-theme',  theme === 'light' ? 'Dark Theme' : 'Light Theme');
         $('#toggle-theme ion-icon').attr('name', theme === 'light' ? 'moon' : 'sunny');
     }
 

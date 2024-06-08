@@ -206,6 +206,11 @@ ion-icon.menu {
   height: 100%;
 }
 
+.profile-icons {
+  line-height: 0;
+  margin-inline-end: 0.6rem;
+}
+
 .mail {
   cursor: pointer !important;
 }
@@ -261,4 +266,19 @@ ion-icon.menu {
 .video__youtube h5,
 .video__youtube p {
   margin-bottom: 0;
+}
+
+.goog-te-combo {
+  cursor: pointer;
+  height: 1.6rem;
+  width: 12rem;
+  border-radius: 0.7rem;
+  background: var(--bs-body-bg);
+  color: var(--bs-body-color);
+  font-size: 1.5rem;
+  padding: 0.2rem 1rem;
+  outline: none;
+}
+.goog-te-combo option {
+  border-radius: 2rem;
 }/*# sourceMappingURL=main.css.map */

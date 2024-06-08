@@ -6,14 +6,14 @@ import datetime
 
 def index(request):
     context = {
-        'notifications': Notification.objects.all(),
+        'notifications': Notification.objects.filter(is_valid=True),
         'year':  datetime.date.today().year
     }
     return render(request, 'add_content/index.html', context=context)
 
 def to_user(request):
     context = {
-        'notifications': Notification.objects.all(),
+        'notifications': Notification.objects.filter(is_valid=True),
         'year':  datetime.date.today().year
     }
     return render(request, 'add_content/to_user.html', context=context)

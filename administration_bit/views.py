@@ -7,28 +7,28 @@ import datetime
 
 def index(request):
     context = {
-        'notifications': Notification.objects.all(),
+        'notifications': Notification.objects.filter(is_valid=True),
         'year':  datetime.date.today().year
     }
     return render(request, 'administrations/index.html', context=context)
 
 def palcements(request):
     context = {
-        'notifications': Notification.objects.all(),
+        'notifications': Notification.objects.filter(is_valid=True),
         'year':  datetime.date.today().year
     }
     return render(request, 'administrations/placements.html', context=context)
 
 def departments(request):
     context = {
-        'notifications': Notification.objects.all(),
+        'notifications': Notification.objects.filter(is_valid=True),
         'year':  datetime.date.today().year
     }
     return render(request, 'administrations/departments.html', context=context)
 
 def department(request, slug):
     context = {
-        'notifications': Notification.objects.all(),
+        'notifications': Notification.objects.filter(is_valid=True),
         'year':  datetime.date.today().year,
         'tit': slug
     }
@@ -36,14 +36,14 @@ def department(request, slug):
 
 def timetable(request):
     context = {
-        'notifications': Notification.objects.all(),
+        'notifications': Notification.objects.filter(is_valid=True),
         'year':  datetime.date.today().year
     }
     return render(request, 'administrations/timetable.html', context=context)
 
 def department_course(request, course):
     context = {
-        'notifications': Notification.objects.all(),
+        'notifications': Notification.objects.filter(is_valid=True),
         'year':  datetime.date.today().year,
         'FAQs': FAQ.objects.all()
     }
@@ -52,7 +52,7 @@ def department_course(request, course):
 
 def faq(request):
     context = {
-        'notifications': Notification.objects.all(),
+        'notifications': Notification.objects.filter(is_valid=True),
         'year':  datetime.date.today().year,
         'FAQs': FAQ.objects.all()
     }

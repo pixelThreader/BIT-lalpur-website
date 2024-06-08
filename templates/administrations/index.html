@@ -1,10 +1,12 @@
+{% extends 'base.html' %}
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{% endblock title %}</title>
+    <title>{% block title %}Administration | BIT Lalpur{% endblock title %}</title>
     <link rel="stylesheet" href="/static/css/mian.css">
     <link rel="stylesheet" href="/static/css/bootstrap.min.css">
 </head>
@@ -22,21 +24,15 @@
                 </div>
 
             </div>
-            <!-- bootstrap copied -->
+            <!-- Starting Cards... -->
             <div class="row m-0 g-5">
                 <div class="col-md-8">
-                    <!-- LHS Container - non-sticky -->
-                    <!-- cards1 -->
+                    <!-- LHS Container - non-sticky... -->
+                    <!-- cards1... -->
                     <div class="container-fluid">
                         <div class="card">
                             <div class="card-body row g-0">
-                                <div class="col-12 col-md-4 d-flex justify-content-center p-2">
-                                    <div>
-                                        <img src="/assets/media/faculties/vandana_bhattacharjee.png " alt=""
-                                            class="img-thumbnail w-100">
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-8 p-2">
+                                <div class="col-12 p-2">
                                     <h5 class="card-title">
                                         <div class="col  d-flex flex-column position-static pb-0">
                                             <strong class="d-inline-block mb-2 text-success">Director
@@ -81,19 +77,13 @@
                             </div>
                         </div>
                     </div>
-                    <!-- cards1 -->
+                    <!-- cards1... -->
                     <br>
-                    <!-- cards2 -->
+                    <!-- cards2... -->
                     <div class="container-fluid">
                         <div class="card">
                             <div class="card-body row g-0">
-                                <div class="col-12 col-md-4 d-flex justify-content-center p-2">
-                                    <div>
-                                        <img src="/assets/media/faculties/manoj_kumar_giri.jpg " alt=""
-                                            class="img-thumbnail w-100">
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-8 p-2">
+                                <div class="col-12 p-2">
                                     <h5 class="card-title">
                                         <div class="col  d-flex flex-column position-static pb-0">
                                             <strong class="d-inline-block mb-2 text-info">Assistant Registrar</strong>
@@ -139,15 +129,15 @@
                             </div>
                         </div>
                     </div>
-                    <!-- cards2 -->
+                    <!-- cards2... -->
                     <hr class="my-4">
-                    <!-- tables -->
+                    <!-- tables... -->
                     <h3 class="text-warning text-center">Contact details of offices at BITOC Lalpur</h3>
                     <div class="table-responsive mt-4 rounded-3">
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th scope="col">Office</th>
+                                    <th scope="col align-center">Office</th>
                                     <th scope="col">Name</th>
                                     <th scope="col">E-mail</th>
                                     <th scope="col">Contacts</th>
@@ -445,9 +435,9 @@
                         <div class="p-4 mb-3 bg-body-tertiary rounded">
                             <h4 class="fst-italic">CURRENT NEWS</h4>
                             <hr class="my-3">
-                            <ul class="list-unstyled nav-item">
-                                <li class="mb-3 nav-link">
-                                    <a href="#" class="list-group-item list-group-item-action active"
+                            <ul class="list-unstyled nav">
+                                <li class="mb-3 nav-item">
+                                    <a href="#" class="list-group-item list-group-item-action nav-link"
                                         aria-current="true">
                                         <div class="d-flex w-100 justify-content-between">
                                             <h6 class="mb-1">Semester Fee and Registration for MO-2023</h6>
@@ -458,8 +448,8 @@
                                         <!-- timestamp -->
                                     </a>
                                 </li>
-                                <li class="mb-3 nav-link">
-                                    <a href="#" class="list-group-item list-group-item-action active"
+                                <li class="mb-3 nav-item">
+                                    <a href="#" class="list-group-item list-group-item-action nav-link"
                                         aria-current="true">
                                         <div class="d-flex w-100 justify-content-between">
                                             <h6 class="mb-1">Semester Fee and Registration for MO-2023</h6>
@@ -470,8 +460,8 @@
                                         <!-- timestamp -->
                                     </a>
                                 </li>
-                                <li class="mb-3 nav-link">
-                                    <a href="#" class="list-group-item list-group-item-action active"
+                                <li class="mb-3 nav-item">
+                                    <a href="#" class="list-group-item list-group-item-action nav-link"
                                         aria-current="true">
                                         <div class="d-flex w-100 justify-content-between">
                                             <h6 class="mb-1">Semester Fee and Registration for MO-2023</h6>
@@ -482,8 +472,8 @@
                                         <!-- timestamp -->
                                     </a>
                                 </li>
-                                <li class="mb-3 nav-link">
-                                    <a href="#" class="list-group-item list-group-item-action active"
+                                <li class="mb-3 nav-item">
+                                    <a href="#" class="list-group-item list-group-item-action nav-link"
                                         aria-current="true">
                                         <div class="d-flex w-100 justify-content-between">
                                             <h6 class="mb-1">Semester Fee and Registration for MO-2023</h6>
