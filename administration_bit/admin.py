@@ -1,6 +1,6 @@
 from django.contrib import admin
-from . models import Notification, FAQ
+from . models import Notification, FAQ, Department
 
 # Register your models here.
 
-admin.site.register((Notification, FAQ))
+admin.site.register((Notification, FAQ, Department))

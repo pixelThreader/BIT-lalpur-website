@@ -34,3 +34,19 @@ class FAQ(models.Model):
 
     def __str__(self):
         return self.question
+
+
+class Department(models.Model):
+
+    sno = models.AutoField(primary_key=True, unique=True)
+    name = models.CharField(max_length=50, default=None)
+    title = models.CharField(max_length=1000, default=None)
+    desc = models.TextField()
+    date_time_added = models.DateTimeField(auto_now=True, auto_now_add=True)
+
+    class Meta:
+        verbose_name = ("Department")
+        verbose_name_plural = ("Departments")
+
+    def __str__(self):
+        return self.name

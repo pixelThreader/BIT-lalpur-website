@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Time Tables | BIT Lalpur{% endblock title %}</title>
+</head>
+<body>
+    {% block body %}
+    <main class="container">
+        <div class="mb-5 pb-5">
+            <h1 class="text-center">Time Table</h1>
+        </div>
+        <div class="cantainer row d-flex justify-content-center align-items-center mt-5 pt-5">
+            <div class="col-6 d-flex justify-content-center align-items-center ">
+                <a target="_blank" href="https://bitmesra.ac.in/UploadedDocuments/adminlalpur/files/TIME%20TABLE%20SP%202023.pdf" class="rounded-3 pdf-btn text-decoration-none d-flex justify-content-center align-items-center flex-column" role="button">
+
+                    <img src="/static/assets/utilities/laptop.jpg" alt="" class="mx-auto img-fluid" height="150" width="150">
+                    <p class="mt-3 px-4 text-center">Department of Computer Science <br> (SP / 2023)</p>
+                </a>
+            </div>
+            <div class="col-6 d-flex justify-content-center align-items-center ">
+                <a target="_blank"  href="https://bitmesra.ac.in/UploadedDocuments/adminlalpur/files/Time-Table%20SP23.pdf" class=" p-3 rounded-3 pdf-btn text-decoration-none d-flex justify-content-center align-items-center flex-column" role="button">
+
+                    <img src="/static/assets/utilities/suitcase.png" alt="" class="mx-auto img-fluid" height="150" width="150">
+                    <p class="mt-3 px-4 text-center">Department of Management <br> (SP/ 2023)</p>
+                </a>
+            </div>
+
+
+        </div>
+    </main>
+    {% endblock body %}
+
+    {% block js %}{% endblock js %}
+</body>
+</html>

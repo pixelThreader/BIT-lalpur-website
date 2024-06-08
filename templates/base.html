@@ -14,8 +14,8 @@
     <link rel="stylesheet" href="/static/css/scale.css">
     <link rel="stylesheet" href="/static/css/light.css">
     {% block css %}{% endblock css %}
-    <script type="text/javascript"
-        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+        async></script>
 </head>
 
 <body data-bs-theme="light">
@@ -109,7 +109,7 @@
                 <div class="offcanvas offcanvas-start" tabindex="-1" id="bit_lalput_sidebar"
                     aria-labelledby="bit_lalput_sidebarLabel">
                     <div class="offcanvas-header">
-                        <a href="#" class="text-decoration-none sidebar_header_text d-flex align-items-center">
+                        <a href="/" class="text-decoration-none sidebar_header_text d-flex align-items-center">
                             <img src="/static/assets/brand/bit100x100.png" height="50" width="50" alt="bit_logo"
                                 class="img-fluid me-2">
                             <h5 class="offcanvas-title" id="bit_lalput_sidebarLabel">BIT MESRA</h5>
@@ -177,7 +177,7 @@
                                             class="link-body-emphasis d-inline-flex text-decoration-none rounded">ACADMICS
                                             PROGRAMS</a>
                                     </li>
-                                    <li><a href="#"
+                                    <li><a href="{% url 'timetable' %}"
                                             class="link-body-emphasis d-inline-flex text-decoration-none rounded">TIME
                                             TABLE</a>
                                     </li>
@@ -392,16 +392,6 @@
 
     <script src="/static/js/bootstrap.bundle.min.js"></script>
     <script src="/static/js/jquery.js"></script>
-    <script>
-        $(document).ready(function () {
-            $('#u_0_0_m0').css({
-                'display': 'flex !important',
-                'justify-content': 'center !important',
-            })
-        });
-    </script>
-    <script type="text/javascript"
-        src="//translate.google.com/translate_a/element.jscb=googleTranslateElementInit"></script>
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
@@ -409,12 +399,14 @@
     <script src="/static/js/popper.min.js"></script>
     <script src="/static/js/tippy-bundle.umd.min.js"></script>
     <script src="/static/js/tooltip.js"></script>
+    <script>
 
-    <!-- Google translate element... -->
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
-        }
+        $(document).ready(function () {
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+            }
+            googleTranslateElementInit();
+        });
 
         $('#bit_header_logo').attr('src', function () {
             return $('body').data('bs-theme') == 'dark' ?
