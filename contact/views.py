@@ -1,9 +1,19 @@
 from django.shortcuts import render
+from administration_bit.models import Notification
+import datetime
 
 # Create your views here.
 
 def index(request):
-    return render(request, 'add_content/index.html')
+    context = {
+        'notifications': Notification.objects.all(),
+        'year':  datetime.date.today().year
+    }
+    return render(request, 'add_content/index.html', context=context)
 
 def to_user(request):
-    return render(request, 'add_content/to_user.html')
+    context = {
+        'notifications': Notification.objects.all(),
+        'year':  datetime.date.today().year
+    }
+    return render(request, 'add_content/to_user.html', context=context)

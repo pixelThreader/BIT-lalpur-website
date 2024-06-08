@@ -1,16 +1,34 @@
 from django.shortcuts import render
+from administration_bit.models import Notification
+import datetime
 
 # Create your views here.
 
 def index(request):
-    return render(request, 'blog/index.html')
+    context = {
+        'notifications': Notification.objects.all(),
+        'year':  datetime.date.today().year
+    }
+    return render(request, 'blog/index.html', context=context)
 
 def blog(request):
-    return render(request, 'blog/blog.html')
+    context = {
+        'notifications': Notification.objects.all(),
+        'year':  datetime.date.today().year
+    }
+    return render(request, 'blog/blog.html', context=context)
 
 def blog_post(request):
-    return render(request, 'blog/blog_post.html')
+    context = {
+        'notifications': Notification.objects.all(),
+        'year':  datetime.date.today().year
+    }
+    return render(request, 'blog/blog_post.html', context=context)
 
 def search(request):
-    return render(request, 'blog/search.html')
+    context = {
+        'notifications': Notification.objects.all(),
+        'year':  datetime.date.today().year
+    }
+    return render(request, 'blog/search.html', context=context)
 
