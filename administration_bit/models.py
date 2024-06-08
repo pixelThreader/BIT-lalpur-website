@@ -42,7 +42,8 @@ class Department(models.Model):
     name = models.CharField(max_length=50, default=None)
     title = models.CharField(max_length=1000, default=None)
     desc = models.TextField()
-    date_time_added = models.DateTimeField(auto_now=True, auto_now_add=True)
+    slug = models.SlugField(db_index=True)
+    date_time_added = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         verbose_name = ("Department")

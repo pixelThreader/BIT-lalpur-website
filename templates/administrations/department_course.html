@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Science | Departments </title>
+    <title>{% block title %}Blog | BIT Lalpur{% endblock title %}</title>
+    <link rel="shortcut icon" href="/assets/brand/bit_logo_50x50.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+</head>
+
+<body>
+
+
+
+    {% block body %}
+    <main class="container">
+        <h1 class="text-center mb-5 gap-4">Department of Computer Science</h1>
+        <div class="row container m-0 d-flex">
+            <!-- LHS -->
+            <div class="col-md-6  position-md-static sticky-top">
+                <div class="department_img rounded-3">
+                    <img src="/static/assets/bit/collage_image.jpg" class="img-fluid" alt="">
+                </div>
+
+                <div class="department_text">
+                    <h4 class="mb-3">Important Links</h4>
+                    <h6>Undergraduate</h6>
+                    <div class="d-flex justify-content-center gap-3">
+                        <button class="btn btn-outline-primary rounded-3" type="button">
+                            <a class="link-body-emphasis text-decoration-none"
+                                href="https://www.bitmesra.ac.in/UploadedDocuments/adminlalpur/files/BCA_CBCS_Syllabus.pdf">
+                                Bachelor of Computer Applications (BCA) Syllabus
+                            </a>
+                        </button>
+
+                        <button class="btn btn-outline-primary rounded-3" type="button">
+                            <a class="link-body-emphasis text-decoration-none"
+                                href="https://www.bitmesra.ac.in/UploadedDocuments/adminlalpur/files/BCA%20Course%20Structure_%20MO-2022%20onwards.pdf">
+                                BCA Course Structure for MO-2022 onwards
+                            </a>
+                        </button>
+
+                        <a class="btn btn-outline-primary rounded-3" style="background-color: #e6e6e6 !important"
+                            href="https://www.bitmesra.ac.in/UploadedDocuments/adminlalpur/files/BCA_Syllabus_MO_2022.pdf">
+                            BCA Syllabus for MO-2022 onwards
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- RHS -->
+            <div class="col-md-6 border rounded-3 bg-home-about text-center">
+                <h3 class="text-center mb-4 mt-5">About Computer Science</h1>
+                    <p>The Department of Computer Science started with the BCA Programme, at Lalpur Extension Centre in
+                        1999. It is driven by the objective of providing students the necessary skills to make
+                        successful IT professionals and also preparing them for higher studies in the pursuit of MCA,
+                        MIT, MS in Computers etc.
+                    </p>
+
+                    <p class="class="text-center"">
+                        The Department has advanced and well-equipped Computer Laboratories broadband connectivity and
+                        latest software. The extension centre's library has an exhaustive collection of books, Journals
+                        and magazines on related disciplines.
+                    </p>
+
+                    <h3 class=" mt-4 mb-4">Programmes</h3>
+
+                    <p>
+                        The Department offers the Bachelor of Computer Application at the undergraduate level and a
+                        Masters of Computer Application at the postgraduate level
+                    </p>
+
+                    <h3 class=" mt-4 mb-4">Course Structure</h3>
+
+                    <p>
+                        The necessary foundation courses required for an accomplished career in Information Technology
+                        is offered at the BCA & MCA . These include:
+                    </p>
+
+                    <ul class="text-start mt-4">
+                        <li>Mathematics</li>
+                        <li>Programming languages and Data structures</li>
+                        <li>Various application software</li>
+                        <li>Knowledge of the tools used in the IT industry</li>
+                        <li>Theory papers like Digital Logic, Computer Architecture and Operating Systems for
+                            understanding
+                            the inner- workings of the computer system.</li>
+                    </ul>
+
+
+            </div>
+        </div>
+    </main>
+    {% endblock body %}
+
+
+
+</html>

@@ -2,6 +2,7 @@
 document.querySelectorAll('.msg').forEach(button => {
     button._tippy = tippy(button, {
         content: 'Tooltip content',
+        zIndex: 1000000000,
         animation: (button.dataset.tippyAnimation == null) ? 'scale' : button.dataset.tippyAnimation,
         inertia: true,
         theme: ($('body').data('bs-theme')=="light")? 'dark':'light',

@@ -14,252 +14,264 @@
     <link rel="stylesheet" href="/static/css/scale.css">
     <link rel="stylesheet" href="/static/css/light.css">
     {% block css %}{% endblock css %}
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-        async></script>
 </head>
 
-<body data-bs-theme="light">
-    <nav class="py-2 border-bottom">
-        <div class="container d-flex flex-wrap">
-            <ul class="nav me-auto d-none d-lg-flex">
-                <li class="nav-item">
-                    <a href="{% url 'about' %}" class="nav-link link-body-emphasis px-2 active" aria-current="page">
-                        ABOUT US
-                    </a>
-                </li>
-                <div class="vr"></div>
-                <li class="nav-item">
-                    <a target="_blank" href="https://bitmesra.ac.in/Disp_Notify_Admission?cid=1&deptid=11"
-                        class="nav-link link-body-emphasis px-2">
-                        ADMISSION
-                    </a>
-                </li>
-                <div class="vr"></div>
-                <li class="nav-item">
-                    <a href="{% url 'departments' %}" class="nav-link link-body-emphasis px-2">
-                        DEPARTMENTS
-                    </a>
-                </li>
-                <div class="vr"></div>
-                <li class="nav-item">
-                    <a href="{% url 'faqs' %}" class="nav-link link-body-emphasis px-2">
-                        FAQs
-                    </a>
-            </ul>
-            <div>
-                <div id="google_translate_element"></div>
-            </div>
-            <!-- sidebar-notification -->
-            <div>
-                <button class="btn btn-danger rounded-circle side_toggle p-0 mx-2 msg position-relative" type="button"
-                    data-tippy-content="Show Notifications" data-bs-toggle="offcanvas"
-                    data-bs-target="#bit_lalpur_notification" aria-controls="bit_lalpur_notification">
-                    <ion-icon name="notifications-outline" style="font-size: 1.5rem;"></ion-icon>
-                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">
-                        {{ notifications.count }}
-                        <span class="visually-hidden">unread messages</span>
-                    </span>
-                </button>
-
-                <div class="offcanvas offcanvas-end" tabindex="-1" id="bit_lalpur_notification"
-                    aria-labelledby="bit_lalpur_notificationLabel">
-                    <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="bit_lalpur_notificationLabel">NOTIFICATIONS</h5>
-                        <button type="button" class="btn-close msg" data-tippy-content="Close Notifications"
-                            data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body">
-                        <!-- notification -->
-                        <div class="container-fluid d-flex flex-column p-0 m-0 gap-3 scroll-bar">
-                            <!-- notification card -->
-                            {% for notification in notifications %}
-                            <a href="{{ notification.notify_link }}" target="_blank" rel="noopener noreferrer"
-                                class="text-decoration-none">
-                                <div
-                                    class="notification container-fluid border border-info bg-info-subtle p-0 m-0 rounded-2 overflow-hidden">
-                                    <div class="notification-header border-bottom border-info container-fluid d-flex align-items-center"
-                                        style="height: 2.3rem;">
-                                        <h6 class="text-truncate w-75 d-flex align-items-center h-100 m-0">
-                                            {{ notification.notif_title }}
-                                        </h6>
-                                    </div>
-                                    <div class="notification-content p-2 w-100">
-                                        Posted On: <span>{{ notification.notif_desc_dtme }}</span>
-                                    </div>
-                                </div>
-                            </a>
-                            {% endfor %}
-
-                        </div>
-                        <!-- notification -->
-                    </div>
-                    <!-- Temp -->
-                </div>
-            </div>
-            <!-- sidebar-notification -->
-
-            <!-- sidebar-navigation -->
-            <div>
-                <button class="btn btn-danger rounded-circle side_toggle p-0 msg" data-tippy-content="Open Navigation"
-                    type="button" data-bs-toggle="offcanvas" data-bs-target="#bit_lalput_sidebar"
-                    aria-controls="bit_lalput_sidebar">
-                    <ion-icon class="menu" name="menu-outline"></ion-icon>
-                </button>
-
-                <div class="offcanvas offcanvas-start" tabindex="-1" id="bit_lalput_sidebar"
-                    aria-labelledby="bit_lalput_sidebarLabel">
-                    <div class="offcanvas-header">
-                        <a href="/" class="text-decoration-none sidebar_header_text d-flex align-items-center">
-                            <img src="/static/assets/brand/bit100x100.png" height="50" width="50" alt="bit_logo"
-                                class="img-fluid me-2">
-                            <h5 class="offcanvas-title" id="bit_lalput_sidebarLabel">BIT MESRA</h5>
+<body data-bs-theme="light" class="scroll-bar">
+    <nav class="py-2 border-bottom sticky-top" style="background-color: var(--bs-body-bg); z-index: 100000;">
+        <div class="w-100 d-flex justify-content-between align-items-center container">
+            <a href="/" rel="noopener noreferrer">
+                <img src="/static/assets/brand/bit100x100.png" alt="" height="50" width="50">
+            </a>
+            <div class="vr ms-3 me-0"></div>
+            <div class="container-fluid m-0 p-0 d-flex flex-wrap justify-content-end">
+                <ul class="nav me-auto d-none d-lg-flex">
+                    <li class="nav-item ">
+                        <a href="{% url 'about' %}" class="nav-link link-body-emphasis px-2 active" aria-current="page">
+                            ABOUT US
                         </a>
-                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body">
-                        <div class="flex-shrink-0 p-3">
-
-                            <a class="btn btn-toggle d-lg-none d-inline-flex align-items-center rounded border-0 w-100 no_arrow"
-                                href="{% url 'about' %}">
-                                ABOUT US
-                            </a>
-
-                            <hr class="d-lg-none">
-
-                            <a class="btn btn-toggle d-lg-none d-inline-flex align-items-center rounded border-0 w-100 no_arrow"
-                                href="{% url 'departments' %}">
-                                ADMISSIONS
-                            </a>
-
-                            <hr class="d-lg-none">
-
-                            <a class="btn btn-toggle d-lg-none d-inline-flex align-items-center rounded border-0 w-100 no_arrow"
-                                href="{% url 'plcements' %}">
-                                DEAPRTMENTS
-                            </a>
-
-                            <hr class="d-lg-none">
-
-                            <a class="btn btn-toggle d-lg-none d-inline-flex align-items-center rounded border-0 w-100 no_arrow"
-                                href="{% url 'plcements' %}">
-                                FAQs
-                            </a>
-
-                            <hr class="d-lg-none">
-
-                            <button
-                                class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed w-100"
-                                data-bs-toggle="collapse" data-bs-target="#institute" aria-expanded="false">
-                                INSTITUTE
-                            </button>
-                            <div class="collapse" id="institute" style>
-                                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                    <li><a href="{% url 'administration' %}"
-                                            class="link-body-emphasis d-inline-flex text-decoration-none rounded">ADMISTRATION</a>
-                                    </li>
-                                    <li><a href="#"
-                                            class="link-body-emphasis d-inline-flex text-decoration-none rounded">CAMPUS
-                                            TOUR</a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <hr>
-
-                            <button
-                                class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed w-100"
-                                data-bs-toggle="collapse" data-bs-target="#acadmics" aria-expanded="false">
-                                ACADMICS
-                            </button>
-                            <div class="collapse" id="acadmics" style>
-                                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                    <li><a href="#"
-                                            class="link-body-emphasis d-inline-flex text-decoration-none rounded">ACADMICS
-                                            PROGRAMS</a>
-                                    </li>
-                                    <li><a href="{% url 'timetable' %}"
-                                            class="link-body-emphasis d-inline-flex text-decoration-none rounded">TIME
-                                            TABLE</a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <hr>
-
-                            <button
-                                class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed w-100"
-                                data-bs-toggle="collapse" data-bs-target="#students" aria-expanded="false">
-                                STUDENTS
-                            </button>
-                            <div class="collapse" id="students" style>
-                                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                    <li><a href="#"
-                                            class="link-body-emphasis d-inline-flex text-decoration-none rounded">CURRENT
-                                            STUDENTS</a>
-                                    </li>
-                                    <li><a href="#"
-                                            class="link-body-emphasis d-inline-flex text-decoration-none rounded">PROSPECTIVE
-                                            STUDENTS</a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <hr>
-
-                            <a class="btn btn-toggle d-inline-flex align-items-center rounded border-0 w-100 no_arrow"
-                                href="{% url 'plcements' %}">
-                                CAMPUS PLACEMENTS
-                            </a>
-
-                            <hr>
-
-                            <a class="btn btn-toggle d-inline-flex align-items-center rounded border-0 w-100 no_arrow"
-                                href="https://bitmesra.ac.in/UploadedDocuments/adminlalpur/files/PUBLICATIONS-2018-2022.pdf"
-                                target="_blank">
-                                REAEARCH
-                            </a>
-
-                            <hr>
-
-                            <a class="btn btn-toggle d-inline-flex align-items-center rounded border-0 w-100 no_arrow"
-                                target="_blank" href="https://alumni.bitmesra.ac.in/">
-                                ALUMNI
-                            </a>
-
-                            <hr>
-
-                            <button
-                                class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed w-100"
-                                data-bs-toggle="collapse" data-bs-target="#career" aria-expanded="false">
-                                CAREER
-                            </button>
-                            <div class="collapse" id="career" style>
-                                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                    <li><a href="https://bitmesra.ac.in/BIT_Curent_Recruitment?cid=7" target="_blank"
-                                            class="link-body-emphasis d-inline-flex text-decoration-none rounded">Recruitment
-                                            advertisement</a>
-                                    </li>
-                                    <li><a href="https://bitmesra.ac.in/Show_Content_Section?cid=1&pid=507"
-                                            target="_blank"
-                                            class="link-body-emphasis d-inline-flex text-decoration-none rounded">Why
-                                            Work With Us</a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <hr>
-
-                            <a class="btn btn-toggle d-inline-flex align-items-center rounded border-0 w-100 no_arrow"
-                                href="https://bitmesra.ac.in/BIT_Tender_Notices?cid=7" target="_blank">
-                                TENDER
-                            </a>
-
-                        </div>
-                    </div>
-                    <!-- Temp -->
+                    </li>
+                    <div class="vr"></div>
+                    <li class="nav-item">
+                        <a target="_blank" href="https://bitmesra.ac.in/Disp_Notify_Admission?cid=1&deptid=11"
+                            class="nav-link link-body-emphasis px-2">
+                            ADMISSION
+                        </a>
+                    </li>
+                    <div class="vr"></div>
+                    <li class="nav-item">
+                        <a href="{% url 'departments' %}" class="nav-link link-body-emphasis px-2">
+                            DEPARTMENTS
+                        </a>
+                    </li>
+                    <div class="vr"></div>
+                    <li class="nav-item">
+                        <a href="{% url 'faqs' %}" class="nav-link link-body-emphasis px-2">
+                            FAQs
+                        </a>
+                </ul>
+                <div>
+                    <div id="google_translate_element"></div>
                 </div>
+
+                <button class="btn btn-danger rounded-circle side_toggle p-0 ms-2 msg position-relative" type="button"
+                    data-tippy-content="Dark" id="toggle-theme">
+                    <ion-icon name="moon" style="font-size: 1.5rem;"></ion-icon>
+                </button>
+                <!-- sidebar-notification -->
+                <div>
+                    <button class="btn btn-danger rounded-circle side_toggle p-0 mx-2 msg position-relative"
+                        type="button" data-tippy-content="Show Notifications" data-bs-toggle="offcanvas"
+                        data-bs-target="#bit_lalpur_notification" aria-controls="bit_lalpur_notification">
+                        <ion-icon name="notifications-outline" style="font-size: 1.5rem;"></ion-icon>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">
+                            {{ notifications.count }}
+                            <span class="visually-hidden">unread messages</span>
+                        </span>
+                    </button>
+
+                    <div class="offcanvas offcanvas-end" tabindex="-1" id="bit_lalpur_notification"
+                        aria-labelledby="bit_lalpur_notificationLabel">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="bit_lalpur_notificationLabel">NOTIFICATIONS</h5>
+                            <button type="button" class="btn-close msg" data-tippy-content="Close Notifications"
+                                data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <!-- notification -->
+                            <div class="container-fluid d-flex flex-column p-0 m-0 gap-3 scroll-bar">
+                                <!-- notification card -->
+                                {% for notification in notifications %}
+                                <a href="{{ notification.notify_link }}" target="_blank" rel="noopener noreferrer"
+                                    class="text-decoration-none">
+                                    <div
+                                        class="notification container-fluid border border-info bg-info-subtle p-0 m-0 rounded-2 overflow-hidden">
+                                        <div
+                                            class="notification-header border-bottom border-info container-fluid d-flex align-items-center">
+                                            <p
+                                                class="w-75 d-flex align-items-center m-0 fs-5 text-light text-capitalize">
+                                                {{ notification.notif_title | safe }}
+                                            </p>
+                                        </div>
+                                        <div class="notification-content p-2 w-100 fs-6 py-1">
+                                            Posted On: <span>{{ notification.notif_desc_dtme }}</span>
+                                        </div>
+                                    </div>
+                                </a>
+                                {% endfor %}
+
+                            </div>
+                            <!-- notification -->
+                        </div>
+                        <!-- Temp -->
+                    </div>
+                </div>
+                <!-- sidebar-notification -->
+
+                <!-- sidebar-navigation -->
+                <div>
+                    <button class="btn btn-danger rounded-circle side_toggle p-0 msg"
+                        data-tippy-content="Open Navigation" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#bit_lalput_sidebar" aria-controls="bit_lalput_sidebar">
+                        <ion-icon class="menu" name="menu-outline"></ion-icon>
+                    </button>
+
+                    <div class="offcanvas offcanvas-start" tabindex="-1" id="bit_lalput_sidebar"
+                        aria-labelledby="bit_lalput_sidebarLabel">
+                        <div class="offcanvas-header">
+                            <a href="/" class="text-decoration-none sidebar_header_text d-flex align-items-center">
+                                <img src="/static/assets/brand/bit100x100.png" height="50" width="50" alt="bit_logo"
+                                    class="img-fluid me-2">
+                                <h5 class="offcanvas-title" id="bit_lalput_sidebarLabel">BIT MESRA</h5>
+                            </a>
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <div class="flex-shrink-0 p-3">
+
+                                <a class="btn btn-toggle d-lg-none d-inline-flex align-items-center rounded border-0 w-100 no_arrow"
+                                    href="{% url 'about' %}">
+                                    ABOUT US
+                                </a>
+
+                                <hr class="d-lg-none">
+
+                                <a class="btn btn-toggle d-lg-none d-inline-flex align-items-center rounded border-0 w-100 no_arrow"
+                                    href="{% url 'departments' %}">
+                                    ADMISSIONS
+                                </a>
+
+                                <hr class="d-lg-none">
+
+                                <a class="btn btn-toggle d-lg-none d-inline-flex align-items-center rounded border-0 w-100 no_arrow"
+                                    href="{% url 'plcements' %}">
+                                    DEAPRTMENTS
+                                </a>
+
+                                <hr class="d-lg-none">
+
+                                <a class="btn btn-toggle d-lg-none d-inline-flex align-items-center rounded border-0 w-100 no_arrow"
+                                    href="{% url 'plcements' %}">
+                                    FAQs
+                                </a>
+
+                                <hr class="d-lg-none">
+
+                                <button
+                                    class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed w-100"
+                                    data-bs-toggle="collapse" data-bs-target="#institute" aria-expanded="false">
+                                    INSTITUTE
+                                </button>
+                                <div class="collapse" id="institute" style>
+                                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                        <li><a href="{% url 'administration' %}"
+                                                class="link-body-emphasis d-inline-flex text-decoration-none rounded">ADMISTRATION</a>
+                                        </li>
+                                        <li><a href="#"
+                                                class="link-body-emphasis d-inline-flex text-decoration-none rounded">CAMPUS
+                                                TOUR</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <hr>
+
+                                <button
+                                    class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed w-100"
+                                    data-bs-toggle="collapse" data-bs-target="#acadmics" aria-expanded="false">
+                                    ACADMICS
+                                </button>
+                                <div class="collapse" id="acadmics" style>
+                                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                        <li><a href="#"
+                                                class="link-body-emphasis d-inline-flex text-decoration-none rounded">ACADMICS
+                                                PROGRAMS</a>
+                                        </li>
+                                        <li><a href="{% url 'timetable' %}"
+                                                class="link-body-emphasis d-inline-flex text-decoration-none rounded">TIME
+                                                TABLE</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <hr>
+
+                                <button
+                                    class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed w-100"
+                                    data-bs-toggle="collapse" data-bs-target="#students" aria-expanded="false">
+                                    STUDENTS
+                                </button>
+                                <div class="collapse" id="students" style>
+                                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                        <li><a href="#"
+                                                class="link-body-emphasis d-inline-flex text-decoration-none rounded">CURRENT
+                                                STUDENTS</a>
+                                        </li>
+                                        <li><a href="#"
+                                                class="link-body-emphasis d-inline-flex text-decoration-none rounded">PROSPECTIVE
+                                                STUDENTS</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <hr>
+
+                                <a class="btn btn-toggle d-inline-flex align-items-center rounded border-0 w-100 no_arrow"
+                                    href="{% url 'plcements' %}">
+                                    CAMPUS PLACEMENTS
+                                </a>
+
+                                <hr>
+
+                                <a class="btn btn-toggle d-inline-flex align-items-center rounded border-0 w-100 no_arrow"
+                                    href="https://bitmesra.ac.in/UploadedDocuments/adminlalpur/files/PUBLICATIONS-2018-2022.pdf"
+                                    target="_blank">
+                                    REAEARCH
+                                </a>
+
+                                <hr>
+
+                                <a class="btn btn-toggle d-inline-flex align-items-center rounded border-0 w-100 no_arrow"
+                                    target="_blank" href="https://alumni.bitmesra.ac.in/">
+                                    ALUMNI
+                                </a>
+
+                                <hr>
+
+                                <button
+                                    class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed w-100"
+                                    data-bs-toggle="collapse" data-bs-target="#career" aria-expanded="false">
+                                    CAREER
+                                </button>
+                                <div class="collapse" id="career" style>
+                                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                        <li><a href="https://bitmesra.ac.in/BIT_Curent_Recruitment?cid=7"
+                                                target="_blank"
+                                                class="link-body-emphasis d-inline-flex text-decoration-none rounded">Recruitment
+                                                advertisement</a>
+                                        </li>
+                                        <li><a href="https://bitmesra.ac.in/Show_Content_Section?cid=1&pid=507"
+                                                target="_blank"
+                                                class="link-body-emphasis d-inline-flex text-decoration-none rounded">Why
+                                                Work With Us</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <hr>
+
+                                <a class="btn btn-toggle d-inline-flex align-items-center rounded border-0 w-100 no_arrow"
+                                    href="https://bitmesra.ac.in/BIT_Tender_Notices?cid=7" target="_blank">
+                                    TENDER
+                                </a>
+
+                            </div>
+                        </div>
+                        <!-- Temp -->
+                    </div>
+                </div>
+                <!-- sidebar-navigation -->
             </div>
-            <!-- sidebar-navigation -->
         </div>
     </nav>
 
@@ -290,7 +302,7 @@
 
     <div class="container">
 
-        <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 pt-5 mt-5 mb-3">
+        <footer class="row row-cols-1 row-cols-md-2 row-cols-lg-5 py-5 mb-3">
             <div class="col mb-3">
                 <a href="/"
                     class="d-flex justify-content-center align-items-center mb-3 link-body-emphasis text-decoration-none">
@@ -300,9 +312,9 @@
                     © <span class="year">{{ year }}</span> Bit Mesra</p>
             </div>
 
-            <hr style="width:80%; margin:0 auto; display:block;" class="d-block d-sm-none pb-3">
+            <hr style="width:80%; margin:0 auto; display:block;" class="d-block d-md-none pb-3">
 
-            <div class="col-sm-12 d-flex justify-content-center">
+            <div class="col-md-12 d-flex justify-content-center">
                 <div class="text-center">
                     <ul class="nav flex-column">
                         <li class="nav-item mb-2"><a target="_blank"
@@ -316,9 +328,9 @@
                 </div>
             </div>
 
-            <hr style="width:80%; margin:0 auto; display:block;" class="d-block d-sm-none pb-3 mt-3">
+            <hr style="width:80%; margin:0 auto; display:block;" class="d-block d-md-none pb-3 mt-3">
 
-            <div class="col-sm-12 d-flex justify-content-center">
+            <div class="col-md-12 d-flex justify-content-center">
                 <div class="text-center">
                     <ul class="nav flex-column">
                         <li class="nav-item mb-2"><a target="_blank"
@@ -329,9 +341,9 @@
                 </div>
             </div>
 
-            <hr style="width:80%; margin:0 auto; display:block;" class="d-block d-sm-none pb-3 mt-3">
+            <hr style="width:80%; margin:0 auto; display:block;" class="d-block d-md-none pb-3 mt-3">
 
-            <div class="col-sm-12 d-flex justify-content-center">
+            <div class="col-md-12 d-flex justify-content-center">
                 <div class="text-center">
                     <ul class="nav flex-column">
                         <li class="nav-item mb-2"><a target="_blank"
@@ -347,9 +359,9 @@
                 </div>
             </div>
 
-            <hr style="width:80%; margin:0 auto; display:block;" class="d-block d-sm-none pb-3 mt-3">
+            <hr style="width:80%; margin:0 auto; display:block;" class="d-block d-md-none pb-3 mt-3">
 
-            <div class="col-sm-12 d-flex justify-content-center">
+            <div class="col-md-12 d-flex justify-content-center">
                 <div class="text-center">
                     <h5 class="text-body-secondary">Social</h5>
                     <ul class="nav flex-column">
@@ -389,6 +401,14 @@
         </footer>
     </div>
 
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+        }
+    </script>
+
+    <script type="text/javascript"
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
     <script src="/static/js/bootstrap.bundle.min.js"></script>
     <script src="/static/js/jquery.js"></script>
@@ -401,17 +421,26 @@
     <script src="/static/js/tooltip.js"></script>
     <script>
 
-        $(document).ready(function () {
-            function googleTranslateElementInit() {
-                new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
-            }
-            googleTranslateElementInit();
-        });
+        function changelogo() {
+            $('#bit_header_logo').attr('src', function () {
+                return $('body').data('bs-theme') == 'dark' ?
+                    "/static/assets/brand/bit_logo.png" :
+                    "/static/assets/brand/bit_logo_light.png";
+            });
+        }
 
-        $('#bit_header_logo').attr('src', function () {
-            return $('body').data('bs-theme') == 'dark' ?
-                "/static/assets/brand/bit_logo.png" :
-                "/static/assets/brand/bit_logo_light.png";
+        changelogo();
+
+        $(document).ready(function () {
+            $('#toggle-theme').click(function () {
+                var body = $('body');
+                var currentTheme = body.attr('data-bs-theme');
+                var newTheme = currentTheme === 'light' ? 'dark' : 'light';
+                body.attr('data-bs-theme', newTheme);
+                $('#toggle-theme').attr('title', newTheme === 'light' ? 'Dark' : 'Light');
+                $('#toggle-theme ion-icon').attr('name', newTheme === 'light' ? 'moon' : 'sunny');
+                changelogo();
+            });
         });
     </script>
 

@@ -15,14 +15,14 @@
         </div>
         <div class="cantainer row d-flex justify-content-center align-items-center mt-5 pt-5">
             <div class="col-6 d-flex justify-content-center align-items-center ">
-                <a href="departments_1.html" class="rounded-3 pdf-btn text-decoration-none d-flex justify-content-center align-items-center flex-column" role="button">
+                <a href="{% url 'departments' %}computer-science" class="rounded-3 pdf-btn text-decoration-none d-flex justify-content-center align-items-center flex-column" role="button">
 
                     <img src="/static/assets/utilities/laptop.jpg" alt="" class="mx-auto img-fluid" height="150" width="150">
                     <p class="mt-3 px-4 text-center">Department of Computer Science</p>
                 </a>
             </div>
             <div class="col-6 d-flex justify-content-center align-items-center ">
-                <a href="#" class=" p-3 rounded-3 pdf-btn text-decoration-none d-flex justify-content-center align-items-center flex-column" role="button">
+                <a href="{% url 'departments' %}management" class=" p-3 rounded-3 pdf-btn text-decoration-none d-flex justify-content-center align-items-center flex-column" role="button">
 
                     <img src="/static/assets/utilities/suitcase.png" alt="" class="mx-auto img-fluid" height="150" width="150">
                     <p class="mt-3 px-4 text-center">Department of Management </p>

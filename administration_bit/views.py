@@ -12,8 +12,12 @@ def palcements(request):
 def departments(request):
     return render(request, 'administrations/departments.html')
 
-def departments_(request, slug):
-    return render(request, 'administrations/departments.html')
+def department(request, slug):
+    
+    context = {
+        'tit': slug
+    }
+    return render(request, 'administrations/department_course.html', context=context)
 
 def timetable(request):
     return render(request, 'administrations/timetable.html')
