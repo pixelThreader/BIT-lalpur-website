@@ -1,0 +1,28 @@
+{
+    "login_page": [
+        {
+            "id": 1,
+            "text": "login",
+            "bengali": "প্রবেশ করুন",
+            "hindi": "लॉगिन",
+            "marathi": "लॉगिन करा",
+            "gujarati": "પ્રવેશ કરો",
+            "kannada": "ಲಾಗಿನ್ ಮಾಡಿ",
+            "malayalam": "ലോഗിൻ",
+            "tamil": "உள்நுழைய",
+            "punjabi": "ਲਾਗਿਨ"
+        },
+        {
+            "id": 2,
+            "text": "login",
+            "bengali": "প্রবেশ করুন",
+            "hindi": "लॉगिन",
+            "marathi": "लॉगिन करा",
+            "gujarati": "પ્રવેશ કરો",
+            "kannada": "ಲಾಗಿನ್ ಮಾಡಿ",
+            "malayalam": "ലോഗിൻ",
+            "tamil": "உள்நுழைய",
+            "punjabi": "ਲਾਗਿਨ"
+        }
+    ]
+}

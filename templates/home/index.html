@@ -36,6 +36,8 @@
 <body>
 
     {% block body %}
+
+    <div id="fb-root"></div>
     <main>
         <!-- Carousel -->
         <div class="container">
@@ -435,62 +437,21 @@
                                 Facebook Feed</h4>
                         </div>
                         <!-- Body-BlockName -->
-                        <div class="container-fluid border rounded-2 overflow-hidden py-3 d-flex justify-content-center"
+                        <div class="container-fluid border rounded-2 overflow-hidden d-flex justify-content-center"
                             style="height: 500px;">
-                            <div class="fb-page fb_iframe_widget" data-href="https://www.facebook.com/BITMesraRanchi/"
-                                data-tabs="timeline, events, messages" data-width="500"
-                                style="width: 100%; height: 100%" data-small-header="true"
-                                data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"
-                                fb-xfbml-state="rendered"
-                                fb-iframe-plugin-query="adapt_container_width=true&amp;app_id=1599809536914893&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2FBITMesraRanchi%2F&amp;locale=en_US&amp;sdk=joey&amp;show_facepile=true&amp;small_header=true&amp;tabs=timeline%2C%20events%2C%20messages&amp;width=750">
-                                <span style="vertical-align: bottom; width: 100%; height: 100%">
-                                    <iframe name="f82a896092667d564" data-testid="fb:page Facebook Social Plugin"
-                                        title="fb:page Facebook Social Plugin" frameborder="0" allowtransparency="true"
-                                        allowfullscreen="true" scrolling="no" allow="encrypted-media"
-                                        src="https://www.facebook.com/v7.0/plugins/page.php?adapt_container_width=true&amp;app_id=1599809536914893&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df81827e23fd3ce308%26domain%3Dwww.bitmesra.ac.in%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fwww.bitmesra.ac.in%252Ff376744f4f9f522d7%26relation%3Dparent.parent&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2FBITMesraRanchi%2F&amp;locale=en_US&amp;sdk=joey&amp;show_facepile=true&amp;small_header=true&amp;tabs=timeline%2C%20events%2C%20messages"
-                                        style="border: none; visibility: visible; width: 100%; height: 100%"
-                                        data-gtm-yt-inspected-8="true" class=""></iframe>
-                                </span>
+                            <div class="fb-page" data-href="https://www.facebook.com/BITMesraRanchi"
+                                data-tabs="timeline" data-width="" data-height="" data-small-header="false"
+                                data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="true">
+                                <blockquote cite="https://www.facebook.com/BITMesraRanchi"
+                                    class="fb-xfbml-parse-ignore"><a
+                                        href="https://www.facebook.com/BITMesraRanchi">Birla Institute of Technology</a>
+                                </blockquote>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <!-- Youtube Style -->
-        <style>
-            .responsive-iframe-container {
-                position: relative;
-                overflow: hidden;
-                width: 100%;
-                padding-top: 56.25%;
-                /* 16:9 Aspect Ratio */
-                border-radius: 8px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            }
-
-            .responsive-iframe-container iframe {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                border: 0;
-            }
-
-            .video__youtube {
-                background-color: #343a40;
-                border-radius: 8px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            }
-
-            .video__youtube h5,
-            .video__youtube p {
-                margin-bottom: 0;
-                /* width: calc(100% - 1rem); */
-            }
-        </style>
 
 
         <!-- Youtube Style -->
@@ -533,42 +494,48 @@
                                     </div>
                                 </div>
                                 <!-- a -->
-                                
+
                                 <div class="col-md-4">
                                     <div class="video__youtube p-2">
                                         <div
                                             class="container-fluid p-0 d-flex justify-content-center align-items-center flex-column">
                                             <div class="responsive-iframe-container mb-3">
-                                        <iframe id="mejs_9657570935983175_youtube_iframe" frameborder="0"
-                                            allowfullscreen=""
-                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                            referrerpolicy="strict-origin-when-cross-origin"
-                                            title="The official anthem of BIT Mesra Ranchi"
-                                            src="https://www.youtube.com/embed/zqOTIdO7_0U?controls=0&amp;rel=0&amp;disablekb=1&amp;showinfo=0&amp;modestbranding=0&amp;html5=1&amp;playsinline=0&amp;start=0&amp;end=0&amp;iv_load_policy=3&amp;autoplay=0&amp;loop=0&amp;nocookie=false&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fwww.bitmesra.ac.in&amp;widgetid=2"
-                                            data-gtm-yt-inspected-8="true" width="362.663" height="203"></iframe>
+                                                <iframe id="mejs_9657570935983175_youtube_iframe" frameborder="0"
+                                                    allowfullscreen=""
+                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                    referrerpolicy="strict-origin-when-cross-origin"
+                                                    title="The official anthem of BIT Mesra Ranchi"
+                                                    src="https://www.youtube.com/embed/zqOTIdO7_0U?controls=0&amp;rel=0&amp;disablekb=1&amp;showinfo=0&amp;modestbranding=0&amp;html5=1&amp;playsinline=0&amp;start=0&amp;end=0&amp;iv_load_policy=3&amp;autoplay=0&amp;loop=0&amp;nocookie=false&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fwww.bitmesra.ac.in&amp;widgetid=2"
+                                                    data-gtm-yt-inspected-8="true" width="362.663"
+                                                    height="203"></iframe>
                                             </div>
-                                            <h5 class="px-2 w-100 text-truncate">The official anthem of BIT Mesra Ranchi</h5>
-                                            <p class="px-2 w-100 title text-truncate">Participants and all the respected guests singing the official song of BIT on the auspicious occasion of the launch of 5 days short term course DMBA23</p>
+                                            <h5 class="px-2 w-100 text-truncate">The official anthem of BIT Mesra Ranchi
+                                            </h5>
+                                            <p class="px-2 w-100 title text-truncate">Participants and all the respected
+                                                guests singing the official song of BIT on the auspicious occasion of
+                                                the launch of 5 days short term course DMBA23</p>
                                         </div>
                                     </div>
                                 </div>
                                 <!-- a -->
-                                
+
                                 <div class="col-md-4">
                                     <div class="video__youtube p-2">
                                         <div
                                             class="container-fluid p-0 d-flex justify-content-center align-items-center flex-column">
                                             <div class="responsive-iframe-container mb-3">
-                                        <iframe id="mejs_6376271062091905_youtube_iframe" frameborder="0"
-                                            allowfullscreen=""
-                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                            referrerpolicy="strict-origin-when-cross-origin"
-                                            title="DMBA 2023 Inauguration - Speech By Dr. C. Jagannathan (DRIE, BIT Mesra)"
-                                            src="https://www.youtube.com/embed/nqI7EQf9Wdc?controls=0&amp;rel=0&amp;disablekb=1&amp;showinfo=0&amp;modestbranding=0&amp;html5=1&amp;playsinline=0&amp;start=0&amp;end=0&amp;iv_load_policy=3&amp;autoplay=0&amp;loop=0&amp;nocookie=false&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fwww.bitmesra.ac.in&amp;widgetid=1"
-                                            data-gtm-yt-inspected-8="true" width="362.663" height="203"></iframe>
+                                                <iframe id="mejs_6376271062091905_youtube_iframe" frameborder="0"
+                                                    allowfullscreen=""
+                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                    referrerpolicy="strict-origin-when-cross-origin"
+                                                    title="DMBA 2023 Inauguration - Speech By Dr. C. Jagannathan (DRIE, BIT Mesra)"
+                                                    src="https://www.youtube.com/embed/nqI7EQf9Wdc?controls=0&amp;rel=0&amp;disablekb=1&amp;showinfo=0&amp;modestbranding=0&amp;html5=1&amp;playsinline=0&amp;start=0&amp;end=0&amp;iv_load_policy=3&amp;autoplay=0&amp;loop=0&amp;nocookie=false&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fwww.bitmesra.ac.in&amp;widgetid=1"
+                                                    data-gtm-yt-inspected-8="true" width="362.663"
+                                                    height="203"></iframe>
                                             </div>
                                             <h5 class="px-2 w-100 text-truncate">DMBA 2023</h5>
-                                            <p class="px-2 w-100 title text-truncate">DMBA 2023 Inauguration - Speech By Dr. C. Jagannathan (DRIE, BIT Mesra)</p>
+                                            <p class="px-2 w-100 title text-truncate">DMBA 2023 Inauguration - Speech By
+                                                Dr. C. Jagannathan (DRIE, BIT Mesra)</p>
                                         </div>
                                     </div>
                                 </div>
@@ -607,6 +574,9 @@
             },
         });
     </script>
+
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v20.0"
+        nonce="CdWhndxI"></script>
 
     {% endblock js %}
 
