@@ -419,30 +419,7 @@
     <script src="/static/js/popper.min.js"></script>
     <script src="/static/js/tippy-bundle.umd.min.js"></script>
     <script src="/static/js/tooltip.js"></script>
-    <script>
-
-        function changelogo() {
-            $('#bit_header_logo').attr('src', function () {
-                return $('body').data('bs-theme') == 'dark' ?
-                    "/static/assets/brand/bit_logo.png" :
-                    "/static/assets/brand/bit_logo_light.png";
-            });
-        }
-
-        changelogo();
-
-        $(document).ready(function () {
-            $('#toggle-theme').click(function () {
-                var body = $('body');
-                var currentTheme = body.attr('data-bs-theme');
-                var newTheme = currentTheme === 'light' ? 'dark' : 'light';
-                body.attr('data-bs-theme', newTheme);
-                $('#toggle-theme').attr('title', newTheme === 'light' ? 'Dark' : 'Light');
-                $('#toggle-theme ion-icon').attr('name', newTheme === 'light' ? 'moon' : 'sunny');
-                changelogo();
-            });
-        });
-    </script>
+    <script src="/static/js/main.js"></script>
 
     {% block js %}{% endblock js %}
 
