@@ -282,12 +282,9 @@
                         {% else %}
                         Hii user
                         {% endif %}
-                    " 
-                    class="d-block btn btn-danger msg rounded-pill ms-2 link-body-emphasis text-decoration-none dropdown-toggle p-1 px-3"
-                    data-bs-toggle="dropdown" 
-                    aria-expanded="false"
-                    data-tippy-placement="right">
-                        <ion-icon name="person" style="font-size: 1.5rem;"></ion-icon>
+                    " class="d-block btn btn-danger msg rounded-pill ms-2 link-body-emphasis text-decoration-none dropdown-toggle p-1 px-3"
+                        data-bs-toggle="dropdown" aria-expanded="false" data-tippy-placement="right">
+                        <ion-icon name="person" style="font-size: 1.5rem;" class="text-light"></ion-icon>
                     </button>
                     <ul class="dropdown-menu text-small">
                         {% if request.user.is_superuser %}
@@ -351,8 +348,15 @@
                 </span>
             </a>
             <div class="d-flex justify-content-center align-items-center">
-                <form class="col-12 col-lg-auto mb-3 mb-lg-0 d-flex input-group" role="search" method="get"
-                    action="{% url 'search' %}">
+                <form action="{% url 'search' %}" class="col-12 col-lg-auto mb-3 mb-lg-0 d-flex input-group" role="search" method="get">
+                    <div class="input-group mb-3 md-mt-5">
+                        <input type="text" class="form-control" placeholder="Search" aria-label="Search"
+                            aria-describedby="search-btn-google-bit" />
+                        <button class="btn btn-danger" type="button"
+                            id="search-btn-google-bit">
+                            <ion-icon name="search"></ion-icon>
+                        </button>
+                    </div>
                 </form>
             </div>
         </div>
@@ -508,6 +512,8 @@
     <script src="/static/js/tippy-bundle.umd.min.js"></script>
     <script src="/static/js/tooltip.js"></script>
     <script src="/static/js/main.js"></script>
+    <!-- Google Search -->
+    <script async src="https://cse.google.com/cse.js?cx=05bbe2c050e424cb6"></script>
 
     {% block js %}{% endblock js %}
 

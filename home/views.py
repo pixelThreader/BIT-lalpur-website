@@ -18,10 +18,3 @@ def about(request):
         'year':  datetime.date.today().year
     }
     return render(request, 'home/about.html', context=context)
-
-def contact(request):
-    context = {
-        'notifications': Notification.objects.filter(is_valid=True),
-        'year':  datetime.date.today().year
-    }
-    return render(request, 'home/contact.html', context=context)

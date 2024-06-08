@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import JsonResponse
 from administration_bit.models import Notification
 import datetime
 
@@ -9,11 +10,19 @@ def index(request):
         'notifications': Notification.objects.filter(is_valid=True),
         'year':  datetime.date.today().year
     }
-    return render(request, 'add_content/index.html', context=context)
+    return render(request, 'home/contact.html', context=context)
 
 def to_user(request):
+
+    if request.method=='POST':
+        name = request.POST.get('sender-name')
+        from_email = request.POST.get('sender-mail')
+        to_email = request.POST.get('reciver-mail')
+        title = request.POST.get('mail-header')
+        description = request.POST.get('mail-body')
+
     context = {
         'notifications': Notification.objects.filter(is_valid=True),
         'year':  datetime.date.today().year
     }
-    return render(request, 'add_content/to_user.html', context=context)
+    return JsonResponse(context)
