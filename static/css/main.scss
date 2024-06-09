@@ -60,13 +60,12 @@ ion-icon.menu {
     padding: .25rem .5rem;
     font-weight: 600;
     color: var(--bs-emphasis-color);
-    background-color: transparent;
 }
 
 .btn-toggle:hover,
 .btn-toggle:focus {
-    color: rgba(var(--bs-emphasis-color-rgb), .85 !important);
-    background-color: #dbb2b2 !important;
+    color: rgba(var(--bs-emphasis-color-rgb), .85) !important;
+    background-color: var(--hover-link) !important;
 }
 
 .btn-toggle::before {
@@ -91,7 +90,7 @@ ion-icon.menu {
 
 .btn-toggle[aria-expanded="true"] {
     color: rgba(var(--bs-emphasis-color-rgb), .85);
-    background-color: var(--hover-link);
+    background-color: var(--hover-link) !important;
 }
 
 .btn-toggle[aria-expanded="true"]::before {
