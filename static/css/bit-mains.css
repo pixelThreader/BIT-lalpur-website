@@ -1,10 +1,12 @@
 :root,
 [data-bs-theme=light] {
   --hover-link: #dbb2b2 !important;
+  --hover-link-100: #b93636 !important;
 }
 
 [data-bs-theme=dark] {
   --hover-link: #b93636 !important;
+  --hover-link-100: #dbb2b2 !important;
 }
 
 body {
@@ -148,27 +150,36 @@ ion-icon.menu {
   background: #545454;
 }
 
-.nav-item .nav-link {
+.nav-item:hover .nav-link,
+.nav-item.active .nav-link {
+  color: var(--hover-link-100) !important;
+}
+
+.nav-link:hover,
+.nav-item.active {
+  color: var(--hover-link-100);
+  text-decoration: none;
+}
+
+.nav-link:not(:focus):not(:hover) {
   color: initial;
   text-decoration: none;
-  position: relative;
 }
-.nav-item .nav-link:hover {
-  color: #d33039;
-}
-.nav-item .nav-link:after {
+.nav-link:hover:after {
   content: "";
-  position: absolute;
-  bottom: -2px;
-  left: 0;
+  display: block;
+  border-bottom: 2px solid var(--hover-link-100);
+  width: 100%;
+  transform: scaleX(1);
+  transition: transform 0.25s ease-out;
+}
+.nav-link:after {
+  content: "";
   display: block;
   border-bottom: 2px solid #fff;
   width: 100%;
   transform: scaleX(0);
   transition: transform 0.25s ease-in;
-}
-.nav-item .nav-link:hover:after {
-  transform: scaleX(1);
 }
 
 .font-para-11 {
