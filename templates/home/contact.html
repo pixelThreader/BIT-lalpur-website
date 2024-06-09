@@ -1,20 +1,18 @@
+{% extends 'base.html' %}
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact us | BIT Lalpur</title>
-    <!-- <title>Blog | BIT Lalpur</title> -->
-    <link rel="shortcut icon" href="/assets/brand/bit_logo_50x50.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>{% block title %}Contact us | BIT Lalpur{% endblock title %}</title>
 
 </head>
 
 <body>
 
-
+    {% block body %}
     <main class="container">
         <div class="album py-5 bg-home-about rounded-3">
             <div class="container px-4">
@@ -93,680 +91,681 @@
                         </a>
                     </div>
                 </div>
+            </div>
+
+            <hr class="my-4">
+
+            <h4 class="ps-5 mb-5">Academic Coordinators</h4>
+
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 container px-4" id="teachersLog">
+                <div class="col-md-6">
+                    <a href="#" class="card shadow-sm text-decoration-none">
+                        <div class="card-body">
+                            <div class="col p-4 d-flex flex-column position-static pb-0">
+                                <strong class="d-inline-block mb-2 text-warning">Computer Science</strong>
+                                <hr class="my-1">
+                                <h4 class="mb-0">Dr. Amrita Priyam</h4>
+                                <hr class="my-3">
+                                <p class="card-text mb-auto">
+                                <ul class="list-unstyled m-0">
+                                    <li class="bg-home-about rounded-1 p-2 mb-2">
+                                        <span class="fw-bold">
+                                            Contact No.:
+                                        </span>
+                                        9431361802
+                                    </li>
+                                    <li class="bg-home-about rounded-1 p-2">
+                                        <span class="fw-bold">
+                                            Email Id:
+                                        </span>
+                                        <br class="mb-1">
+                                        apriyam@bitmesra.ac.in
+                                    </li>
+                                </ul>
+                                </p>
+
+                            </div>
+                        </div>
+                    </a>
                 </div>
+                <div class="col-md-6">
+                    <a href="#" class="card shadow-sm text-decoration-none">
+                        <div class="card-body">
+                            <div class="col p-4 d-flex flex-column position-static pb-0">
+                                <strong class="d-inline-block mb-2 text-warning">Management</strong>
+                                <hr class="my-1">
+                                <h3 class="mb-0">Dr. Pranab Kumar</h3>
+                                <hr class="my-3">
+                                <p class="card-text mb-auto">
+                                <ul class="list-unstyled m-0">
+                                    <li class="bg-home-about rounded-1 p-2 mb-2">
+                                        <span class="fw-bold">
+                                            Contact No.:
+                                        </span>
+                                        9431363934
+                                    </li>
+                                    <li class="bg-home-about rounded-1 p-2">
+                                        <span class="fw-bold">
+                                            Email Id:
+                                        </span>
+                                        <br class="mb-1">
+                                        pranabkumar@bitmesra.ac.in
+                                    </li>
+                                </ul>
+                                </p>
 
-                <hr class="my-4">
-
-                <h4 class="ps-5 mb-5">Academic Coordinators</h4>
-
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 container px-4" id="teachersLog">
-                    <div class="col-md-6">
-                        <a href="#" class="card shadow-sm text-decoration-none">
-                            <div class="card-body">
-                                <div class="col p-4 d-flex flex-column position-static pb-0">
-                                    <strong class="d-inline-block mb-2 text-warning">Computer Science</strong>
-                                    <hr class="my-1">
-                                    <h4 class="mb-0">Dr. Amrita Priyam</h4>
-                                    <hr class="my-3">
-                                    <p class="card-text mb-auto">
-                                    <ul class="list-unstyled m-0">
-                                        <li class="bg-home-about rounded-1 p-2 mb-2">
-                                            <span class="fw-bold">
-                                                Contact No.:
-                                            </span>
-                                            9431361802
-                                        </li>
-                                        <li class="bg-home-about rounded-1 p-2">
-                                            <span class="fw-bold">
-                                                Email Id:
-                                            </span>
-                                            <br class="mb-1">
-                                            apriyam@bitmesra.ac.in
-                                        </li>
-                                    </ul>
-                                    </p>
-
-                                </div>
                             </div>
-                        </a>
-                    </div>
-                    <div class="col-md-6">
-                        <a href="#" class="card shadow-sm text-decoration-none">
-                            <div class="card-body">
-                                <div class="col p-4 d-flex flex-column position-static pb-0">
-                                    <strong class="d-inline-block mb-2 text-warning">Management</strong>
-                                    <hr class="my-1">
-                                    <h3 class="mb-0">Dr. Pranab Kumar</h3>
-                                    <hr class="my-3">
-                                    <p class="card-text mb-auto">
-                                    <ul class="list-unstyled m-0">
-                                        <li class="bg-home-about rounded-1 p-2 mb-2">
-                                            <span class="fw-bold">
-                                                Contact No.:
-                                            </span>
-                                            9431363934
-                                        </li>
-                                        <li class="bg-home-about rounded-1 p-2">
-                                            <span class="fw-bold">
-                                                Email Id:
-                                            </span>
-                                            <br class="mb-1">
-                                            pranabkumar@bitmesra.ac.in
-                                        </li>
-                                    </ul>
-                                    </p>
-
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <hr class="my-4">
-
-                <h4 class="ps-5 mb-5 text-center d-md-flex justify-content-start">Contact details of Offices at BIT Lalpur Centre</h4>
-
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 container px-4" id="teachersLog">
-
-                    <div class="col-md-6">
-                        <a href="#" class="card shadow-sm text-decoration-none">
-                            <div class="card-body">
-                                <div class="col p-4 pb-0 d-flex flex-column position-static">
-                                    <strong class="d-inline-block mb-2 text-primary">Account</strong>
-                                    <hr class="my-1">
-                                    <h4 class="mb-0">Mr. Shantanu Kumar</h4>
-                                    <hr class="my-3">
-                                    <p class="card-text mb-auto">
-                                    <ul class="list-unstyled m-0">
-                                        <li class="bg-home-about rounded-1 p-2 mb-2">
-                                            <span class="fw-bold">
-                                                Contact No.:
-                                            </span>
-                                            9955004848
-                                        </li>
-                                        <li class="bg-home-about rounded-1 p-2">
-                                            <span class="fw-bold">
-                                                Email Id:
-                                            </span>
-                                            <br class="mb-1">
-                                            shantanukumar@bitmesra.ac.in
-                                        </li>
-                                    </ul>
-                                    </p>
-
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-md-6">
-                        <a href="#" class="card shadow-sm text-decoration-none">
-                            <div class="card-body">
-                                <div class="col p-4 pb-0 d-flex flex-column position-static">
-                                    <strong class="d-inline-block mb-2 text-primary">Account</strong>
-                                    <hr class="my-1">
-                                    <h3 class="mb-0">Mr. Suresh Mahto</h3>
-                                    <hr class="my-3">
-                                    <p class="card-text mb-auto">
-                                    <ul class="list-unstyled m-0">
-                                        <li class="bg-home-about rounded-1 p-2 mb-2">
-                                            <span class="fw-bold">
-                                                Contact No.:
-                                            </span>
-                                            8957008961
-                                        </li>
-                                        <li class="bg-home-about rounded-1 p-2">
-                                            <span class="fw-bold">
-                                                Email Id:
-                                            </span>
-                                            <br class="mb-1">
-                                            sureshmahtolalpur@bitmesra.ac.in
-                                        </li>
-                                    </ul>
-                                    </p>
-
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-
-                    <div class="col-md-6">
-                        <a href="#" class="card shadow-sm text-decoration-none">
-                            <div class="card-body">
-                                <div class="col p-4 pb-0 d-flex flex-column position-static">
-                                    <strong class="d-inline-block mb-2 text-primary">Admission</strong>
-                                    <hr class="my-1">
-                                    <h3 class="mb-0">Dr. Amrita Priyamr</h3>
-                                    <hr class="my-3">
-                                    <p class="card-text mb-auto">
-                                    <ul class="list-unstyled m-0">
-                                        <li class="bg-home-about rounded-1 p-2 mb-2">
-                                            <span class="fw-bold">
-                                                Contact No.:
-                                            </span>
-                                            9431361802
-                                        </li>
-                                        <li class="bg-home-about rounded-1 p-2">
-                                            <span class="fw-bold">
-                                                Email Id:
-                                            </span>
-                                            <br class="mb-1">
-                                            admissionsbitlalpur@bitmesra.ac.in
-                                        </li>
-                                    </ul>
-                                    </p>
-
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-md-6">
-                        <a href="#" class="card shadow-sm text-decoration-none">
-                            <div class="card-body">
-                                <div class="col p-4 pb-0 d-flex flex-column position-static">
-                                    <strong class="d-inline-block mb-2 text-primary">Admission</strong>
-                                    <hr class="my-1">
-                                    <h3 class="mb-0">Dr. Sanjay Kumar</h3>
-                                    <hr class="my-3">
-                                    <p class="card-text mb-auto">
-                                    <ul class="list-unstyled m-0">
-                                        <li class="bg-home-about rounded-1 p-2 mb-2">
-                                            <span class="fw-bold">
-                                                Contact No.:
-                                            </span>
-                                            9934514216
-                                        </li>
-                                        <li class="bg-home-about rounded-1 p-2">
-                                            <span class="fw-bold">
-                                                Email Id:
-                                            </span>
-                                            <br class="mb-1">
-                                            admissionsbitlalpur@bitmesra.ac.in
-                                        </li>
-                                    </ul>
-                                    </p>
-
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-md-6">
-                        <a href="#" class="card shadow-sm text-decoration-none">
-                            <div class="card-body">
-                                <div class="col p-4 pb-0 d-flex flex-column position-static">
-                                    <strong class="d-inline-block mb-2 text-primary">Admission</strong>
-                                    <hr class="my-1">
-                                    <h3 class="mb-0">Mr. Basudeo Singh</h3>
-                                    <hr class="my-3">
-                                    <p class="card-text mb-auto">
-                                    <ul class="list-unstyled m-0">
-                                        <li class="bg-home-about rounded-1 p-2 mb-2">
-                                            <span class="fw-bold">
-                                                Contact No.:
-                                            </span>
-                                            9905745754
-                                        </li>
-                                        <li class="bg-home-about rounded-1 p-2">
-                                            <span class="fw-bold">
-                                                Email Id:
-                                            </span>
-                                            <br class="mb-1">
-                                            admissionsbitlalpur@bitmesra.ac.in
-                                        </li>
-                                    </ul>
-                                    </p>
-
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-md-6">
-                        <a href="#" class="card shadow-sm text-decoration-none">
-                            <div class="card-body">
-                                <div class="col p-4 pb-0 d-flex flex-column position-static">
-                                    <strong class="d-inline-block mb-2 text-primary">Semester</strong>
-                                    <hr class="my-1">
-                                    <h3 class="mb-0">Dr. Srabani Mukhopadhyaya</h3>
-                                    <hr class="my-3">
-                                    <p class="card-text mb-auto">
-                                    <ul class="list-unstyled m-0">
-                                        <li class="bg-home-about rounded-1 p-2 mb-2">
-                                            <span class="fw-bold">
-                                                Contact No.:
-                                            </span>
-                                            9830774212
-                                        </li>
-                                        <li class="bg-home-about rounded-1 p-2">
-                                            <span class="fw-bold">
-                                                Email Id:
-                                            </span>
-                                            <br class="mb-1">
-                                            sembitlalpur@bitmesra.ac.in
-                                        </li>
-                                    </ul>
-                                    </p>
-
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-
-                    <div class="col">
-                        <a href="#" class="card shadow-sm text-decoration-none">
-                            <div class="card-body">
-                                <img class="img-fluid card-img-top" width="100%" height="225"
-                                    src="https://dummyimage.com/200x200/000/fff" alt="">
-                                <div class="col p-4 pb-0 d-flex flex-column position-static">
-                                    <strong class="d-inline-block mb-2 text-primary">Semester</strong>
-                                    <hr class="my-1">
-                                    <h3 class="mb-0">Dr. Satrajeet Choudhary</h3>
-                                    <hr class="my-3">
-                                    <p class="card-text mb-auto">
-                                    <ul class="list-unstyled m-0">
-                                        <li class="bg-home-about rounded-1 p-2 mb-2">
-                                            <span class="fw-bold">
-                                                Contact No.:
-                                            </span>
-                                            9934504749
-                                        </li>
-                                        <li class="bg-home-about rounded-1 p-2">
-                                            <span class="fw-bold">
-                                                Email Id:
-                                            </span>
-                                            <br class="mb-1">
-                                            sembitlalpur@bitmesra.ac.in
-                                        </li>
-                                    </ul>
-                                    </p>
-
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col">
-                        <a href="#" class="card shadow-sm text-decoration-none">
-                            <div class="card-body">
-                                <img class="img-fluid card-img-top" width="100%" height="225"
-                                    src="https://dummyimage.com/200x200/000/fff" alt="">
-                                <div class="col p-4 pb-0 d-flex flex-column position-static">
-                                    <strong class="d-inline-block mb-2 text-primary">Admission</strong>
-                                    <hr class="my-1">
-                                    <h3 class="mb-0">Mrs. Mini Dubey</h3>
-                                    <hr class="my-3">
-                                    <p class="card-text mb-auto">
-                                    <ul class="list-unstyled m-0">
-                                        <li class="bg-home-about rounded-1 p-2 mb-2">
-                                            <span class="fw-bold">
-                                                Contact No.:
-                                            </span>
-                                            8210234745
-                                        </li>
-                                        <li class="bg-home-about rounded-1 p-2">
-                                            <span class="fw-bold">
-                                                Email Id:
-                                            </span>
-                                            <br class="mb-1">
-                                            sembitlalpur@bitmesra.ac.in
-                                        </li>
-                                    </ul>
-                                    </p>
-
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-
-                    <div class="col">
-                        <a href="#" class="card shadow-sm text-decoration-none">
-                            <div class="card-body">
-                                <img class="img-fluid card-img-top" width="100%" height="225"
-                                    src="assets/media/faculties/kuntal_mukherjee.jpeg" alt="">
-                                <div class="col p-4 pb-0 d-flex flex-column position-static">
-                                    <strong class="d-inline-block mb-2 text-primary">ERP</strong>
-                                    <hr class="my-1">
-                                    <h3 class="mb-0">Dr. Kuntal Mukherjee</h3>
-                                    <hr class="my-3">
-                                    <p class="card-text mb-auto">
-                                    <ul class="list-unstyled m-0">
-                                        <li class="bg-home-about rounded-1 p-2 mb-2">
-                                            <span class="fw-bold">
-                                                Contact No.:
-                                            </span>
-                                            9934504749
-                                        </li>
-                                        <li class="bg-home-about rounded-1 p-2">
-                                            <span class="fw-bold">
-                                                Email Id:
-                                            </span>
-                                            <br class="mb-1">
-                                            erpbitlalpur@bitmesra.ac.in
-                                        </li>
-                                    </ul>
-                                    </p>
-
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col">
-                        <a href="#" class="card shadow-sm text-decoration-none">
-                            <div class="card-body">
-                                <img class="img-fluid card-img-top" width="100%" height="225"
-                                    src="https://dummyimage.com/200x200/000/fff" alt="">
-                                <div class="col p-4 pb-0 d-flex flex-column position-static">
-                                    <strong class="d-inline-block mb-2 text-primary">ERP</strong>
-                                    <hr class="my-1">
-                                    <h3 class="mb-0">Mrs. Mini Dubey</h3>
-                                    <hr class="my-3">
-                                    <p class="card-text mb-auto">
-                                    <ul class="list-unstyled m-0">
-                                        <li class="bg-home-about rounded-1 p-2 mb-2">
-                                            <span class="fw-bold">
-                                                Contact No.:
-                                            </span>
-                                            9931149772
-                                        </li>
-                                        <li class="bg-home-about rounded-1 p-2">
-                                            <span class="fw-bold">
-                                                Email Id:
-                                            </span>
-                                            <br class="mb-1">
-                                            erpbitlalpur@bitmesra.ac.in
-                                        </li>
-                                    </ul>
-                                    </p>
-
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col">
-                        <a href="#" class="card shadow-sm text-decoration-none">
-                            <div class="card-body">
-                                <img class="img-fluid card-img-top" width="100%" height="225"
-                                    src="assets/media/faculties/jaya_pal.jpg" alt="">
-                                <div class="col p-4 pb-0 d-flex flex-column position-static">
-                                    <strong class="d-inline-block mb-2 text-primary">Examination</strong>
-                                    <hr class="my-1">
-                                    <h3 class="mb-0">Dr. Jaya Pal </h3>
-                                    <hr class="my-3">
-                                    <p class="card-text mb-auto">
-                                    <ul class="list-unstyled m-0">
-                                        <li class="bg-home-about rounded-1 p-2 mb-2">
-                                            <span class="fw-bold">
-                                                Contact No.:
-                                            </span>
-                                            9931149772
-                                        </li>
-                                        <li class="bg-home-about rounded-1 p-2">
-                                            <span class="fw-bold">
-                                                Email Id:
-                                            </span>
-                                            <br class="mb-1">
-                                            exambitlalpur@bitmesra.ac.in
-                                        </li>
-                                    </ul>
-                                    </p>
-
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col">
-                        <a href="#" class="card shadow-sm text-decoration-none">
-                            <div class="card-body">
-                                <img class="img-fluid card-img-top" width="100%" height="225"
-                                    src="assets/media/faculties/siva_sury_narayana.jpg" alt="">
-                                <div class="col p-4 pb-0 d-flex flex-column position-static">
-                                    <strong class="d-inline-block mb-2 text-primary">Examination</strong>
-                                    <hr class="my-1">
-                                    <h3 class="mb-0">Dr. Shiva Surya Narayana</h3>
-                                    <hr class="my-3">
-                                    <p class="card-text mb-auto">
-                                    <ul class="list-unstyled m-0">
-                                        <li class="bg-home-about rounded-1 p-2 mb-2">
-                                            <span class="fw-bold">
-                                                Contact No.:
-                                            </span>
-                                            9810950586
-                                        </li>
-                                        <li class="bg-home-about rounded-1 p-2">
-                                            <span class="fw-bold">
-                                                Email Id:
-                                            </span>
-                                            <br class="mb-1">
-                                            exambitlalpur@bitmesra.ac.in
-                                        </li>
-                                    </ul>
-                                    </p>
-
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col">
-                        <a href="#" class="card shadow-sm text-decoration-none">
-                            <div class="card-body">
-                                <img class="img-fluid card-img-top" width="100%" height="225"
-                                    src="https://dummyimage.com/200x200/000/fff" alt="">
-                                <div class="col p-4 pb-0 d-flex flex-column position-static">
-                                    <strong class="d-inline-block mb-2 text-primary">Student
-                                        Section</strong>
-                                    <hr class="my-1">
-                                    <h3 class="mb-0">Dr. Pradeep Munda</h3>
-                                    <hr class="my-3">
-                                    <p class="card-text mb-auto">
-                                    <ul class="list-unstyled m-0">
-                                        <li class="bg-home-about rounded-1 p-2 mb-2">
-                                            <span class="fw-bold">
-                                                Contact No.:
-                                            </span>
-                                            7061765573
-                                        </li>
-                                        <li class="bg-home-about rounded-1 p-2">
-                                            <span class="fw-bold">
-                                                Email Id:
-                                            </span>
-                                            <br class="mb-1">
-                                            stusecbitlalpur@bitmesra.ac.in
-                                        </li>
-                                    </ul>
-                                    </p>
-
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col">
-                        <a href="#" class="card shadow-sm text-decoration-none">
-                            <div class="card-body">
-                                <img class="img-fluid card-img-top" width="100%" height="225"
-                                    src="https://dummyimage.com/200x200/000/fff" alt="">
-                                <div class="col p-4 pb-0 d-flex flex-column position-static">
-                                    <strong class="d-inline-block mb-2 text-primary">Student
-                                        Section</strong>
-                                    <hr class="my-1">
-                                    <h3 class="mb-0">Mr. Rana Pratap Mishra</h3>
-                                    <hr class="my-3">
-                                    <p class="card-text mb-auto">
-                                    <ul class="list-unstyled m-0">
-                                        <li class="bg-home-about rounded-1 p-2 mb-2">
-                                            <span class="fw-bold">
-                                                Contact No.:
-                                            </span>
-                                            9608171323
-                                        </li>
-                                        <li class="bg-home-about rounded-1 p-2">
-                                            <span class="fw-bold">
-                                                Email Id:
-                                            </span>
-                                            <br class="mb-1">
-                                            stusecbitlalpur@bitmesra.ac.in
-                                        </li>
-                                    </ul>
-                                    </p>
-
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col">
-                        <a href="#" class="card shadow-sm text-decoration-none">
-                            <div class="card-body">
-                                <img class="img-fluid card-img-top" width="100%" height="225"
-                                    src="assets/media/faculties/tanmoy_kr_banerjee.jpg" alt="">
-                                <div class="col p-4 pb-0 d-flex flex-column position-static">
-                                    <strong class="d-inline-block mb-2 text-primary">Training &
-                                        Placement</strong>
-                                    <hr class="my-1">
-                                    <h3 class="mb-0">Dr.T. K. Banerjee 
-                                    </h3>
-                                    <hr class="my-3">
-                                    <p class="card-text mb-auto">
-                                    <ul class="list-unstyled m-0">
-                                        <li class="bg-home-about rounded-1 p-2 mb-2">
-                                            <span class="fw-bold">
-                                                Contact No.:
-                                            </span>
-                                            7980358286
-                                        </li>
-                                        <li class="bg-home-about rounded-1 p-2">
-                                            <span class="fw-bold">
-                                                Email Id:
-                                            </span>
-                                            <br class="mb-1">
-                                            tpolalpur@bitmesra.ac.in
-                                        </li>
-                                    </ul>
-                                    </p>
-
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col">
-                        <a href="#" class="card shadow-sm text-decoration-none">
-                            <div class="card-body">
-                                <img class="img-fluid card-img-top" width="100%" height="225"
-                                    src="assets/media/faculties/siba_mitra.jpg" alt="">
-                                <div class="col p-4 pb-0 d-flex flex-column position-static">
-                                    <strong class="d-inline-block mb-2 text-primary">Training &
-                                        Placement</strong>
-                                    <hr class="my-1">
-                                    <h3 class="mb-0">Dr. Siba Mitra</h3>
-                                    <hr class="my-3">
-                                    <p class="card-text mb-auto">
-                                    <ul class="list-unstyled m-0">
-                                        <li class="bg-home-about rounded-1 p-2 mb-2">
-                                            <span class="fw-bold">
-                                                Contact No.:
-                                            </span>
-                                            8777308118
-                                        </li>
-                                        <li class="bg-home-about rounded-1 p-2">
-                                            <span class="fw-bold">
-                                                Email Id:
-                                            </span>
-                                            <br class="mb-1">
-                                            stusecbitlalpur@bitmesra.ac.in
-                                        </li>
-                                    </ul>
-                                    </p>
-
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col">
-                        <a href="#" class="card shadow-sm text-decoration-none">
-                            <div class="card-body">
-                                <img class="img-fluid card-img-top" width="100%" height="225"
-                                    src="https://dummyimage.com/200x200/000/fff" alt="">
-                                <div class="col p-4 pb-0 d-flex flex-column position-static">
-                                    <strong class="d-inline-block mb-2 text-primary">Training &
-                                        Placement</strong>
-                                    <hr class="my-1">
-                                    <h3 class="mb-0">Mrs. Anamika Charan</h3>
-                                    <hr class="my-3">
-                                    <p class="card-text mb-auto">
-                                    <ul class="list-unstyled m-0">
-                                        <li class="bg-home-about rounded-1 p-2 mb-2">
-                                            <span class="fw-bold">
-                                                Contact No.:
-                                            </span>
-                                            9608171323
-                                        </li>
-                                        <li class="bg-home-about rounded-1 p-2">
-                                            <span class="fw-bold">
-                                                Email Id:
-                                            </span>
-                                            <br class="mb-1">
-                                            tpolalpur@bitmesra.ac.in
-                                        </li>
-                                    </ul>
-                                    </p>
-
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col">
-                        <a href="#" class="card shadow-sm text-decoration-none">
-                            <div class="card-body">
-                                <img class="img-fluid card-img-top" width="100%" height="225"
-                                    src="https://dummyimage.com/200x200/000/fff" alt="">
-                                <div class="col p-4 pb-0 d-flex flex-column position-static">
-                                    <strong class="d-inline-block mb-2 text-primary">Other
-                                        Enquiries</strong>
-                                    <hr class="my-1">
-                                    <h3 class="mb-0">Mr. Basudeo Singh</h3>
-                                    <hr class="my-3">
-                                    <p class="card-text mb-auto">
-                                    <ul class="list-unstyled m-0">
-                                        <li class="bg-home-about rounded-1 p-2 mb-2">
-                                            <span class="fw-bold">
-                                                Contact No.:
-                                            </span>
-                                            9905745754
-                                        </li>
-                                        <li class="bg-home-about rounded-1 p-2">
-                                            <span class="fw-bold">
-                                                Email Id:
-                                            </span>
-                                            <br class="mb-1">
-                                            office.bitlalpur@bitmesra.ac.in
-                                        </li>
-                                    </ul>
-                                    </p>
-
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-
+                        </div>
+                    </a>
                 </div>
             </div>
+
+            <hr class="my-4">
+
+            <h4 class="ps-5 mb-5 text-center d-md-flex justify-content-start">Contact details of Offices at BIT Lalpur
+                Centre</h4>
+
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 container px-4" id="teachersLog">
+
+                <div class="col-md-6">
+                    <a href="#" class="card shadow-sm text-decoration-none">
+                        <div class="card-body">
+                            <div class="col p-4 pb-0 d-flex flex-column position-static">
+                                <strong class="d-inline-block mb-2 text-primary">Account</strong>
+                                <hr class="my-1">
+                                <h4 class="mb-0">Mr. Shantanu Kumar</h4>
+                                <hr class="my-3">
+                                <p class="card-text mb-auto">
+                                <ul class="list-unstyled m-0">
+                                    <li class="bg-home-about rounded-1 p-2 mb-2">
+                                        <span class="fw-bold">
+                                            Contact No.:
+                                        </span>
+                                        9955004848
+                                    </li>
+                                    <li class="bg-home-about rounded-1 p-2">
+                                        <span class="fw-bold">
+                                            Email Id:
+                                        </span>
+                                        <br class="mb-1">
+                                        shantanukumar@bitmesra.ac.in
+                                    </li>
+                                </ul>
+                                </p>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-6">
+                    <a href="#" class="card shadow-sm text-decoration-none">
+                        <div class="card-body">
+                            <div class="col p-4 pb-0 d-flex flex-column position-static">
+                                <strong class="d-inline-block mb-2 text-primary">Account</strong>
+                                <hr class="my-1">
+                                <h3 class="mb-0">Mr. Suresh Mahto</h3>
+                                <hr class="my-3">
+                                <p class="card-text mb-auto">
+                                <ul class="list-unstyled m-0">
+                                    <li class="bg-home-about rounded-1 p-2 mb-2">
+                                        <span class="fw-bold">
+                                            Contact No.:
+                                        </span>
+                                        8957008961
+                                    </li>
+                                    <li class="bg-home-about rounded-1 p-2">
+                                        <span class="fw-bold">
+                                            Email Id:
+                                        </span>
+                                        <br class="mb-1">
+                                        sureshmahtolalpur@bitmesra.ac.in
+                                    </li>
+                                </ul>
+                                </p>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+                <div class="col-md-6">
+                    <a href="#" class="card shadow-sm text-decoration-none">
+                        <div class="card-body">
+                            <div class="col p-4 pb-0 d-flex flex-column position-static">
+                                <strong class="d-inline-block mb-2 text-primary">Admission</strong>
+                                <hr class="my-1">
+                                <h3 class="mb-0">Dr. Amrita Priyamr</h3>
+                                <hr class="my-3">
+                                <p class="card-text mb-auto">
+                                <ul class="list-unstyled m-0">
+                                    <li class="bg-home-about rounded-1 p-2 mb-2">
+                                        <span class="fw-bold">
+                                            Contact No.:
+                                        </span>
+                                        9431361802
+                                    </li>
+                                    <li class="bg-home-about rounded-1 p-2">
+                                        <span class="fw-bold">
+                                            Email Id:
+                                        </span>
+                                        <br class="mb-1">
+                                        admissionsbitlalpur@bitmesra.ac.in
+                                    </li>
+                                </ul>
+                                </p>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-6">
+                    <a href="#" class="card shadow-sm text-decoration-none">
+                        <div class="card-body">
+                            <div class="col p-4 pb-0 d-flex flex-column position-static">
+                                <strong class="d-inline-block mb-2 text-primary">Admission</strong>
+                                <hr class="my-1">
+                                <h3 class="mb-0">Dr. Sanjay Kumar</h3>
+                                <hr class="my-3">
+                                <p class="card-text mb-auto">
+                                <ul class="list-unstyled m-0">
+                                    <li class="bg-home-about rounded-1 p-2 mb-2">
+                                        <span class="fw-bold">
+                                            Contact No.:
+                                        </span>
+                                        9934514216
+                                    </li>
+                                    <li class="bg-home-about rounded-1 p-2">
+                                        <span class="fw-bold">
+                                            Email Id:
+                                        </span>
+                                        <br class="mb-1">
+                                        admissionsbitlalpur@bitmesra.ac.in
+                                    </li>
+                                </ul>
+                                </p>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-6">
+                    <a href="#" class="card shadow-sm text-decoration-none">
+                        <div class="card-body">
+                            <div class="col p-4 pb-0 d-flex flex-column position-static">
+                                <strong class="d-inline-block mb-2 text-primary">Admission</strong>
+                                <hr class="my-1">
+                                <h3 class="mb-0">Mr. Basudeo Singh</h3>
+                                <hr class="my-3">
+                                <p class="card-text mb-auto">
+                                <ul class="list-unstyled m-0">
+                                    <li class="bg-home-about rounded-1 p-2 mb-2">
+                                        <span class="fw-bold">
+                                            Contact No.:
+                                        </span>
+                                        9905745754
+                                    </li>
+                                    <li class="bg-home-about rounded-1 p-2">
+                                        <span class="fw-bold">
+                                            Email Id:
+                                        </span>
+                                        <br class="mb-1">
+                                        admissionsbitlalpur@bitmesra.ac.in
+                                    </li>
+                                </ul>
+                                </p>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-6">
+                    <a href="#" class="card shadow-sm text-decoration-none">
+                        <div class="card-body">
+                            <div class="col p-4 pb-0 d-flex flex-column position-static">
+                                <strong class="d-inline-block mb-2 text-primary">Semester</strong>
+                                <hr class="my-1">
+                                <h3 class="mb-0">Dr. Srabani Mukhopadhyaya</h3>
+                                <hr class="my-3">
+                                <p class="card-text mb-auto">
+                                <ul class="list-unstyled m-0">
+                                    <li class="bg-home-about rounded-1 p-2 mb-2">
+                                        <span class="fw-bold">
+                                            Contact No.:
+                                        </span>
+                                        9830774212
+                                    </li>
+                                    <li class="bg-home-about rounded-1 p-2">
+                                        <span class="fw-bold">
+                                            Email Id:
+                                        </span>
+                                        <br class="mb-1">
+                                        sembitlalpur@bitmesra.ac.in
+                                    </li>
+                                </ul>
+                                </p>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+                <div class="col">
+                    <a href="#" class="card shadow-sm text-decoration-none">
+                        <div class="card-body">
+                            <img class="img-fluid card-img-top" width="100%" height="225"
+                                src="https://dummyimage.com/200x200/000/fff" alt="">
+                            <div class="col p-4 pb-0 d-flex flex-column position-static">
+                                <strong class="d-inline-block mb-2 text-primary">Semester</strong>
+                                <hr class="my-1">
+                                <h3 class="mb-0">Dr. Satrajeet Choudhary</h3>
+                                <hr class="my-3">
+                                <p class="card-text mb-auto">
+                                <ul class="list-unstyled m-0">
+                                    <li class="bg-home-about rounded-1 p-2 mb-2">
+                                        <span class="fw-bold">
+                                            Contact No.:
+                                        </span>
+                                        9934504749
+                                    </li>
+                                    <li class="bg-home-about rounded-1 p-2">
+                                        <span class="fw-bold">
+                                            Email Id:
+                                        </span>
+                                        <br class="mb-1">
+                                        sembitlalpur@bitmesra.ac.in
+                                    </li>
+                                </ul>
+                                </p>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col">
+                    <a href="#" class="card shadow-sm text-decoration-none">
+                        <div class="card-body">
+                            <img class="img-fluid card-img-top" width="100%" height="225"
+                                src="https://dummyimage.com/200x200/000/fff" alt="">
+                            <div class="col p-4 pb-0 d-flex flex-column position-static">
+                                <strong class="d-inline-block mb-2 text-primary">Admission</strong>
+                                <hr class="my-1">
+                                <h3 class="mb-0">Mrs. Mini Dubey</h3>
+                                <hr class="my-3">
+                                <p class="card-text mb-auto">
+                                <ul class="list-unstyled m-0">
+                                    <li class="bg-home-about rounded-1 p-2 mb-2">
+                                        <span class="fw-bold">
+                                            Contact No.:
+                                        </span>
+                                        8210234745
+                                    </li>
+                                    <li class="bg-home-about rounded-1 p-2">
+                                        <span class="fw-bold">
+                                            Email Id:
+                                        </span>
+                                        <br class="mb-1">
+                                        sembitlalpur@bitmesra.ac.in
+                                    </li>
+                                </ul>
+                                </p>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+                <div class="col">
+                    <a href="#" class="card shadow-sm text-decoration-none">
+                        <div class="card-body">
+                            <img class="img-fluid card-img-top" width="100%" height="225"
+                                src="assets/media/faculties/kuntal_mukherjee.jpeg" alt="">
+                            <div class="col p-4 pb-0 d-flex flex-column position-static">
+                                <strong class="d-inline-block mb-2 text-primary">ERP</strong>
+                                <hr class="my-1">
+                                <h3 class="mb-0">Dr. Kuntal Mukherjee</h3>
+                                <hr class="my-3">
+                                <p class="card-text mb-auto">
+                                <ul class="list-unstyled m-0">
+                                    <li class="bg-home-about rounded-1 p-2 mb-2">
+                                        <span class="fw-bold">
+                                            Contact No.:
+                                        </span>
+                                        9934504749
+                                    </li>
+                                    <li class="bg-home-about rounded-1 p-2">
+                                        <span class="fw-bold">
+                                            Email Id:
+                                        </span>
+                                        <br class="mb-1">
+                                        erpbitlalpur@bitmesra.ac.in
+                                    </li>
+                                </ul>
+                                </p>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col">
+                    <a href="#" class="card shadow-sm text-decoration-none">
+                        <div class="card-body">
+                            <img class="img-fluid card-img-top" width="100%" height="225"
+                                src="https://dummyimage.com/200x200/000/fff" alt="">
+                            <div class="col p-4 pb-0 d-flex flex-column position-static">
+                                <strong class="d-inline-block mb-2 text-primary">ERP</strong>
+                                <hr class="my-1">
+                                <h3 class="mb-0">Mrs. Mini Dubey</h3>
+                                <hr class="my-3">
+                                <p class="card-text mb-auto">
+                                <ul class="list-unstyled m-0">
+                                    <li class="bg-home-about rounded-1 p-2 mb-2">
+                                        <span class="fw-bold">
+                                            Contact No.:
+                                        </span>
+                                        9931149772
+                                    </li>
+                                    <li class="bg-home-about rounded-1 p-2">
+                                        <span class="fw-bold">
+                                            Email Id:
+                                        </span>
+                                        <br class="mb-1">
+                                        erpbitlalpur@bitmesra.ac.in
+                                    </li>
+                                </ul>
+                                </p>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col">
+                    <a href="#" class="card shadow-sm text-decoration-none">
+                        <div class="card-body">
+                            <img class="img-fluid card-img-top" width="100%" height="225"
+                                src="assets/media/faculties/jaya_pal.jpg" alt="">
+                            <div class="col p-4 pb-0 d-flex flex-column position-static">
+                                <strong class="d-inline-block mb-2 text-primary">Examination</strong>
+                                <hr class="my-1">
+                                <h3 class="mb-0">Dr. Jaya Pal </h3>
+                                <hr class="my-3">
+                                <p class="card-text mb-auto">
+                                <ul class="list-unstyled m-0">
+                                    <li class="bg-home-about rounded-1 p-2 mb-2">
+                                        <span class="fw-bold">
+                                            Contact No.:
+                                        </span>
+                                        9931149772
+                                    </li>
+                                    <li class="bg-home-about rounded-1 p-2">
+                                        <span class="fw-bold">
+                                            Email Id:
+                                        </span>
+                                        <br class="mb-1">
+                                        exambitlalpur@bitmesra.ac.in
+                                    </li>
+                                </ul>
+                                </p>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col">
+                    <a href="#" class="card shadow-sm text-decoration-none">
+                        <div class="card-body">
+                            <img class="img-fluid card-img-top" width="100%" height="225"
+                                src="assets/media/faculties/siva_sury_narayana.jpg" alt="">
+                            <div class="col p-4 pb-0 d-flex flex-column position-static">
+                                <strong class="d-inline-block mb-2 text-primary">Examination</strong>
+                                <hr class="my-1">
+                                <h3 class="mb-0">Dr. Shiva Surya Narayana</h3>
+                                <hr class="my-3">
+                                <p class="card-text mb-auto">
+                                <ul class="list-unstyled m-0">
+                                    <li class="bg-home-about rounded-1 p-2 mb-2">
+                                        <span class="fw-bold">
+                                            Contact No.:
+                                        </span>
+                                        9810950586
+                                    </li>
+                                    <li class="bg-home-about rounded-1 p-2">
+                                        <span class="fw-bold">
+                                            Email Id:
+                                        </span>
+                                        <br class="mb-1">
+                                        exambitlalpur@bitmesra.ac.in
+                                    </li>
+                                </ul>
+                                </p>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col">
+                    <a href="#" class="card shadow-sm text-decoration-none">
+                        <div class="card-body">
+                            <img class="img-fluid card-img-top" width="100%" height="225"
+                                src="https://dummyimage.com/200x200/000/fff" alt="">
+                            <div class="col p-4 pb-0 d-flex flex-column position-static">
+                                <strong class="d-inline-block mb-2 text-primary">Student
+                                    Section</strong>
+                                <hr class="my-1">
+                                <h3 class="mb-0">Dr. Pradeep Munda</h3>
+                                <hr class="my-3">
+                                <p class="card-text mb-auto">
+                                <ul class="list-unstyled m-0">
+                                    <li class="bg-home-about rounded-1 p-2 mb-2">
+                                        <span class="fw-bold">
+                                            Contact No.:
+                                        </span>
+                                        7061765573
+                                    </li>
+                                    <li class="bg-home-about rounded-1 p-2">
+                                        <span class="fw-bold">
+                                            Email Id:
+                                        </span>
+                                        <br class="mb-1">
+                                        stusecbitlalpur@bitmesra.ac.in
+                                    </li>
+                                </ul>
+                                </p>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col">
+                    <a href="#" class="card shadow-sm text-decoration-none">
+                        <div class="card-body">
+                            <img class="img-fluid card-img-top" width="100%" height="225"
+                                src="https://dummyimage.com/200x200/000/fff" alt="">
+                            <div class="col p-4 pb-0 d-flex flex-column position-static">
+                                <strong class="d-inline-block mb-2 text-primary">Student
+                                    Section</strong>
+                                <hr class="my-1">
+                                <h3 class="mb-0">Mr. Rana Pratap Mishra</h3>
+                                <hr class="my-3">
+                                <p class="card-text mb-auto">
+                                <ul class="list-unstyled m-0">
+                                    <li class="bg-home-about rounded-1 p-2 mb-2">
+                                        <span class="fw-bold">
+                                            Contact No.:
+                                        </span>
+                                        9608171323
+                                    </li>
+                                    <li class="bg-home-about rounded-1 p-2">
+                                        <span class="fw-bold">
+                                            Email Id:
+                                        </span>
+                                        <br class="mb-1">
+                                        stusecbitlalpur@bitmesra.ac.in
+                                    </li>
+                                </ul>
+                                </p>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col">
+                    <a href="#" class="card shadow-sm text-decoration-none">
+                        <div class="card-body">
+                            <img class="img-fluid card-img-top" width="100%" height="225"
+                                src="assets/media/faculties/tanmoy_kr_banerjee.jpg" alt="">
+                            <div class="col p-4 pb-0 d-flex flex-column position-static">
+                                <strong class="d-inline-block mb-2 text-primary">Training &
+                                    Placement</strong>
+                                <hr class="my-1">
+                                <h3 class="mb-0">Dr.T. K. Banerjee
+                                </h3>
+                                <hr class="my-3">
+                                <p class="card-text mb-auto">
+                                <ul class="list-unstyled m-0">
+                                    <li class="bg-home-about rounded-1 p-2 mb-2">
+                                        <span class="fw-bold">
+                                            Contact No.:
+                                        </span>
+                                        7980358286
+                                    </li>
+                                    <li class="bg-home-about rounded-1 p-2">
+                                        <span class="fw-bold">
+                                            Email Id:
+                                        </span>
+                                        <br class="mb-1">
+                                        tpolalpur@bitmesra.ac.in
+                                    </li>
+                                </ul>
+                                </p>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col">
+                    <a href="#" class="card shadow-sm text-decoration-none">
+                        <div class="card-body">
+                            <img class="img-fluid card-img-top" width="100%" height="225"
+                                src="assets/media/faculties/siba_mitra.jpg" alt="">
+                            <div class="col p-4 pb-0 d-flex flex-column position-static">
+                                <strong class="d-inline-block mb-2 text-primary">Training &
+                                    Placement</strong>
+                                <hr class="my-1">
+                                <h3 class="mb-0">Dr. Siba Mitra</h3>
+                                <hr class="my-3">
+                                <p class="card-text mb-auto">
+                                <ul class="list-unstyled m-0">
+                                    <li class="bg-home-about rounded-1 p-2 mb-2">
+                                        <span class="fw-bold">
+                                            Contact No.:
+                                        </span>
+                                        8777308118
+                                    </li>
+                                    <li class="bg-home-about rounded-1 p-2">
+                                        <span class="fw-bold">
+                                            Email Id:
+                                        </span>
+                                        <br class="mb-1">
+                                        stusecbitlalpur@bitmesra.ac.in
+                                    </li>
+                                </ul>
+                                </p>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col">
+                    <a href="#" class="card shadow-sm text-decoration-none">
+                        <div class="card-body">
+                            <img class="img-fluid card-img-top" width="100%" height="225"
+                                src="https://dummyimage.com/200x200/000/fff" alt="">
+                            <div class="col p-4 pb-0 d-flex flex-column position-static">
+                                <strong class="d-inline-block mb-2 text-primary">Training &
+                                    Placement</strong>
+                                <hr class="my-1">
+                                <h3 class="mb-0">Mrs. Anamika Charan</h3>
+                                <hr class="my-3">
+                                <p class="card-text mb-auto">
+                                <ul class="list-unstyled m-0">
+                                    <li class="bg-home-about rounded-1 p-2 mb-2">
+                                        <span class="fw-bold">
+                                            Contact No.:
+                                        </span>
+                                        9608171323
+                                    </li>
+                                    <li class="bg-home-about rounded-1 p-2">
+                                        <span class="fw-bold">
+                                            Email Id:
+                                        </span>
+                                        <br class="mb-1">
+                                        tpolalpur@bitmesra.ac.in
+                                    </li>
+                                </ul>
+                                </p>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col">
+                    <a href="#" class="card shadow-sm text-decoration-none">
+                        <div class="card-body">
+                            <img class="img-fluid card-img-top" width="100%" height="225"
+                                src="https://dummyimage.com/200x200/000/fff" alt="">
+                            <div class="col p-4 pb-0 d-flex flex-column position-static">
+                                <strong class="d-inline-block mb-2 text-primary">Other
+                                    Enquiries</strong>
+                                <hr class="my-1">
+                                <h3 class="mb-0">Mr. Basudeo Singh</h3>
+                                <hr class="my-3">
+                                <p class="card-text mb-auto">
+                                <ul class="list-unstyled m-0">
+                                    <li class="bg-home-about rounded-1 p-2 mb-2">
+                                        <span class="fw-bold">
+                                            Contact No.:
+                                        </span>
+                                        9905745754
+                                    </li>
+                                    <li class="bg-home-about rounded-1 p-2">
+                                        <span class="fw-bold">
+                                            Email Id:
+                                        </span>
+                                        <br class="mb-1">
+                                        office.bitlalpur@bitmesra.ac.in
+                                    </li>
+                                </ul>
+                                </p>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+            </div>
+        </div>
         </div>
     </main>
+    {% endblock body %}
 
-    <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
