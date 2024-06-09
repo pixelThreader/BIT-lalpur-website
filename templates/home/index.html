@@ -453,9 +453,6 @@
             </div>
         </div>
 
-
-        <!-- Youtube Style -->
-
         <!-- YOUTUBE VIDEO SECTION  -->
         <div class="container mt-5">
             <!-- ROW 1 -->
@@ -548,23 +545,73 @@
         </div>
         <!-- bottom section -->
 
-
-
         <!-- Important Links -->
         <!-- Important link toggler -->
-        <div class="imp-link-container sticky-bottom m-3 bg-danger d-flex justify-content-center" style="height: 100%; width: 100px;">
-            <button class="btn btn-primary">
-                <ion-icon name="ellipsis-vertical-circle-outline"></ion-icon>
+        <div class="imp-link-container sticky-bottom m-3 d-flex flex-column-reverse align-items-center pb-3"
+            style="height: 100%; width: 100px; z-index: 999;">
+            <button
+                class="btn btn-primary button-imp-nav rounded-circle p-0 d-flex align-items-center justify-content-center"
+                style="font-size: 2rem;">
+                <ion-icon name="ellipsis-vertical-circle-outline" style="line-height: 0;"></ion-icon>
             </button>
-
-            <ul>
-                <li class="imp-link-list">
-                    <a href="http://www.bitmesra.ac.in" target="_blank" rel="noopener noreferrer">
-                        <img src="/static/assets/bit/iQAC.png" alt="iQAC">
+            <ul class="h-100 m-0 p-0">
+                <li class="imp-link-list msg" data-tippy-content="IQAC" data-tippy-placement="right">
+                    <a href="https://www.bitmesra.ac.in/IQAC/Default?page=iqac&pid=Home" target="_blank"
+                        rel="noopener noreferrer">
+                        <img src="/static/assets/bit/iQAC.png" alt="IQAC">
+                    </a>
+                </li>
+                <li class="imp-link-list msg" data-tippy-content="NIRF" data-tippy-placement="right">
+                    <a href="https://www.bitmesra.ac.in/Show_Content_Section?cid=1&pid=295" target="_blank"
+                        rel="noopener noreferrer">
+                        <img src="/static/assets/bit/nirf.png" alt="NIRF">
+                    </a>
+                </li>
+                <li class="imp-link-list msg" data-tippy-content="Annual Report" data-tippy-placement="right">
+                    <a href="https://www.bitmesra.ac.in/Show_Content_Section?cid=1&pid=417" target="_blank"
+                        rel="noopener noreferrer">
+                        <img src="/static/assets/bit/iQAC.png" alt="Annual Report">
+                    </a>
+                </li>
+                <li class="imp-link-list msg" data-tippy-content="Mandatory Closure" data-tippy-placement="right">
+                    <a href="https://www.bitmesra.ac.in/Show_Content_Section?cid=1&pid=184" target="_blank"
+                        rel="noopener noreferrer">
+                        <img src="/static/assets/bit/iQAC.png" alt="Mandatory Closure">
+                    </a>
+                </li>
+                <li class="imp-link-list msg" data-tippy-content="AICTE" data-tippy-placement="right">
+                    <a href="https://www.bitmesra.ac.in/Show_Admission_Page?cid=1&deptid=11&pid=28" target="_blank"
+                        rel="noopener noreferrer">
+                        <img src="/static/assets/bit/aicte.jpeg" alt="AICTE">
+                    </a>
+                </li>
+                <li class="imp-link-list msg" data-tippy-content="BITMAA-NA" data-tippy-placement="right">
+                    <a href="https://www.bitmesra.ac.in/Show_Content_Section?cid=1&pid=407" target="_blank"
+                        rel="noopener noreferrer">
+                        <img src="/static/assets/bit/bitmaa-na.png" alt="BITMAA-NA">
+                    </a>
+                </li>
+                <li class="imp-link-list msg" data-tippy-content="JRF/SRF Opening" data-tippy-placement="right">
+                    <a href="https://www.bitmesra.ac.in/BIT_Recent_Openings_JRF_SRF_PF_RF_00893?cid=7" target="_blank"
+                        rel="noopener noreferrer">
+                        <img src="/static/assets/bit/iQAC.png" alt="JRF/SRF Opening">
+                    </a>
+                </li>
+                <li class="imp-link-list msg" data-tippy-content="Admission Notifications" data-tippy-placement="right">
+                    <a href="https://www.bitmesra.ac.in/Disp_Notify_Admission?cid=1&deptid=11" target="_blank"
+                        rel="noopener noreferrer">
+                        <img src="/static/assets/bit/iQAC.png" alt="Admission Notifications">
+                    </a>
+                </li>
+                <li class="imp-link-list msg" data-tippy-content="BIT Web Mail" data-tippy-placement="right">
+                    <a href="https://accounts.google.com/signin/v2/identifier?continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&service=mail&hd=bitmesra.ac.in&sacu=1&flowName=GlifWebSignIn&flowEntry=AddSession"
+                        target="_blank" rel="noopener noreferrer">
+                        <img src="/static/assets/bit/iQAC.png" alt="BITWebMail">
                     </a>
                 </li>
             </ul>
         </div>
+
     </main>
     {% endblock body %}
 
@@ -591,6 +638,38 @@
                 el: ".swiper-pagination",
             },
         });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            var $button = $('.button-imp-nav');
+            var $menuItems = $('.imp-link-container ul li');
+            var isOpen = false;
+
+            gsap.set($menuItems, { y: 100, autoAlpha: 0 });
+
+            $button.on('click', function () {
+                if (isOpen) {
+                    gsap.to($menuItems, {
+                        y: 100,
+                        autoAlpha: 0,
+                        duration: 0.5,
+                        stagger: 0.1,
+                        ease: "power2.inOut"
+                    });
+                } else {
+                    gsap.to($menuItems, {
+                        y: 0,
+                        autoAlpha: 1,
+                        duration: 0.5,
+                        stagger: 0.1,
+                        ease: "power2.inOut"
+                    });
+                }
+                isOpen = !isOpen;
+            });
+        });
+
     </script>
 
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v20.0"
