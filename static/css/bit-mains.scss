@@ -2,6 +2,7 @@
 [data-bs-theme="light"] {
     --hover-link: #dbb2b2 !important;
     --hover-link-100: #b93636 !important;
+    --h-i-link: 5rem;
 }
 
 [data-bs-theme="dark"] {
@@ -313,5 +314,26 @@ ion-icon.menu {
 
     option {
         border-radius: 2rem;
+    }
+}
+
+// Additional important links
+
+.button-imp-nav {
+    height: 50px;
+    width: 50px;
+}
+
+.imp-link-list {
+    position: relative;
+    height: var(--h-i-link);
+    width: 100%;
+    display: grid;
+    place-items: center;
+
+
+    a {
+        height: 50px;
+        width: 50px;
     }
 }

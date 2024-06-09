@@ -44,9 +44,16 @@
                     </li>
                     <div class="vr"></div>
                     <li class="nav-item">
+                        <a href="{% url 'blogs' %}" class="nav-link link-body-emphasis px-2">
+                            BLOGS
+                        </a>
+                    </li>
+                    <div class="vr"></div>
+                    <li class="nav-item">
                         <a href="{% url 'faqs' %}" class="nav-link link-body-emphasis px-2">
                             FAQs
                         </a>
+                    </li>
                 </ul>
                 <div>
                     <div id="google_translate_element"></div>
@@ -286,10 +293,10 @@
                         <ion-icon name="person" style="font-size: 1.5rem;" class="text-light"></ion-icon>
                     </button>
                     <ul class="dropdown-menu text-small">
-                            <a class="dropdown-item" href="{% url 'to_user' %}">
-                                <ion-icon name="mail" class="profile-icons"></ion-icon>
-                                Send Email
-                            </a>
+                        <a class="dropdown-item" href="{% url 'to_user' %}">
+                            <ion-icon name="mail" class="profile-icons"></ion-icon>
+                            Send Email
+                        </a>
                         </li>
                         {% if request.user.is_superuser %}
                         <li>
@@ -299,8 +306,8 @@
                             </a>
                         </li>
                         <li>
-                        {% endif %}
-                        {% if request.user.is_anonymous %}
+                            {% endif %}
+                            {% if request.user.is_anonymous %}
                         <li>
                             <a class="dropdown-item" href="{% url 'signup' %}">
                                 <ion-icon name="person-add" class="profile-icons"></ion-icon>
@@ -353,12 +360,12 @@
                 </span>
             </a>
             <div class="d-flex justify-content-center align-items-center">
-                <form action="{% url 'search' %}" class="col-12 col-lg-auto mb-3 mb-lg-0 d-flex input-group" role="search" method="get">
+                <form action="{% url 'search' %}" class="col-12 col-lg-auto mb-3 mb-lg-0 d-flex input-group"
+                    role="search" method="get">
                     <div class="input-group mb-3 md-mt-5">
                         <input type="text" class="form-control" placeholder="Search" aria-label="Search"
                             aria-describedby="search-btn-google-bit" />
-                        <button class="btn btn-danger" type="button"
-                            id="search-btn-google-bit">
+                        <button class="btn btn-danger" type="button" id="search-btn-google-bit">
                             <ion-icon name="search"></ion-icon>
                         </button>
                     </div>
