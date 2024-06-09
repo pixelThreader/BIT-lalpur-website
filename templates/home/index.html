@@ -642,22 +642,28 @@
 
     <script>
         $(document).ready(function () {
-            var $button = $('.button-imp-nav');
-            var $menuItems = $('.imp-link-container ul li');
-            var isOpen = false;
+            const $button = $('.button-imp-nav');
+            const $menuItems = $('.imp-link-list');
+            let isOpen = false;
 
-            gsap.set($menuItems, { y: 100, autoAlpha: 0 });
+            $menuItems.hide();  // Initially hide the menu items
 
             $button.on('click', function () {
                 if (isOpen) {
+                    // Collapse the menu with staggered animation
                     gsap.to($menuItems, {
                         y: 100,
                         autoAlpha: 0,
                         duration: 0.5,
                         stagger: 0.1,
-                        ease: "power2.inOut"
+                        ease: "power2.inOut",
+                        onComplete: function () {
+                            $menuItems.hide();  // Hide the menu items after the animation
+                        }
                     });
                 } else {
+                    $menuItems.show();  // Show the menu items before starting the animation
+                    // Expand the menu with staggered animation
                     gsap.to($menuItems, {
                         y: 0,
                         autoAlpha: 1,

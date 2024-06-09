@@ -44,7 +44,7 @@
                     </li>
                     <div class="vr"></div>
                     <li class="nav-item">
-                        <a href="{% url 'blogs' %}" class="nav-link link-body-emphasis px-2">
+                        <a href="{% url 'blog' %}" class="nav-link link-body-emphasis px-2">
                             BLOGS
                         </a>
                     </li>
@@ -293,11 +293,6 @@
                         <ion-icon name="person" style="font-size: 1.5rem;" class="text-light"></ion-icon>
                     </button>
                     <ul class="dropdown-menu text-small">
-                        <a class="dropdown-item" href="{% url 'to_user' %}">
-                            <ion-icon name="mail" class="profile-icons"></ion-icon>
-                            Send Email
-                        </a>
-                        </li>
                         {% if request.user.is_superuser %}
                         <li>
                             <a class="dropdown-item" href="/admin">

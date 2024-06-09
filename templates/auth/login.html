@@ -1,0 +1,142 @@
+{% extends 'auth/_.html' %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Login | BIT Lalpur{% endblock title %}</title>
+    {% block css %}
+    <style>
+        .imgbox {
+            position: fixed;
+            z-index: -1;
+            height: 100%;
+            width: 100%;
+            background-image: url(/static/assets/bit/collage_image.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            filter: brightness(0.7);
+        }
+
+        .main-form-container {
+            height: 90%;
+            background: rgba(174, 171, 171, 0.46);
+            backdrop-filter: blur(30px);
+        }
+
+        @media (min-width:780px) {
+            .forms {
+                width: 80%;
+                margin: 0 auto;
+            }
+        }
+    </style>
+    {% endblock css %}
+    <link rel="shortcut icon" href="/assets/brand/bit_logo_50x50.png" type="image/x-icon">
+</head>
+
+<body>
+
+    {% block body %}
+    <div class="container-fluid vh-100 p-0 d-flex justify-content-center align-items-center">
+        <div class="imgbox"></div>
+        <div class="container main-form-container rounded-4 p-4 d-flex justify-content-between flex-column">
+            <header class="d-flex justify-content-between align-items-center">
+                <h1 class="title">LOGIN</h1>
+                <div class="rhs">
+                    <div class="language"></div>
+                    <div class="bit_logo"></div>
+                </div>
+            </header>
+            <div class="h-75">
+                <main class="container-fluid rounded-3 p-3 h-100" style="background-color: rgba(255, 255, 255, 0.46);">
+                    <ul class="nav nav-pills mb-3 gap-2" id="pills-tab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="btn btn-outline-danger active" id="pills-home-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
+                                aria-selected="true">via Email</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="btn btn-outline-danger btn-danger-outline" id="pills-profile-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
+                                aria-selected="false">via Username</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="pills-tabContent">
+                        <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                            aria-labelledby="pills-home-tab" tabindex="0">
+
+                            <form action="{% url 'login' %}" method="POST" class="forms">
+                                <div class="row g-3 p-0 m-0">
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" placeholder="Email" aria-label="Email"
+                                            autocomplete="off">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="input-group mb-3">
+                                            <input type="password" class="form-control" placeholder="Password"
+                                                aria-label="Password" id="passwordInput" autocomplete="off">
+                                            <button class="btn btn-light border" type="button" id="button-addon2">
+                                                <ion-icon name="eye-outline" id="toggleIcon"></ion-icon>
+                                            </button>
+                                        </div>
+                                        <small class="d-block text-end mt-1"> <a href="#"
+                                                class="text-decoration-none">Forgot Password?</a></small>
+                                    </div>
+                                </div>
+                                <div class="row g-3 my-3 p-0 m-0">
+                                    <div class="col-md-6">
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option selected>Choose designation</option>
+                                            <option value="1">Authority</option>
+                                            <option value="2">Faculty</option>
+                                            <option value="3">Students</option>
+                                            <option value="3">Staff</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="container d-flex justify-content-center align-items-center">
+                                    <button class="btn btn-danger w-50">
+                                        LOGIN
+                                    </button>
+                                </div>
+                            </form>
+
+                        </div>
+                        <div class="tab-pane fade" id="pills-profile" role="tabpanel"
+                            aria-labelledby="pills-profile-tab" tabindex="0">...</div>
+                    </div>
+                </main>
+                <footer class="d-flex justify-content-center align-items-center">
+                    &copy; {{ year }} BIT Lalpur
+                </footer>
+            </div>
+        </div>
+    </div>
+    {% endblock body %}
+
+    {% block js %}
+    <script>
+        $(document).ready(function () {
+            $('#button-addon2').on('click', function () {
+                var passwordInput = $('#passwordInput');
+                var icon = $('#toggleIcon');
+                if (passwordInput.attr('type') === 'password') {
+                    passwordInput.attr('type', 'text');
+                    icon.attr('name', 'eye-off-outline');
+                } else {
+                    passwordInput.attr('type', 'password');
+                    icon.attr('name', 'eye-outline');
+                }
+            });
+        });
+    </script>
+    {% endblock js %}
+
+</body>
+
+</html>
