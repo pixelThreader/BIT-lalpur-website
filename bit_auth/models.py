@@ -7,10 +7,9 @@ class AdditionalUserCredentials(models.Model):
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
-    # My Custom Modles
 
-    GENDER_CHOICE = [('Male', 'Male'),('Female', 'Female'), ('Others','Others'), ('Not to say','Not to say')]
-    WHO_CHOICE = [('Student', 'Student'),('Faculty', 'Faculty'), ('Staff','Staff')]
+    GENDER_CHOICE = [('Male', 'Male'), ('Female', 'Female'), ('Others','Others'), ('Not to say','Not to say')]
+    WHO_CHOICE = [('Authority', 'Admin'), ('Student', 'Student'), ('Faculty', 'Faculty'), ('Staff','Staff')]
 
     who = models.CharField(max_length=30, choices= WHO_CHOICE)
     Emergency_id01 = models.CharField(max_length=10, unique = True)

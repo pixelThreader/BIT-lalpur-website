@@ -1,10 +1,19 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import logout
+from django.contrib.auth import logout, login, authenticate
 import datetime
 
 # Create your views here.
 
 def login__(request):
+    if request.method == 'POST':
+        mhtd = request.POST.get('via-email-method')
+        if mhtd == '__email':
+            email = request.POST.get('via-email-user')
+            passwd = request.POST.get('via-email-passwd')
+            user = authenticate(email=email, password=passwd)
+            login(request, user)
+            
+
     cont = {
         'year': datetime.datetime.now().year
     }

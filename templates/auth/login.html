@@ -36,7 +36,6 @@
         }
     </style>
     {% endblock css %}
-    <link rel="shortcut icon" href="/assets/brand/bit_logo_50x50.png" type="image/x-icon">
 </head>
 
 <body>
@@ -71,31 +70,32 @@
                             aria-labelledby="pills-home-tab" tabindex="0">
 
                             <form action="{% url 'login' %}" method="POST" class="forms">
+                                {% csrf_token %}
+                                <input type="hidden" name="via-email-method" value="__email">
                                 <div class="row g-3 p-0 m-0">
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control" placeholder="Email" aria-label="Email"
-                                            autocomplete="off">
+                                        <input type="email" class="form-control" placeholder="Email" aria-label="Email" required
+                                            autocomplete="off" name="via-email-user">
                                     </div>
                                     <div class="col-md-6">
                                         <div class="input-group mb-3">
                                             <input type="password" class="form-control" placeholder="Password"
-                                                aria-label="Password" id="passwordInput" autocomplete="off">
-                                            <button class="btn btn-light border" type="button" id="button-addon2">
-                                                <ion-icon name="eye-outline" id="toggleIcon"></ion-icon>
+                                                aria-label="Password" id="passwordInputEmail" required autocomplete="off" name="via-email-passwd">
+                                            <button class="btn btn-light border passwd-btn" type="button" target="#passwordInputEmail" target_icon="#toggleIconEmail">
+                                                <ion-icon name="eye-outline" id="toggleIconEmail"></ion-icon>
                                             </button>
                                         </div>
-                                        <small class="d-block text-end mt-1"> <a href="#"
+                                        <small class="d-block text-end"> <a href="#"
                                                 class="text-decoration-none">Forgot Password?</a></small>
                                     </div>
                                 </div>
                                 <div class="row g-3 my-3 p-0 m-0">
                                     <div class="col-md-6">
-                                        <select class="form-select" aria-label="Default select example">
-                                            <option selected>Choose designation</option>
-                                            <option value="1">Authority</option>
-                                            <option value="2">Faculty</option>
-                                            <option value="3">Students</option>
-                                            <option value="3">Staff</option>
+                                        <select class="form-select" aria-label="via Email Form Select" name="via-email-select" required>
+                                            <option value="Authority">Authority</option>
+                                            <option value="Faculty">Faculty</option>
+                                            <option value="Student">Students</option>
+                                            <option value="Staff">Staff</option>
                                         </select>
                                     </div>
                                 </div>
@@ -122,15 +122,15 @@
     {% block js %}
     <script>
         $(document).ready(function () {
-            $('#button-addon2').on('click', function () {
-                var passwordInput = $('#passwordInput');
-                var icon = $('#toggleIcon');
-                if (passwordInput.attr('type') === 'password') {
-                    passwordInput.attr('type', 'text');
-                    icon.attr('name', 'eye-off-outline');
+            $('.passwd-btn').on('click', function () {
+                var passwordInput = $(this).attr('target');
+                var icon = $(this).attr('target_icon');
+                if ($(passwordInput).attr('type') === 'password') {
+                    $(passwordInput).attr('type', 'text');
+                    $(icon).attr('name', 'eye-off-outline');
                 } else {
-                    passwordInput.attr('type', 'password');
-                    icon.attr('name', 'eye-outline');
+                    $(passwordInput).attr('type', 'password');
+                    $(icon).attr('name', 'eye-outline');
                 }
             });
         });
