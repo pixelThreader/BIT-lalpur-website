@@ -35,10 +35,14 @@ $(document).ready(function () {
     // Event listener for theme toggle button
     $('#toggle-theme').click(function () {
         var body = $('body');
-        var currentTheme = body.attr('data-bs-theme');
-        var newTheme = currentTheme === 'light' ? 'dark' : 'light';
-        body.attr('data-bs-theme', newTheme);
-        // Set the new theme for the session
-        setThemeForSession(newTheme);
+
+        // Check if the body has the force class
+        if (!body.hasClass('force')) {
+            var currentTheme = body.attr('data-bs-theme');
+            var newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            body.attr('data-bs-theme', newTheme);
+            // Set the new theme for the session
+            setThemeForSession(newTheme);
+        }
     });
 });

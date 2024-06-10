@@ -60,9 +60,9 @@
                                 aria-selected="true">via Email</button>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <button class="btn btn-outline-danger btn-danger-outline" id="pills-profile-tab" data-bs-toggle="pill"
-                                data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
-                                aria-selected="false">via Username</button>
+                            <button class="btn btn-outline-danger btn-danger-outline" id="pills-profile-tab"
+                                data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab"
+                                aria-controls="pills-profile" aria-selected="false">via Username</button>
                         </li>
                     </ul>
                     <div class="tab-content" id="pills-tabContent">
@@ -71,27 +71,30 @@
 
                             <form action="{% url 'login' %}" method="POST" class="forms">
                                 {% csrf_token %}
-                                <input type="hidden" name="via-email-method" value="__email">
+                                <input type="hidden" name="via-login-method" value="__email">
                                 <div class="row g-3 p-0 m-0">
                                     <div class="col-md-6">
-                                        <input type="email" class="form-control" placeholder="Email" aria-label="Email" required
-                                            autocomplete="off" name="via-email-user">
+                                        <input type="email" class="form-control" placeholder="Email" aria-label="Email"
+                                            required autocomplete="off" name="via-email-user">
                                     </div>
                                     <div class="col-md-6">
                                         <div class="input-group mb-3">
                                             <input type="password" class="form-control" placeholder="Password"
-                                                aria-label="Password" id="passwordInputEmail" required autocomplete="off" name="via-email-passwd">
-                                            <button class="btn btn-light border passwd-btn" type="button" target="#passwordInputEmail" target_icon="#toggleIconEmail">
+                                                aria-label="Password" id="passwordInputEmail" required
+                                                autocomplete="off" name="via-email-passwd">
+                                            <button class="btn btn-light border passwd-btn" type="button"
+                                                target="#passwordInputEmail" target_icon="#toggleIconEmail">
                                                 <ion-icon name="eye-outline" id="toggleIconEmail"></ion-icon>
                                             </button>
                                         </div>
-                                        <small class="d-block text-end"> <a href="#"
-                                                class="text-decoration-none">Forgot Password?</a></small>
+                                        <small class="d-block text-end"> <a href="#" class="text-decoration-none">Forgot
+                                                Password?</a></small>
                                     </div>
                                 </div>
                                 <div class="row g-3 my-3 p-0 m-0">
                                     <div class="col-md-6">
-                                        <select class="form-select" aria-label="via Email Form Select" name="via-email-select" required>
+                                        <select class="form-select" aria-label="via Email Form Select"
+                                            name="via-email-select" required>
                                             <option value="Authority">Authority</option>
                                             <option value="Faculty">Faculty</option>
                                             <option value="Student">Students</option>
@@ -101,14 +104,56 @@
                                 </div>
                                 <div class="container d-flex justify-content-center align-items-center">
                                     <button type="submit" class="btn btn-danger w-50">
-                                        LOGIN   
+                                        LOGIN
                                     </button>
                                 </div>
                             </form>
 
                         </div>
                         <div class="tab-pane fade" id="pills-profile" role="tabpanel"
-                            aria-labelledby="pills-profile-tab" tabindex="0">...</div>
+                            aria-labelledby="pills-profile-tab" tabindex="0">
+
+                            <form action="{% url 'login' %}" method="POST" class="forms">
+                                {% csrf_token %}
+                                <input type="hidden" name="via-login-method" value="__username">
+                                <div class="row g-3 p-0 m-0">
+                                    <div class="col-md-6">
+                                        sername<input type="text" class="form-control" placeholder="Username" aria-label="Ud"
+                                            required autocomplete="off" name="via-username-user">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="input-group mb-3">
+                                            <input type="password" class="form-control" placeholder="Password"
+                                                aria-label="Password" id="passwordInputUsername" required
+                                                autocomplete="off" name="via-username-passwd">
+                                            <button class="btn btn-light border passwd-btn" type="button"
+                                                target="#passwordInputUsername" target_icon="#toggleIconUsername">
+                                                <ion-icon name="eye-outline" id="toggleIconUsername"></ion-icon>
+                                            </button>
+                                        </div>
+                                        <small class="d-block text-end"> <a href="#" class="text-decoration-none">Forgot
+                                                Password?</a></small>
+                                    </div>
+                                </div>
+                                <div class="row g-3 my-3 p-0 m-0">
+                                    <div class="col-md-6">
+                                        <select class="form-select" aria-label="via Email Form Select"
+                                            name="via-username-select" required>
+                                            <option value="Authority">Authority</option>
+                                            <option value="Faculty">Faculty</option>
+                                            <option value="Student">Students</option>
+                                            <option value="Staff">Staff</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="container d-flex justify-content-center align-items-center">
+                                    <button type="submit" class="btn btn-danger w-50">
+                                        LOGIN
+                                    </button>
+                                </div>
+                            </form>
+
+                        </div>
                     </div>
                 </main>
                 <footer class="d-flex justify-content-center align-items-center">

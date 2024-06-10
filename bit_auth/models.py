@@ -14,7 +14,7 @@ class AdditionalUserCredentials(models.Model):
     who = models.CharField(max_length=30, choices= WHO_CHOICE)
     Emergency_id01 = models.CharField(max_length=10, unique = True)
     phone = models.CharField(max_length=20)
-    phone_alt = models.CharField(max_length=20, default=None, null=True)
+    phone_alt = models.CharField(max_length=20, default="", null=True)
     gender = models.CharField(max_length=30, choices= GENDER_CHOICE)
     birth = models.DateField(auto_now=False)
     country = models.CharField(max_length=50)

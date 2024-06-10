@@ -300,9 +300,8 @@
                                 Admin
                             </a>
                         </li>
-                        <li>
-                            {% endif %}
-                            {% if request.user.is_anonymous %}
+                        {% endif %}
+                        {% if request.user.is_anonymous %}
                         <li>
                             <a class="dropdown-item" href="{% url 'signup' %}">
                                 <ion-icon name="person-add" class="profile-icons"></ion-icon>
